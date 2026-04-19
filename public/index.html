@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="/assets/hero-woonkamer.png" fetchpriority="high" />
-  <link rel="stylesheet" href="/styles.css?v=69" />
+  <link rel="stylesheet" href="/styles.css?v=71" />
 </head>
 <body>
   <header class="site-header">
@@ -174,22 +174,69 @@
       </div>
     </section>
 
-    <section class="section section--why">
-      <div class="wrap grid-2">
-        <div>
-          <h2>Waarom Casa Pheli?</h2>
+    <section class="section section--why section--highlights" aria-labelledby="highlights-title">
+      <div class="wrap highlights-layout">
+        <div class="highlights-copy">
+          <h2 id="highlights-title">Waarom Casa Pheli?</h2>
           <p>
-            Het appartement maakt deel uit van een recent residentieel complex met zwembaden, groenzones en parkeermogelijkheden.
-            Ideaal voor koppels en kleine gezinnen die houden van zon en een ontspannen sfeer.
+            Casa Pheli is een licht, modern appartement op de <strong>eerste verdieping</strong> — bereikbaar met de <strong>lift</strong> —
+            in residentie Area Beach III. Je hebt <strong>twee slaapkamers</strong> en <strong>twee badkamers</strong>, waaronder een
+            comfortabele <strong>suite</strong>, en een <strong>ruim terras</strong> om buiten te leven met een weids uitzicht richting de
+            <strong>zoutmeren</strong>.
           </p>
           <p>
-            Reserveren verloopt persoonlijk: je neemt contact op per e-mail en wij helpen je graag verder met data, prijs en praktische info.
+            Het complex biedt <strong>twee zwembaden</strong> (binnen en buiten), een <strong>fitnessruimte</strong>, <strong>sauna</strong>,
+            een <strong>padelveld</strong> en <strong>ondergrondse parking</strong>. <strong>Airconditioning</strong> staat in het hele
+            appartement voor aangename temperaturen het hele jaar door.
+          </p>
+          <ul class="highlights-facts" aria-label="Belangrijkste kenmerken">
+            <li class="highlights-fact-card">2 slaapkamers</li>
+            <li class="highlights-fact-card">2 badkamers</li>
+            <li class="highlights-fact-card">1 suite</li>
+            <li class="highlights-fact-card">2 zwembaden</li>
+            <li class="highlights-fact-card">Fitness</li>
+            <li class="highlights-fact-card">Sauna</li>
+            <li class="highlights-fact-card">Padelveld</li>
+            <li class="highlights-fact-card">Airco overal</li>
+            <li class="highlights-fact-card">Ondergrondse parking</li>
+            <li class="highlights-fact-card">Uitzicht zoutmeren</li>
+            <li class="highlights-fact-card">Ruim terras</li>
+            <li class="highlights-fact-card">1e verdieping · lift</li>
+          </ul>
+          <p class="highlights-cta">
+            Vragen over beschikbaarheid? <a href="/contact">Neem contact op</a> — we helpen je graag verder.
           </p>
         </div>
-        <div class="card">
-          <h3>In het kort</h3>
-          <p><strong>Locatie:</strong> Carrer el Tomello, blok 2, app. 47 — El Raso, Guardamar del Segura.</p>
-          <p style="margin-top: 0.75rem"><strong>Contact:</strong> <a href="mailto:heidi.torfs@outlook.be">heidi.torfs@outlook.be</a></p>
+        <div class="highlights-aside">
+          <div
+            class="highlights-stage"
+            data-highlights-carousel
+            role="region"
+            aria-roledescription="carrousel"
+            aria-label="Sfeerbeelden van het appartement en het complex"
+          >
+            <div class="highlights-panel">
+              <img
+                class="highlights-photo"
+                src="/assets/gallery/galerij-01.png"
+                alt="Woonkamer Casa Pheli"
+                width="1200"
+                height="800"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+          <aside class="highlights-info-card" aria-labelledby="highlights-kort-title">
+            <h3 id="highlights-kort-title" class="highlights-info-title">In het kort</h3>
+            <p class="highlights-info-line">
+              <strong>Locatie:</strong> Carrer el Tomello, blok 2, app. 47 — El Raso, Guardamar del Segura.
+            </p>
+            <p class="highlights-info-line highlights-info-line--last">
+              <strong>Contact:</strong>
+              <a href="mailto:heidi.torfs@outlook.be">heidi.torfs@outlook.be</a>
+            </p>
+          </aside>
         </div>
       </div>
     </section>
@@ -346,5 +393,6 @@
   <script src="/scripts/nav.js" defer></script>
   <script src="/scripts/hero-slider.js" defer></script>
   <script src="/scripts/amenities-reveal.js?v=1" defer></script>
+  <script src="/scripts/highlights-carousel.js?v=2" defer></script>
 </body>
 </html>
