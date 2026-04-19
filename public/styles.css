@@ -370,6 +370,20 @@ a:hover {
   border-color: rgba(61, 52, 41, 0.22);
 }
 
+/* Hero: primaire CTA (beige i.p.v. terracotta) */
+.hero--slider .hero-actions .btn-primary {
+  background: linear-gradient(180deg, #f8f2ea 0%, var(--sand-deep) 100%);
+  color: var(--earth);
+  border: 1px solid rgba(61, 52, 41, 0.12);
+  box-shadow: 0 4px 18px rgba(61, 52, 41, 0.18);
+}
+
+.hero--slider .hero-actions .btn-primary:hover {
+  background: linear-gradient(180deg, #fbf6f0 0%, #ddd0c4 100%);
+  color: var(--earth);
+  transform: translateY(-1px);
+}
+
 .hero-dots-wrap {
   position: relative;
   z-index: 2;
@@ -400,8 +414,8 @@ a:hover {
 }
 
 .hero-dot.is-active {
-  background: var(--terracotta);
-  border-color: var(--terracotta);
+  background: var(--sand-deep);
+  border-color: rgba(61, 52, 41, 0.35);
   transform: scale(1.12);
 }
 
