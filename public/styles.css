@@ -63,7 +63,8 @@ a:hover {
   width: 100%;
   max-width: 1080px;
   margin-inline: auto;
-  padding-inline: clamp(1.1rem, 4vw, 1.5rem);
+  padding-left: max(clamp(1.1rem, 4vw, 1.5rem), env(safe-area-inset-left, 0px));
+  padding-right: max(clamp(1.1rem, 4vw, 1.5rem), env(safe-area-inset-right, 0px));
 }
 
 /* ——— Header (bruin + sticky) ——— */
@@ -85,13 +86,14 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 0.85rem 0;
+  /* Alleen verticaal — geen padding: 0.85rem 0 (dat wist .wrap horizontaal weg) */
+  padding-block: 0.85rem;
   min-height: 3.5rem;
 }
 
 .brand {
   font-family: var(--font-display);
-  font-size: clamp(1.2rem, 4.2vw, 1.65rem);
+  font-size: clamp(1.35rem, 4.8vw, 1.75rem);
   font-weight: 600;
   letter-spacing: 0.02em;
   color: rgba(255, 254, 251, 0.96);
@@ -710,12 +712,16 @@ a:hover {
     min-height: 100%;
   }
 
+  .section h2 {
+    font-size: clamp(1.85rem, 5.2vw, 2.2rem);
+  }
+
   .hero--slider .hero-title-wrap h1 {
     font-size: clamp(1.4rem, 5.2vw, 2.5rem);
   }
 
   .hero--slider .hero-title-wrap--galerij h1 {
-    font-size: clamp(2.35rem, 9vw, 3.65rem);
+    font-size: clamp(2.55rem, 9.5vw, 3.85rem);
     max-width: min(100%, 100%);
   }
 
