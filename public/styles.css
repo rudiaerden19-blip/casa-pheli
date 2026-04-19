@@ -511,6 +511,11 @@ a:hover {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
+/* Homepage: Waarom — hogere positie (minder padding-top) */
+.section.section--highlights.section--why {
+  padding-top: clamp(2rem, 5vw, 3rem);
+}
+
 /* Homepage: Waarom — kenmerken links + horizontale foto-slider */
 .section--highlights .highlights-layout {
   display: grid;
@@ -534,50 +539,38 @@ a:hover {
   max-width: 100%;
 }
 
-.highlights-copy h2 {
-  margin-top: 0;
+.highlights-intro {
+  text-align: center;
+  margin: 0 0 1.1rem;
 }
 
-.highlights-facilities-block {
-  margin: 0 auto 1.35rem;
-  max-width: 52ch;
+.highlights-copy h2 {
+  margin-top: 0;
+  margin-bottom: 0.45rem;
   text-align: center;
 }
 
-.highlights-facilities-kicker {
-  margin: 0 0 0.45rem;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--gold);
-}
-
-.highlights-facilities-headline {
-  margin: 0 0 0.75rem;
+.highlights-lead {
+  margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3.4vw, 1.95rem);
+  font-size: clamp(1.35rem, 3.2vw, 1.8rem);
   font-weight: 600;
-  line-height: 1.22;
-  color: var(--earth);
-}
-
-.highlights-facilities-line1 {
-  display: block;
-}
-
-.highlights-facilities-line2 {
-  display: block;
-  margin-top: 0.12em;
+  line-height: 1.3;
   color: var(--terracotta);
+  text-align: center;
+  max-width: 42ch;
+  margin-inline: auto;
 }
 
 .highlights-facilities-text {
-  margin: 0;
+  margin: 0 0 1.1rem;
   font-size: 0.98rem;
   line-height: 1.55;
   color: var(--earth-soft);
+  text-align: center;
   text-wrap: balance;
+  max-width: 52ch;
+  margin-inline: auto;
 }
 
 .highlights-features {
