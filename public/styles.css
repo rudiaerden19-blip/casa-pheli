@@ -529,7 +529,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.15rem;
+  gap: calc(1.15rem + 2cm);
   width: 100%;
   max-width: 19rem;
   margin-inline: auto;
