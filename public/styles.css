@@ -827,7 +827,16 @@ button.btn {
   }
 }
 
-.hosts-book-btn {
+.hosts-photo-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.7rem;
+  width: 100%;
+}
+
+.hosts-book-btn,
+.hosts-video-btn {
   width: 100%;
   max-width: 100%;
   padding-inline: 1.5rem;

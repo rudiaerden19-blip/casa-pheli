@@ -1,10 +1,11 @@
 (function () {
-  var openBtn = document.querySelector("[data-video-modal-open]");
+  var openBtns = document.querySelectorAll("[data-video-modal-open]");
   var modal = document.getElementById("video-modal");
   var player = document.getElementById("video-modal-player");
-  if (!modal || !openBtn) return;
+  if (!modal || openBtns.length === 0) return;
 
   var closers = modal.querySelectorAll("[data-video-modal-close]");
+  var lastOpener = null;
 
   function openModal() {
     modal.removeAttribute("hidden");
@@ -26,11 +27,18 @@
       player.pause();
       player.currentTime = 0;
     }
-    openBtn.focus();
+    if (lastOpener && typeof lastOpener.focus === "function") {
+      lastOpener.focus();
+    } else if (openBtns[0]) {
+      openBtns[0].focus();
+    }
   }
 
-  openBtn.addEventListener("click", function () {
-    openModal();
+  openBtns.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      lastOpener = btn;
+      openModal();
+    });
   });
 
   closers.forEach(function (el) {
