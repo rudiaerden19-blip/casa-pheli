@@ -3,8 +3,7 @@
     { "source": "/galerij", "destination": "/galerij.html" },
     { "source": "/boeken", "destination": "/boeken.html" },
     { "source": "/gastenboek", "destination": "/gastenboek.html" },
-    { "source": "/contact", "destination": "/contact.html" },
-    { "source": "/bezienswaardigheden", "destination": "/bezienswaardigheden.html" }
+    { "source": "/contact", "destination": "/contact.html" }
   ],
   "headers": [
     {
@@ -29,10 +28,6 @@
     },
     {
       "source": "/contact",
-      "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
-    },
-    {
-      "source": "/bezienswaardigheden",
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
     }
   ]
