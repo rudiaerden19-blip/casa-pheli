@@ -194,8 +194,8 @@ a:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: clamp(22rem, 58vh, 38rem);
-  max-height: min(70vh, 40rem);
+  min-height: clamp(30rem, 78vh, 56rem);
+  max-height: min(88vh, 56rem);
   padding: 0;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
