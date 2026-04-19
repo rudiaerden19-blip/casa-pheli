@@ -995,11 +995,21 @@ button.btn {
 }
 
 .hosts-thought-bubble__cloud {
-  background: var(--white);
-  border: 2.5px solid var(--terracotta);
   border-radius: 1.35rem 1.5rem 1.2rem 1.4rem;
   padding: 0.75rem 0.95rem 0.85rem;
-  box-shadow: 4px 5px 0 rgba(196, 92, 62, 0.18);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.58) 0%,
+    rgba(255, 255, 255, 0.28) 55%,
+    rgba(250, 246, 240, 0.35) 100%
+  );
+  backdrop-filter: blur(16px) saturate(1.15);
+  -webkit-backdrop-filter: blur(16px) saturate(1.15);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow:
+    0 8px 28px rgba(61, 52, 41, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.65),
+    0 0 0 1px rgba(196, 92, 62, 0.2);
 }
 
 .hosts-thought-bubble__cloud blockquote {
@@ -1013,6 +1023,7 @@ button.btn {
   line-height: 1.5;
   font-weight: 500;
   color: var(--earth);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.45);
 }
 
 .hosts-thought-bubble__attr {
@@ -1022,6 +1033,7 @@ button.btn {
   font-weight: 500;
   color: var(--earth-soft);
   text-align: right;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .hosts-thought-bubble__tail {
@@ -1037,9 +1049,14 @@ button.btn {
   display: block;
   flex-shrink: 0;
   border-radius: 50%;
-  background: var(--white);
-  border: 2.5px solid var(--terracotta);
-  box-shadow: 1px 2px 0 rgba(196, 92, 62, 0.12);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.22));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow:
+    0 3px 10px rgba(61, 52, 41, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    0 0 0 1px rgba(196, 92, 62, 0.18);
   width: 0.85rem;
   height: 0.85rem;
 }
@@ -1047,13 +1064,11 @@ button.btn {
 .hosts-thought-bubble__dot--md {
   width: 0.55rem;
   height: 0.55rem;
-  border-width: 2px;
 }
 
 .hosts-thought-bubble__dot--sm {
   width: 0.35rem;
   height: 0.35rem;
-  border-width: 1.5px;
 }
 
 .card {
