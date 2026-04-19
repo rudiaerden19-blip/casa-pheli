@@ -863,6 +863,29 @@ a:hover {
   background: rgba(250, 246, 240, 0.72);
   border: 1px solid rgba(168, 107, 74, 0.14);
   border-radius: var(--radius);
+  box-shadow: 0 2px 8px rgba(61, 52, 41, 0.06);
+  transform-origin: center center;
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s ease;
+}
+
+.pricing-cost-row:hover {
+  position: relative;
+  z-index: 1;
+  transform: scale(1.045);
+  box-shadow: 0 12px 28px rgba(61, 52, 41, 0.12);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pricing-cost-row {
+    transition: none;
+  }
+
+  .pricing-cost-row:hover {
+    transform: none;
+    box-shadow: 0 2px 8px rgba(61, 52, 41, 0.06);
+  }
 }
 
 .pricing-cost-label {
