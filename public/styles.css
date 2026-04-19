@@ -631,6 +631,27 @@ a:hover {
   word-break: break-word;
 }
 
+.highlights-features-policy-row {
+  grid-column: 1 / -1;
+  margin: 1.5cm 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.highlights-features-policy-wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0.55rem 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 520px) {
+  .highlights-features-policy-wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
 .highlights-feature--policy {
   border: 2px solid var(--terracotta);
   background: rgba(168, 107, 74, 0.09);
