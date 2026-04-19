@@ -1,6 +1,3 @@
 .vercel
 .DS_Store
 node_modules/
-
-# Te groot voor GitHub (>100MB) — lokaal kopiëren of hosten elders
-public/assets/video/kijk-video.mp4
