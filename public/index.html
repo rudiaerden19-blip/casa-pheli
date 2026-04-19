@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="/assets/hero-woonkamer.png" fetchpriority="high" />
-  <link rel="stylesheet" href="/styles.css?v=128" />
+  <link rel="stylesheet" href="/styles.css?v=129" />
 </head>
 <body>
   <header class="site-header">
@@ -508,11 +508,53 @@
       </div>
     </section>
 
-    <section class="section section--discover">
+    <section class="section section--discover" aria-labelledby="discover-title">
       <div class="wrap">
-        <h2>Ontdek de omgeving</h2>
-        <p>Van markten tot natuurgebieden: de regio heeft voor ieder wat wils.</p>
-        <p style="margin-top: 1rem">
+        <h2 id="discover-title">Ontdek de omgeving</h2>
+        <p class="discover-lead">Van markten tot natuurgebieden: de regio heeft voor ieder wat wils.</p>
+
+        <div class="discover-spots">
+          <article class="discover-spot">
+            <figure class="discover-spot__media">
+              <img
+                src="/assets/discover-kasteel-guardamar-1.png"
+                alt="Zicht op het kasteel van Guardamar del Segura op de heuvel"
+                width="1200"
+                height="800"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+            <div class="discover-spot__body">
+              <p>
+                Het kasteel van Guardamar del Segura is een van de bekendste erfgoedparels en de restauratiewerkzaamheden
+                die zijn uitgevoerd geven ons een goed idee van hoe het gebouw er oorspronkelijk uitzag.
+              </p>
+            </div>
+          </article>
+          <article class="discover-spot discover-spot--reverse">
+            <figure class="discover-spot__media">
+              <img
+                src="/assets/discover-kasteel-guardamar-2.png"
+                alt="Houten wandelpad door de duinen richting zee bij Guardamar"
+                width="1200"
+                height="800"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+            <div class="discover-spot__body">
+              <p>
+                Het ligt op de top van een heuvel, waar we
+                <strong>zowel het kasteel als de overblijfselen van de muur en de citadel kunnen zien.</strong>
+                Tegenwoordig kunnen we een ontspannen wandeling maken door het gebied en iets meer van de geschiedenis van
+                de stad ontdekken.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <p class="discover-cta">
           <a class="btn btn-ghost" href="/bezienswaardigheden">Bezienswaardigheden</a>
         </p>
       </div>
