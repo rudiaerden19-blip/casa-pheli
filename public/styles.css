@@ -183,36 +183,31 @@ a:hover {
 }
 
 .hero.hero--slider {
-  /* Hoogte ≈ breedte / beeldverhouding (~3:2): past bij de hero-jpg’s zodat cover weinig bijsnijdt.
-     Geen vh-plafond hier — dat was de oorzaak van “te veel ingezoomd” op brede schermen. */
-  min-height: max(22rem, calc(100vw / 1.5));
+  position: relative;
   padding: 0;
-  background: none;
+  background: var(--cream);
   overflow: hidden;
-}
-
-@media (max-width: 900px) {
-  .hero.hero--slider {
-    min-height: min(max(22rem, calc(100vw / 1.5)), 70vh);
-  }
+  /* Geen min-height op de hele section — dat maakte de “30 cm” hero */
 }
 
 .hero-slider {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+  position: relative;
+  width: 100%;
+  height: clamp(9.5rem, 16vh, 12.5rem);
+  max-height: 12.5rem;
+  background: #232120;
 }
 
 .hero-slide {
   position: absolute;
   inset: 0;
-  background-size: cover;
+  background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
+  background-color: #232120;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.85s ease;
-  transform: translateZ(0);
+  transition: opacity 0.65s ease;
 }
 
 .hero-slide.is-active {
@@ -222,22 +217,26 @@ a:hover {
 
 .hero--slider .hero-copy {
   position: relative;
-  z-index: 2;
-  padding: clamp(2.5rem, 8vw, 4rem) 0 clamp(1.75rem, 4vw, 2.5rem);
+  z-index: 1;
   text-align: center;
+  padding: clamp(0.85rem, 2.8vw, 1.35rem) clamp(1rem, 3vw, 1.5rem) clamp(0.6rem, 2vw, 1rem);
+  background: var(--cream);
+}
+
+.hero--slider .hero-copy h1 {
+  color: var(--earth);
+  text-shadow: none;
 }
 
 .hero--slider .hero-copy .lead {
   margin-inline: auto;
+  color: var(--earth-soft);
+  text-shadow: none;
 }
 
-.hero--slider .hero-copy h1,
-.hero--slider .hero-copy .lead {
-  /* Light halo + tiny dark edge: readable on bright windows without washing the photo */
-  text-shadow:
-    0 0 1px rgba(250, 246, 240, 0.95),
-    0 1px 2px rgba(61, 52, 41, 0.18),
-    0 0 12px rgba(250, 246, 240, 0.65);
+.hero--slider .hero-copy strong {
+  color: var(--earth);
+  font-weight: 600;
 }
 
 .hero--slider .hero-actions {
@@ -246,8 +245,9 @@ a:hover {
 
 .hero-dots-wrap {
   position: relative;
-  z-index: 2;
-  padding-bottom: clamp(1.25rem, 3vw, 1.85rem);
+  z-index: 1;
+  padding: 0 0 clamp(0.45rem, 1.8vw, 0.75rem);
+  background: var(--cream);
 }
 
 .hero-dots {
@@ -261,8 +261,8 @@ a:hover {
   height: 11px;
   padding: 0;
   border-radius: 999px;
-  border: 2px solid rgba(61, 52, 41, 0.3);
-  background: rgba(255, 254, 251, 0.6);
+  border: 2px solid rgba(61, 52, 41, 0.32);
+  background: rgba(255, 254, 251, 0.9);
   cursor: pointer;
   transition:
     background 0.2s,
