@@ -292,9 +292,14 @@ a:hover {
   pointer-events: none;
 }
 
-/* Portretfoto in brede hero: iets hoger framen (zwembad / lucht) */
+/* Portretfoto in brede hero: volledige foto tonen (uitzoomen t.o.v. cover) */
+.hero-slide--portrait {
+  background: var(--cream);
+}
+
 .hero-slide--portrait img {
-  object-position: center 22%;
+  object-fit: contain;
+  object-position: center center;
 }
 
 .hero--slider .hero-title-wrap h1 {
