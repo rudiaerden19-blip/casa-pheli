@@ -580,11 +580,18 @@ a:hover {
   display: flex;
   flex-direction: column;
   margin: 0;
-  padding: clamp(1.2rem, 3vw, 1.5rem);
+  padding: clamp(1.35rem, 3.2vw, 1.85rem);
+  min-height: 23.5rem;
   background: rgba(255, 254, 251, 0.94);
   border: 1px solid rgba(168, 107, 74, 0.14);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+}
+
+@media (max-width: 899px) {
+  .pricing-card {
+    min-height: 0;
+  }
 }
 
 .pricing-card--featured {
@@ -673,6 +680,19 @@ a:hover {
   display: block;
   width: 100%;
   height: 100%;
+}
+
+.pricing-card-cta {
+  margin-top: auto;
+  padding-top: 1.05rem;
+}
+
+.pricing-card-cta-btn {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  box-sizing: border-box;
 }
 
 .pricing-extra {
