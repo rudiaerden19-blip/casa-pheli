@@ -1517,20 +1517,8 @@ button.btn {
 }
 
 /* ——— Homepage: Voorzieningen ——— */
-/* Titel staat visueel onder de kaarten; in de DOM blijft h2 vóór de ul (toegankelijkheid). */
-.amenities-wrap {
-  display: flex;
-  flex-direction: column;
-  gap: clamp(1.25rem, 3vw, 1.75rem);
-}
-
-.amenities-wrap .amenities-grid {
-  order: 1;
-}
-
-.section--amenities .amenities-wrap h2 {
-  order: 2;
-  margin: 0;
+.section--amenities h2 {
+  margin-bottom: 1.35rem;
 }
 
 .amenities-grid {
