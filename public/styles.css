@@ -532,27 +532,20 @@ a:hover {
   gap: 1.15rem;
   width: 100%;
   max-width: 19rem;
+  margin-inline: auto;
 }
 
 @media (min-width: 720px) {
   .hosts-photo-stack {
-    align-items: flex-end;
     margin-left: auto;
+    margin-right: 0;
   }
 }
 
 .hosts-book-btn {
-  background: rgba(255, 255, 255, 0.88);
-  color: var(--earth);
-  border: 1px solid rgba(61, 52, 41, 0.2);
-  box-shadow: 0 3px 14px rgba(61, 52, 41, 0.12);
-}
-
-.hosts-book-btn:hover {
-  background: #fff;
-  color: var(--earth);
-  border-color: rgba(61, 52, 41, 0.28);
-  transform: translateY(-1px);
+  width: 100%;
+  max-width: 100%;
+  padding-inline: 1.5rem;
 }
 
 .hosts-photo-frame {
