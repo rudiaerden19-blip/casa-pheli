@@ -1055,13 +1055,24 @@ button.btn {
   z-index: 1;
   margin: 0 0 -3px;
   padding: 0.95rem 1.15rem 1rem;
-  background: var(--white);
-  border: 3px solid var(--earth);
+  background: linear-gradient(
+    155deg,
+    rgba(255, 255, 255, 0.52) 0%,
+    rgba(255, 255, 255, 0.28) 45%,
+    rgba(250, 246, 240, 0.38) 100%
+  );
+  backdrop-filter: blur(14px) saturate(1.12);
+  -webkit-backdrop-filter: blur(14px) saturate(1.12);
+  border: 2px solid rgba(61, 52, 41, 0.55);
   border-radius: 2rem 2.1rem 1.85rem 2.05rem;
   box-sizing: border-box;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    0 4px 20px rgba(61, 52, 41, 0.06);
+  isolation: isolate;
 }
 
-/* Driehoekige punt naar beneden (strip-tekstballon); buitenste rand + wit vulvlak */
+/* Driehoekige punt: buitenste contour + glasachtige vulling (zelfde tint als ballon) */
 .hosts-thought-bubble__tip {
   position: absolute;
   z-index: 0;
@@ -1072,7 +1083,7 @@ button.btn {
   margin-left: -15px;
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
-  border-top: 18px solid var(--earth);
+  border-top: 18px solid rgba(61, 52, 41, 0.55);
   background: none;
   pointer-events: none;
 }
@@ -1086,7 +1097,7 @@ button.btn {
   height: 0;
   border-left: 11px solid transparent;
   border-right: 11px solid transparent;
-  border-top: 13px solid var(--white);
+  border-top: 13px solid rgba(255, 255, 255, 0.42);
 }
 
 .section--hosts .hosts-thought-bubble__text {
@@ -1098,6 +1109,7 @@ button.btn {
   line-height: 1.5;
   font-weight: 500;
   color: var(--earth);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
 .hosts-thought-bubble__attr {
@@ -1109,6 +1121,7 @@ button.btn {
   font-weight: 500;
   color: var(--earth-soft);
   text-align: right;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .card {
