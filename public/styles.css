@@ -258,6 +258,17 @@ a:hover {
   display: none;
 }
 
+/* Galerij: wide landschapsfoto — hero-hoogte volgt beeldverhouding (≈4:3), geen “inzoomen” */
+.hero.hero--slider.hero--galerij-wide {
+  min-height: unset;
+  height: min(calc(100vw * 767 / 1024), min(88vh, 56rem));
+  max-height: min(88vh, 56rem);
+}
+
+.hero.hero--slider.hero--galerij-wide .hero-foreground {
+  min-height: min(calc(100vw * 767 / 1024), min(88vh, 56rem));
+}
+
 #galerij-fotos {
   scroll-margin-top: 5.5rem;
 }
@@ -292,10 +303,14 @@ a:hover {
   pointer-events: none;
 }
 
-/* Portretfoto in brede hero: altijd volle breedte/hoogte — geen smalle strook met zijmarges */
-.hero-slide--portrait img {
-  object-fit: cover;
-  object-position: center 28%;
+/* Galerij wide: volledige foto tonen (geen cover-crop); bij hoogte-cap dunne banden i.p.v. uitsnede */
+.hero-slide--wide {
+  background: #1c1917;
+}
+
+.hero-slide--wide img {
+  object-fit: contain;
+  object-position: center center;
 }
 
 .hero--slider .hero-title-wrap h1 {
