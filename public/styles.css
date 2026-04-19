@@ -307,21 +307,14 @@ a:hover {
     0 4px 24px rgba(0, 0, 0, 0.55);
 }
 
-/* Galerij-hero: zwart, groter, witte rand voor leesbaarheid op lichte foto */
+/* Galerij-hero: alleen zwart, geen halo — groot genoeg om goed te lezen */
 .hero--slider .hero-title-wrap--galerij h1 {
-  color: #141210;
-  max-width: min(100%, 32rem);
-  font-size: clamp(1.85rem, 4.8vw, 3rem);
+  color: #000;
+  max-width: min(100%, 42rem);
+  font-size: clamp(2.35rem, 6.8vw, 4.25rem);
   font-weight: 600;
-  line-height: 1.18;
-  text-shadow:
-    -1px -1px 0 rgba(255, 254, 251, 0.98),
-    1px -1px 0 rgba(255, 254, 251, 0.98),
-    -1px 1px 0 rgba(255, 254, 251, 0.98),
-    1px 1px 0 rgba(255, 254, 251, 0.98),
-    0 0 3px rgba(255, 254, 251, 0.95),
-    0 2px 16px rgba(0, 0, 0, 0.28),
-    0 4px 24px rgba(0, 0, 0, 0.2);
+  line-height: 1.14;
+  text-shadow: none;
 }
 
 .hero--slider .btn-ghost {
@@ -675,8 +668,8 @@ a:hover {
   }
 
   .hero--slider .hero-title-wrap--galerij h1 {
-    font-size: clamp(1.55rem, 5.8vw, 2.5rem);
-    max-width: min(100%, 24rem);
+    font-size: clamp(2rem, 8.2vw, 3.35rem);
+    max-width: min(100%, 100%);
   }
 
   .hero-bottom {
