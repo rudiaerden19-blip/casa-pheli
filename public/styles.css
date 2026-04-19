@@ -675,6 +675,120 @@ a:hover {
   height: 100%;
 }
 
+.pricing-extra {
+  margin-top: clamp(2rem, 5vw, 3rem);
+}
+
+.pricing-info-card {
+  padding: clamp(1.25rem, 3vw, 1.75rem);
+  background: rgba(255, 254, 251, 0.96);
+  border: 1px solid rgba(168, 107, 74, 0.14);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.pricing-info-title {
+  margin: 0 0 1.2rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 3vw, 1.65rem);
+  font-weight: 600;
+  color: var(--earth);
+}
+
+.pricing-info-layout {
+  display: grid;
+  gap: 1.25rem 1.75rem;
+  align-items: start;
+}
+
+@media (min-width: 720px) {
+  .pricing-info-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  }
+}
+
+.pricing-info-costs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.pricing-cost-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.65rem 0.85rem;
+  background: rgba(250, 246, 240, 0.72);
+  border: 1px solid rgba(168, 107, 74, 0.14);
+  border-radius: var(--radius);
+}
+
+.pricing-cost-label {
+  font-size: 0.92rem;
+  font-weight: 500;
+  color: var(--earth);
+}
+
+.pricing-cost-value {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--terracotta);
+}
+
+.pricing-info-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pricing-info-list li {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin-bottom: 0.85rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--earth-soft);
+}
+
+.pricing-info-list li:last-child {
+  margin-bottom: 0;
+}
+
+.pricing-info-icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  min-width: 1.35rem;
+  min-height: 1.35rem;
+  margin-top: 0.08rem;
+  color: var(--terracotta);
+}
+
+.pricing-info-icon svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 1.35rem;
+  max-height: 1.35rem;
+}
+
+.pricing-info-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.pricing-info-body strong {
+  color: var(--earth);
+  font-weight: 600;
+}
+
 /* Homepage: Waarom — hogere positie (minder padding-top) */
 .section.section--highlights.section--why {
   padding-top: clamp(2rem, 5vw, 3rem);
