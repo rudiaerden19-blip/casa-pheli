@@ -193,13 +193,50 @@ a:hover {
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: stretch;
   min-height: clamp(30rem, 78vh, 56rem);
   max-height: min(88vh, 56rem);
   padding: 0;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
   background: #1c1917;
+}
+
+.hero-foreground {
+  position: relative;
+  z-index: 2;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  min-height: clamp(30rem, 78vh, 56rem);
+}
+
+.hero-title-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 3vw, 1.5rem);
+}
+
+.hero-bottom {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding-bottom: clamp(0.85rem, 2.5vw, 1.35rem);
+}
+
+.hero-bottom .hero-dots-wrap {
+  padding-bottom: 0.65rem;
+}
+
+.hero-bottom .hero-actions {
+  justify-content: center;
+  margin: 0;
 }
 
 .hero-slider {
@@ -232,38 +269,14 @@ a:hover {
   pointer-events: none;
 }
 
-.hero--slider .hero-copy {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  padding: clamp(2rem, 6vw, 3.5rem) clamp(1rem, 3vw, 1.5rem) clamp(1.5rem, 4vw, 2.5rem);
-  background: transparent;
-}
-
-.hero--slider .hero-copy h1 {
+.hero--slider .hero-title-wrap h1 {
+  margin: 0;
+  max-width: min(100%, 38rem);
   color: #fffefb;
   text-shadow:
     0 0 2px rgba(0, 0, 0, 0.85),
     0 1px 3px rgba(0, 0, 0, 0.9),
     0 4px 24px rgba(0, 0, 0, 0.55);
-}
-
-.hero--slider .hero-copy .lead {
-  margin-inline: auto;
-  color: rgba(255, 254, 251, 0.98);
-  text-shadow:
-    0 0 1px rgba(0, 0, 0, 0.8),
-    0 1px 2px rgba(0, 0, 0, 0.85),
-    0 1px 12px rgba(0, 0, 0, 0.45);
-}
-
-.hero--slider .hero-copy strong {
-  color: #fff;
-  font-weight: 600;
-}
-
-.hero--slider .hero-actions {
-  justify-content: center;
 }
 
 .hero--slider .btn-ghost {
@@ -282,7 +295,6 @@ a:hover {
 .hero-dots-wrap {
   position: relative;
   z-index: 2;
-  padding-bottom: clamp(1.25rem, 3vw, 1.85rem);
 }
 
 .hero-dots {
