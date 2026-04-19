@@ -10,7 +10,8 @@
   var intervalMs = 2000;
 
   function slideWidth() {
-    return viewport.offsetWidth;
+    var w = viewport.getBoundingClientRect().width;
+    return w ? Math.floor(w) : 0;
   }
 
   function layout() {

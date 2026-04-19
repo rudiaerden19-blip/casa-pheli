@@ -25,11 +25,14 @@ html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
   margin: 0;
   overflow-x: hidden;
+  max-width: 100%;
   font-family: var(--font-sans);
   font-size: clamp(1rem, 0.35vw + 0.94rem, 1.06rem);
   line-height: 1.65;
@@ -42,6 +45,9 @@ body {
 
 main {
   flex: 1;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 img {
@@ -62,9 +68,11 @@ a:hover {
 .wrap {
   width: 100%;
   max-width: 1080px;
+  min-width: 0;
   margin-inline: auto;
   padding-left: max(clamp(1.1rem, 4vw, 1.5rem), env(safe-area-inset-left, 0px));
   padding-right: max(clamp(1.1rem, 4vw, 1.5rem), env(safe-area-inset-right, 0px));
+  box-sizing: border-box;
 }
 
 /* ——— Header (bruin + sticky) ——— */
@@ -72,6 +80,8 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 100;
+  max-width: 100%;
+  overflow-x: hidden;
   padding-top: env(safe-area-inset-top, 0);
   background: linear-gradient(180deg, #a86b4a 0%, #955a3f 100%);
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
@@ -460,6 +470,9 @@ a:hover {
 /* ——— Sections ——— */
 .section {
   padding: clamp(3.5rem, 9vw, 5.75rem) 0;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .section--alt {
@@ -503,14 +516,22 @@ a:hover {
   display: grid;
   gap: clamp(1.75rem, 4vw, 2.5rem);
   align-items: start;
+  min-width: 0;
+  max-width: 100%;
 }
 
 @media (min-width: 880px) {
   .section--highlights .highlights-layout {
-    grid-template-columns: 1fr minmax(0, 1.05fr);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
     gap: 2.5rem 3rem;
     align-items: center;
   }
+}
+
+.section--highlights .highlights-copy,
+.section--highlights .highlights-media {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .highlights-copy h2 {
@@ -519,12 +540,13 @@ a:hover {
 
 .highlights-features {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   gap: 0.55rem 1rem;
   margin: 0.85rem 0 0;
   padding: 0;
   list-style: none;
-  max-width: none;
+  max-width: 100%;
+  min-width: 0;
 }
 
 @media (max-width: 520px) {
@@ -565,6 +587,9 @@ a:hover {
 
 .highlights-feature-label {
   text-align: left;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .highlights-media {
@@ -573,21 +598,28 @@ a:hover {
   align-items: stretch;
   gap: 0;
   width: 100%;
-  max-width: 40rem;
+  max-width: min(40rem, 100%);
   margin-inline: auto;
+  min-width: 0;
+  overflow-x: hidden;
 }
 
 /* Geen <p>: vermijdt .section p. Extra ruimte staat ook inline op de div (werkt bij gecachte CSS). */
 .section--highlights .highlights-video-cta {
   margin: 0;
-  max-width: none;
+  width: 100%;
+  max-width: 100%;
   text-align: center;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .section--highlights .highlights-video-cta .btn {
   width: 100%;
-  max-width: 20rem;
+  max-width: min(20rem, 100%);
+  box-sizing: border-box;
 }
 
 button.btn {
@@ -677,6 +709,8 @@ button.btn {
 .highlights-slider-viewport {
   position: relative;
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   overflow: hidden;
   border-radius: var(--radius);
   box-shadow: 0 12px 40px rgba(61, 52, 41, 0.12);
@@ -687,6 +721,7 @@ button.btn {
   display: flex;
   flex-direction: row;
   width: max-content;
+  max-width: none;
   transition: transform 0.55s ease-in-out;
   will-change: transform;
 }
@@ -694,6 +729,8 @@ button.btn {
 .highlights-slider-slide {
   flex: 0 0 auto;
   width: var(--highlights-slide-w, 100%);
+  max-width: 100%;
+  min-width: 0;
   box-sizing: border-box;
 }
 
@@ -723,6 +760,8 @@ button.btn {
   margin: 0 0 1rem;
   max-width: 62ch;
   color: var(--earth-soft);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .section p:last-child {
@@ -1186,6 +1225,8 @@ button.btn {
 /* ——— Footer (3 kolommen + onderbalk, terracotta + beige zand) ——— */
 .site-footer {
   margin-top: auto;
+  max-width: 100%;
+  overflow-x: hidden;
   background: linear-gradient(180deg, var(--sand) 0%, #ddd0c2 100%);
   color: var(--earth);
   font-size: 0.92rem;
