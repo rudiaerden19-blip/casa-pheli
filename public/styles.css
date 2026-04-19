@@ -539,6 +539,11 @@ a:hover {
   transform-origin: center center;
 }
 
+/* Homepage: volgende sectie (o.a. Waarom Casa Pheli?) ~3 cm lager */
+.section.section--hosts + .section {
+  margin-top: 3cm;
+}
+
 .card {
   background: var(--white);
   border: 1px solid var(--line);
