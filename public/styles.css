@@ -567,6 +567,26 @@ a:hover {
   text-align: left;
 }
 
+.highlights-media {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 1rem;
+  width: 100%;
+  max-width: 40rem;
+  margin-inline: auto;
+}
+
+.highlights-video-cta {
+  margin: 0;
+  text-align: center;
+}
+
+.highlights-video-cta .btn {
+  width: 100%;
+  max-width: 20rem;
+}
+
 .highlights-slider-viewport {
   position: relative;
   width: 100%;
