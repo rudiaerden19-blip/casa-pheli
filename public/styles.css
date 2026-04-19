@@ -496,6 +496,49 @@ a:hover {
   }
 }
 
+/* Homepage: Over ons — tekst links, ronde foto rechts (zwarte hoeken weggeknipt) */
+.grid-2--hosts {
+  align-items: center;
+}
+
+.hosts-copy h2 {
+  margin-top: 0;
+}
+
+.hosts-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.hosts-photo {
+  margin: 0;
+  justify-self: center;
+}
+
+@media (min-width: 720px) {
+  .hosts-photo {
+    justify-self: end;
+  }
+}
+
+.hosts-photo-frame {
+  width: min(100%, 19rem);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-inline: auto;
+  box-shadow: var(--shadow);
+  background: var(--cream);
+}
+
+.hosts-photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+  transform: scale(1.14);
+  transform-origin: center center;
+}
+
 .card {
   background: var(--white);
   border: 1px solid var(--line);
