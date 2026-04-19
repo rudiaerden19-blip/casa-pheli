@@ -182,41 +182,52 @@ a:hover {
   border-bottom: 1px solid var(--line);
 }
 
-/* Eén grote hero: alleen strandfoto, full-width cover, geen slider */
+/* Eén grote hero: scherp JPEG (1920px) + <img> i.p.v. kleine PNG oprekken */
 .hero.hero--strand {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: clamp(22rem, 48vh, 36rem);
-  max-height: min(72vh, 40rem);
+  min-height: clamp(20rem, min(44vh, calc(100vw * 0.34)), 32rem);
+  max-height: min(58vh, 36rem);
   padding: clamp(1.75rem, 5vw, 3rem) 0;
   overflow: hidden;
   border-bottom: 1px solid var(--line);
   background-color: #0b3550;
-  background-image: url("/assets/hero-strand.png");
-  background-size: cover;
-  background-position: center 40%;
-  background-repeat: no-repeat;
+}
+
+.hero--strand .hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero--strand .hero-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
 }
 
 .hero--strand .hero-shade {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: 1;
   pointer-events: none;
   background: linear-gradient(
     180deg,
-    rgba(6, 14, 22, 0.38) 0%,
-    transparent 40%,
-    transparent 55%,
-    rgba(6, 14, 22, 0.58) 100%
+    rgba(6, 14, 22, 0.28) 0%,
+    transparent 42%,
+    transparent 58%,
+    rgba(6, 14, 22, 0.48) 100%
   );
 }
 
 .hero--strand .hero-copy {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   text-align: center;
   padding: 0 clamp(1rem, 3vw, 1.5rem);
 }
