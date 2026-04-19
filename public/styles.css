@@ -585,8 +585,8 @@ a:hover {
   margin: 0;
   padding: clamp(1.35rem, 3.2vw, 1.85rem);
   min-height: 23.5rem;
-  background: rgba(255, 254, 251, 0.94);
-  border: 1px solid rgba(168, 107, 74, 0.14);
+  background: linear-gradient(180deg, var(--sand) 0%, var(--sand-deep) 100%);
+  border: 1px solid rgba(61, 52, 41, 0.1);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
   transition:
@@ -741,8 +741,8 @@ a:hover {
 
 .pricing-info-card {
   padding: clamp(1.25rem, 3vw, 1.75rem);
-  background: rgba(255, 254, 251, 0.96);
-  border: 1px solid rgba(168, 107, 74, 0.14);
+  background: linear-gradient(180deg, var(--sand) 0%, var(--sand-deep) 100%);
+  border: 1px solid rgba(61, 52, 41, 0.1);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
 }
