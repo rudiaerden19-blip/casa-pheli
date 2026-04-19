@@ -239,6 +239,15 @@ a:hover {
   margin: 0;
 }
 
+/* Eén foto (bijv. galerij-pagina): zelfde layout, geen slider-stippen */
+.hero--single .hero-dots-wrap {
+  display: none;
+}
+
+#galerij-fotos {
+  scroll-margin-top: 5.5rem;
+}
+
 .hero-slider {
   position: absolute;
   inset: 0;

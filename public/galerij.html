@@ -9,7 +9,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=25" />
+  <link rel="preload" as="image" href="/assets/galerij-hero-terras.png" fetchpriority="high" />
+  <link rel="stylesheet" href="/styles.css?v=26" />
 </head>
 <body>
   <header class="site-header">
@@ -30,9 +31,35 @@
   </header>
 
   <main>
-    <section class="section">
+    <section class="hero hero--slider hero--single" aria-labelledby="galerij-hero-title">
+      <div class="hero-slider" aria-hidden="true">
+        <div class="hero-slide is-active">
+          <img
+            src="/assets/galerij-hero-terras.png"
+            alt=""
+            width="952"
+            height="634"
+            fetchpriority="high"
+            decoding="async"
+          />
+        </div>
+      </div>
+      <div class="hero-foreground">
+        <div class="wrap hero-title-wrap">
+          <h1 id="galerij-hero-title">Uw zonnige droomvakantie aan de Costa Blanca</h1>
+        </div>
+        <div class="hero-bottom">
+          <div class="wrap hero-actions">
+            <a class="btn btn-primary" href="/boeken">Beschikbaarheid aanvragen</a>
+            <a class="btn btn-ghost" href="#galerij-fotos">Naar de foto’s</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="galerij-fotos">
       <div class="wrap">
-        <h1 class="page-title">Galerij</h1>
+        <h2 class="page-title">Galerij</h2>
         <p class="page-intro">
           Hier tonen we straks foto’s van het interieur, het terras en het complex. Tot die tijd kunt u alvast contact opnemen voor een persoonlijke indruk.
         </p>
