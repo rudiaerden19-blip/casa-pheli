@@ -181,6 +181,99 @@ a:hover {
   border-bottom: 1px solid var(--line);
 }
 
+.hero.hero--slider {
+  min-height: clamp(22rem, 58vh, 38rem);
+  padding: 0;
+  background: none;
+  overflow: hidden;
+}
+
+.hero-slider {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.85s ease;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(250, 246, 240, 0.86) 0%,
+    rgba(250, 246, 240, 0.78) 45%,
+    rgba(250, 246, 240, 0.7) 100%
+  );
+}
+
+.hero--slider .hero-copy {
+  position: relative;
+  z-index: 2;
+  padding: clamp(2.5rem, 8vw, 4rem) 0 clamp(1.75rem, 4vw, 2.5rem);
+  text-align: center;
+}
+
+.hero--slider .hero-copy .lead {
+  margin-inline: auto;
+}
+
+.hero--slider .hero-actions {
+  justify-content: center;
+}
+
+.hero-dots-wrap {
+  position: relative;
+  z-index: 2;
+  padding-bottom: clamp(1.25rem, 3vw, 1.85rem);
+}
+
+.hero-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.hero-dot {
+  width: 11px;
+  height: 11px;
+  padding: 0;
+  border-radius: 999px;
+  border: 2px solid rgba(61, 52, 41, 0.3);
+  background: rgba(255, 254, 251, 0.6);
+  cursor: pointer;
+  transition:
+    background 0.2s,
+    transform 0.2s,
+    border-color 0.2s;
+}
+
+.hero-dot:hover {
+  border-color: rgba(168, 107, 74, 0.55);
+}
+
+.hero-dot.is-active {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+  transform: scale(1.12);
+}
+
 .hero h1 {
   margin: 0 0 0.75rem;
   font-family: var(--font-display);
