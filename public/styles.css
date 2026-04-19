@@ -255,53 +255,18 @@ a:hover {
   text-align: center;
 }
 
-/* Eén foto (bijv. galerij-pagina): zelfde layout, geen slider-stippen */
+/* Eén foto (bijv. galerij-pagina): zelfde layout & hoogte als homepage-slider, geen stippen */
 .hero--single .hero-dots-wrap {
   display: none;
 }
 
+/* Galerij: één hero-foto — zelfde cover-gedrag als slider; licht framen op complex */
+.hero--single .hero-slide img {
+  object-position: center 38%;
+}
+
 #galerij-fotos {
   scroll-margin-top: 5.5rem;
-}
-
-/* Galerij: intrinsieke beeldverhouding (geen object-fit zoom/crop) — foto = width 100%, height auto */
-.hero.hero--slider.hero--galerij-natural {
-  display: block;
-  min-height: unset;
-  max-height: none;
-}
-
-.hero.hero--slider.hero--galerij-natural .hero-slider {
-  position: relative;
-  inset: auto;
-}
-
-.hero.hero--slider.hero--galerij-natural .hero-slide {
-  position: relative;
-  inset: auto;
-  opacity: 1;
-  pointer-events: none;
-}
-
-.hero.hero--slider.hero--galerij-natural .hero-slide img {
-  position: relative;
-  inset: auto;
-  width: 100%;
-  height: auto;
-  max-width: none;
-  object-fit: unset;
-  object-position: unset;
-  display: block;
-}
-
-.hero.hero--slider.hero--galerij-natural .hero-foreground {
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  flex: unset;
-  min-height: 0;
-  height: 100%;
-  min-height: 100%;
 }
 
 .hero-slider {
@@ -699,17 +664,8 @@ a:hover {
     max-height: min(88vh, 56rem);
   }
 
-  .hero.hero--slider.hero--galerij-natural {
-    min-height: unset;
-    max-height: none;
-  }
-
   .hero-foreground {
     min-height: min(72vh, 48rem);
-  }
-
-  .hero.hero--slider.hero--galerij-natural .hero-foreground {
-    min-height: 100%;
   }
 
   .section h2 {
@@ -752,17 +708,8 @@ a:hover {
     max-height: min(85vh, 56rem);
   }
 
-  .hero.hero--slider.hero--galerij-natural {
-    min-height: unset;
-    max-height: none;
-  }
-
   .hero-foreground {
     min-height: clamp(26rem, 58vh, 52rem);
-  }
-
-  .hero.hero--slider.hero--galerij-natural .hero-foreground {
-    min-height: 100%;
   }
 
   .hero--slider .hero-bottom .wrap.hero-actions,
