@@ -23,6 +23,8 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -69,6 +71,7 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 100;
+  padding-top: env(safe-area-inset-top, 0);
   background: linear-gradient(180deg, #a86b4a 0%, #955a3f 100%);
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow:
@@ -88,11 +91,12 @@ a:hover {
 
 .brand {
   font-family: var(--font-display);
-  font-size: clamp(1.35rem, 2vw, 1.65rem);
+  font-size: clamp(1.2rem, 4.2vw, 1.65rem);
   font-weight: 600;
   letter-spacing: 0.02em;
   color: rgba(255, 254, 251, 0.96);
   text-decoration: none;
+  min-width: 0;
 }
 
 .brand:hover {
@@ -144,7 +148,8 @@ a:hover {
   color: #fff;
 }
 
-@media (max-width: 768px) {
+/* Tot ±tablet: hamburger (lange NL-menu’s breken niet meer) */
+@media (max-width: 900px) {
   .nav-toggle {
     display: flex;
   }
@@ -158,6 +163,7 @@ a:hover {
     flex-direction: column;
     align-items: stretch;
     padding: 0.75rem clamp(1.1rem, 4vw, 1.5rem) 1rem;
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom, 0));
     background: linear-gradient(180deg, #9d6243 0%, #8a5639 100%);
     border-bottom: 1px solid rgba(0, 0, 0, 0.12);
     box-shadow: 0 12px 28px rgba(61, 52, 41, 0.2);
@@ -169,6 +175,9 @@ a:hover {
 
   .site-nav a {
     padding: 0.65rem 0.75rem;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
   }
 }
 
@@ -216,24 +225,13 @@ a:hover {
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  /* Zachte waas over de foto: lichte sluier + subtiele vignet + frosted blur */
-  background:
-    radial-gradient(ellipse 85% 65% at 50% 45%, rgba(255, 254, 251, 0.22) 0%, transparent 62%),
-    linear-gradient(
-      180deg,
-      rgba(250, 246, 240, 0.52) 0%,
-      rgba(250, 246, 240, 0.38) 42%,
-      rgba(235, 227, 216, 0.48) 100%
-    ),
-    linear-gradient(
-      180deg,
-      rgba(45, 38, 32, 0.14) 0%,
-      transparent 38%,
-      transparent 58%,
-      rgba(45, 38, 32, 0.12) 100%
-    );
-  backdrop-filter: blur(5px) saturate(0.96);
-  -webkit-backdrop-filter: blur(5px) saturate(0.96);
+  background: linear-gradient(
+    180deg,
+    rgba(6, 14, 22, 0.28) 0%,
+    transparent 42%,
+    transparent 58%,
+    rgba(6, 14, 22, 0.48) 100%
+  );
 }
 
 .hero--strand .hero-copy {
