@@ -8,16 +8,23 @@
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=4" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&family=Montserrat:wght@500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css?v=17" />
 </head>
 <body>
   <header class="site-header">
     <div class="wrap header-inner">
-      <a class="brand" href="/">Casa Pheli</a>
-      <button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="Menu openen">
-        <span></span><span></span><span></span>
-      </button>
+      <a class="brand" href="/">
+        <svg class="brand-mark" xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+          <path stroke="#b8942a" stroke-width="1.6" d="M24 2.5 42.2 13v22L24 45.5 5.8 35V13L24 2.5z" />
+          <circle cx="24" cy="24" r="7" fill="#3d3429" />
+          <circle cx="24" cy="24" r="3.2" fill="#eec641" />
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">Casa Pheli</span>
+          <span class="brand-tagline">Appartement · Costa Blanca</span>
+        </span>
+      </a>
       <nav id="site-nav" class="site-nav" data-site-nav>
         <a href="/">Home</a>
         <a href="/galerij">Galerij</a>
@@ -26,6 +33,12 @@
         <a href="/bezienswaardigheden">Bezienswaardigheden</a>
         <a href="/contact" aria-current="page">Contact</a>
       </nav>
+      <div class="header-actions">
+        <a class="header-cta" href="/boeken">Boek nu</a>
+        <button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="Menu openen">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
