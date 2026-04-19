@@ -539,6 +539,10 @@ a:hover {
   max-width: 100%;
 }
 
+.section--highlights .highlights-media {
+  margin-top: 3cm;
+}
+
 .highlights-intro {
   text-align: center;
   margin: 0 0 1.1rem;
