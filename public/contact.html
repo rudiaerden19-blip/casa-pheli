@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Casa Pheli</title>
+  <meta name="description" content="Contact en adres van Casa Pheli in El Raso, Guardamar del Segura." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css?v=2" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/">Casa Pheli</a>
+      <button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="Menu openen">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" data-site-nav>
+        <a href="/">Home</a>
+        <a href="/galerij">Galerij</a>
+        <a href="/boeken">Boeken</a>
+        <a href="/gastenboek">Gastenboek</a>
+        <a href="/bezienswaardigheden">Bezienswaardigheden</a>
+        <a href="/contact" aria-current="page">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <h1 class="page-title">Contact</h1>
+        <p class="page-intro">Vragen over beschikbaarheid, het appartement of de omgeving? Neem gerust contact op.</p>
+
+        <div class="contact-grid">
+          <div class="card">
+            <h3>E-mail</h3>
+            <p style="margin: 0">
+              <a href="mailto:heidi.torfs@outlook.be">heidi.torfs@outlook.be</a>
+            </p>
+            <p style="margin-top: 1rem">
+              <a class="btn btn-primary" href="/boeken">Boeken / beschikbaarheid</a>
+            </p>
+          </div>
+          <div class="card">
+            <h3>Adres</h3>
+            <address class="address-block">
+              <strong>Casa Pheli</strong>
+              Carrer el Tomello<br />
+              Area Beach III<br />
+              Blok 2, appartement 47<br />
+              El Raso<br />
+              Guardamar del Segura<br />
+              Spanje
+            </address>
+            <p style="margin-top: 1rem; margin-bottom: 0">
+              <a
+                class="btn btn-ghost"
+                href="https://www.google.com/maps/search/?api=1&amp;query=Carrer+el+Tomello+El+Raso+Guardamar+del+Segura"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Open in Google Maps</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>© <span id="y"></span> Casa Pheli · Guardamar del Segura</span>
+      <span><a href="mailto:heidi.torfs@outlook.be">heidi.torfs@outlook.be</a></span>
+    </div>
+  </footer>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+  <script src="/scripts/nav.js" defer></script>
+</body>
+</html>

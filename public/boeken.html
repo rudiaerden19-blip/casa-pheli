@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Boeken — Casa Pheli</title>
+  <meta name="description" content="Vraag beschikbaarheid en reservatie voor Casa Pheli per e-mail. Geen online agenda." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css?v=2" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/">Casa Pheli</a>
+      <button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="Menu openen">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" data-site-nav>
+        <a href="/">Home</a>
+        <a href="/galerij">Galerij</a>
+        <a href="/boeken" aria-current="page">Boeken</a>
+        <a href="/gastenboek">Gastenboek</a>
+        <a href="/bezienswaardigheden">Bezienswaardigheden</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <h1 class="page-title">Boeken</h1>
+        <p class="page-intro">
+          Reserveren gebeurt <strong>persoonlijk per e-mail</strong>. Er is <strong>geen online boekingsagenda</strong> op deze site.
+          Zo kunnen we uw vragen rustig beantwoorden en beschikbaarheid met u afstemmen.
+        </p>
+
+        <div class="card" style="max-width: 40rem">
+          <h3>Wat vermeldt u best in uw mail?</h3>
+          <ul style="margin: 0.5rem 0 0; padding-left: 1.2rem; color: var(--earth-soft)">
+            <li>Gewenste <strong>aankomst-</strong> en <strong>vertrekdatum</strong></li>
+            <li><strong>Aantal personen</strong> (volwassenen / kinderen)</li>
+            <li>Eventuele <strong>vragen</strong> over het appartement of het verblijf</li>
+          </ul>
+        </div>
+
+        <p style="margin-top: 1.75rem">
+          <a
+            class="btn btn-primary"
+            href="mailto:heidi.torfs@outlook.be?subject=Beschikbaarheid%20Casa%20Pheli&body=Beste%2C%0A%0AIk%20wil%20graag%20informatie%20over%20beschikbaarheid%20voor%20Casa%20Pheli.%0A%0A-%20Aankomst%20%28datum%29%3A%20%0A-%20Vertrek%20%28datum%29%3A%20%0A-%20Aantal%20personen%3A%20%0A%0AMet%20vriendelijke%20groet%2C"
+            >Mail naar de verhuurder</a
+          >
+        </p>
+        <p class="note" style="margin-top: 1.25rem; max-width: 40rem">
+          Uw bericht gaat naar <strong>heidi.torfs@outlook.be</strong>. Wij streven ernaar zo spoedig mogelijk te antwoorden.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>© <span id="y"></span> Casa Pheli · Guardamar del Segura</span>
+      <span><a href="mailto:heidi.torfs@outlook.be">heidi.torfs@outlook.be</a></span>
+    </div>
+  </footer>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+  <script src="/scripts/nav.js" defer></script>
+</body>
+</html>

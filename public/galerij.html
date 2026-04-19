@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Galerij — Casa Pheli</title>
+  <meta name="description" content="Impressie van het appartement Casa Pheli in El Raso, Guardamar del Segura." />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css?v=2" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="/">Casa Pheli</a>
+      <button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="Menu openen">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" data-site-nav>
+        <a href="/">Home</a>
+        <a href="/galerij" aria-current="page">Galerij</a>
+        <a href="/boeken">Boeken</a>
+        <a href="/gastenboek">Gastenboek</a>
+        <a href="/bezienswaardigheden">Bezienswaardigheden</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="wrap">
+        <h1 class="page-title">Galerij</h1>
+        <p class="page-intro">
+          Hier tonen we straks foto’s van het interieur, het terras en het complex. Tot die tijd kunt u alvast contact opnemen voor een persoonlijke indruk.
+        </p>
+        <div class="gallery-grid">
+          <div class="gallery-item"><span>Woonkamer — foto volgt</span></div>
+          <div class="gallery-item"><span>Keuken — foto volgt</span></div>
+          <div class="gallery-item"><span>Terras — foto volgt</span></div>
+          <div class="gallery-item"><span>Slaapkamer — foto volgt</span></div>
+          <div class="gallery-item"><span>Badkamer — foto volgt</span></div>
+          <div class="gallery-item"><span>Complex &amp; zwembad — foto volgt</span></div>
+        </div>
+        <p class="note" style="margin-top: 1.75rem">
+          Heeft u professionele foto’s? Stuur ze door; wij vervangen deze placeholders.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>© <span id="y"></span> Casa Pheli · Guardamar del Segura</span>
+      <span><a href="mailto:heidi.torfs@outlook.be">heidi.torfs@outlook.be</a></span>
+    </div>
+  </footer>
+  <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+  <script src="/scripts/nav.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "casa-pheli-web",
+  "private": true,
+  "description": "Statische site Casa Pheli — deploy vanuit deze map op Vercel.",
+  "scripts": {
+    "build": "node -e \"require('fs').accessSync('public/index.html'); console.log('casa-pheli-web: build OK')\""
+  }
+}

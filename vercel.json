@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/galerij", "destination": "/galerij.html" },
+    { "source": "/boeken", "destination": "/boeken.html" },
+    { "source": "/gastenboek", "destination": "/gastenboek.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/bezienswaardigheden", "destination": "/bezienswaardigheden.html" }
+  ]
+}
