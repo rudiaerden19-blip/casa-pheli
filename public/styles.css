@@ -516,6 +516,7 @@ a:hover {
   background: linear-gradient(180deg, #f8f5f1 0%, #eee6dd 100%);
   border-top: none;
   border-bottom: 1px solid rgba(168, 107, 74, 0.12);
+  overflow-x: visible;
 }
 
 .pricing-header {
@@ -567,6 +568,7 @@ a:hover {
   gap: 1.15rem;
   margin-top: clamp(1.75rem, 4vw, 2.5rem);
   align-items: stretch;
+  overflow: visible;
 }
 
 @media (min-width: 900px) {
@@ -577,6 +579,7 @@ a:hover {
 }
 
 .pricing-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -586,6 +589,36 @@ a:hover {
   border: 1px solid rgba(168, 107, 74, 0.14);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s ease;
+  transform-origin: center center;
+}
+
+.pricing-card:hover,
+.pricing-card:focus-within {
+  transform: scale(1.045);
+  z-index: 2;
+  box-shadow: 0 22px 50px rgba(61, 52, 41, 0.14);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pricing-card {
+    transition: none;
+  }
+
+  .pricing-card:hover,
+  .pricing-card:focus-within {
+    transform: none;
+    box-shadow: var(--shadow);
+  }
+
+  .pricing-card--featured:hover,
+  .pricing-card--featured:focus-within {
+    box-shadow:
+      0 12px 40px rgba(61, 52, 41, 0.1),
+      0 0 0 1px rgba(168, 107, 74, 0.12);
+  }
 }
 
 @media (max-width: 899px) {
@@ -599,6 +632,13 @@ a:hover {
   box-shadow:
     0 12px 40px rgba(61, 52, 41, 0.1),
     0 0 0 1px rgba(168, 107, 74, 0.12);
+}
+
+.pricing-card--featured:hover,
+.pricing-card--featured:focus-within {
+  box-shadow:
+    0 22px 52px rgba(61, 52, 41, 0.15),
+    0 0 0 1px rgba(168, 107, 74, 0.16);
 }
 
 .pricing-card-name {
