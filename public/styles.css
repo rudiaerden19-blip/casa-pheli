@@ -538,6 +538,46 @@ a:hover {
   margin-top: 0;
 }
 
+.highlights-facilities-block {
+  margin: 0 0 1.35rem;
+  max-width: 52ch;
+}
+
+.highlights-facilities-kicker {
+  margin: 0 0 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.highlights-facilities-headline {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.4vw, 1.95rem);
+  font-weight: 600;
+  line-height: 1.22;
+  color: var(--earth);
+}
+
+.highlights-facilities-line1 {
+  display: block;
+}
+
+.highlights-facilities-line2 {
+  display: block;
+  margin-top: 0.12em;
+  color: var(--gold);
+}
+
+.highlights-facilities-text {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--earth-soft);
+}
+
 .highlights-features {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
