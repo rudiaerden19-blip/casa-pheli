@@ -292,6 +292,11 @@ a:hover {
   pointer-events: none;
 }
 
+/* Portretfoto in brede hero: iets hoger framen (zwembad / lucht) */
+.hero-slide--portrait img {
+  object-position: center 22%;
+}
+
 .hero--slider .hero-title-wrap h1 {
   margin: 0;
   max-width: min(100%, 38rem);
