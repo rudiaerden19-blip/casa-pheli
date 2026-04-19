@@ -1054,10 +1054,10 @@ button.btn {
   position: relative;
   z-index: 1;
   margin: 0 0 -3px;
-  padding: 0.9rem 1rem 0.95rem;
+  padding: 0.95rem 1.15rem 1rem;
   background: var(--white);
   border: 3px solid var(--earth);
-  border-radius: 52% 48% 50% 50% / 46% 46% 54% 54%;
+  border-radius: 2rem 2.1rem 1.85rem 2.05rem;
   box-sizing: border-box;
 }
 
@@ -1090,6 +1090,8 @@ button.btn {
 }
 
 .section--hosts .hosts-thought-bubble__text {
+  position: relative;
+  z-index: 1;
   margin: 0 0 0.55rem;
   max-width: none;
   font-size: clamp(0.78rem, 2.1vw, 0.88rem);
@@ -1099,6 +1101,8 @@ button.btn {
 }
 
 .hosts-thought-bubble__attr {
+  position: relative;
+  z-index: 1;
   margin: 0;
   font-size: 0.72rem;
   font-style: italic;
