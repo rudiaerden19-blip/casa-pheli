@@ -292,14 +292,10 @@ a:hover {
   pointer-events: none;
 }
 
-/* Portretfoto in brede hero: volledige foto tonen (uitzoomen t.o.v. cover) */
-.hero-slide--portrait {
-  background: var(--cream);
-}
-
+/* Portretfoto in brede hero: altijd volle breedte/hoogte — geen smalle strook met zijmarges */
 .hero-slide--portrait img {
-  object-fit: contain;
-  object-position: center center;
+  object-fit: cover;
+  object-position: center 28%;
 }
 
 .hero--slider .hero-title-wrap h1 {
