@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="/assets/hero-woonkamer.png" fetchpriority="high" />
-  <link rel="stylesheet" href="/styles.css?v=78" />
+  <link rel="stylesheet" href="/styles.css?v=79" />
 </head>
 <body>
   <header class="site-header">
@@ -283,12 +283,7 @@
           </div>
         </div>
         <div class="highlights-video-cta" style="padding-top: 3cm; box-sizing: border-box">
-          <a
-            class="btn btn-primary"
-            href="https://www.youtube.com/watch?v=VIDEO_ID"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Bekijk de video</a>
+          <button type="button" class="btn btn-primary" data-video-modal-open>Bekijk de video</button>
         </div>
         </div>
       </div>
@@ -422,6 +417,34 @@
       </div>
     </div>
   </footer>
+
+  <div
+    id="video-modal"
+    class="video-modal"
+    hidden
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="video-modal-title"
+  >
+    <div class="video-modal__backdrop" data-video-modal-close tabindex="-1"></div>
+    <div class="video-modal__dialog">
+      <button type="button" class="video-modal__close" data-video-modal-close aria-label="Sluiten">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <h2 id="video-modal-title" class="sr-only">Video Area Beach III, El Raso, Guardamar</h2>
+      <video
+        id="video-modal-player"
+        class="video-modal__video"
+        controls
+        playsinline
+        preload="metadata"
+        src="/assets/video/area-beach-iii-el-raso-guardamar-1080p.mp4"
+      >
+        <p>Je browser ondersteunt geen ingesloten video.</p>
+      </video>
+    </div>
+  </div>
+
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
@@ -447,5 +470,6 @@
   <script src="/scripts/hero-slider.js" defer></script>
   <script src="/scripts/amenities-reveal.js?v=1" defer></script>
   <script src="/scripts/highlights-carousel.js?v=4" defer></script>
+  <script src="/scripts/video-modal.js?v=1" defer></script>
 </body>
 </html>

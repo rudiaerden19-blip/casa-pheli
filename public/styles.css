@@ -590,6 +590,90 @@ a:hover {
   max-width: 20rem;
 }
 
+button.btn {
+  cursor: pointer;
+}
+
+/* Video lightbox (homepage) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(0.75rem, 4vw, 2rem);
+  box-sizing: border-box;
+}
+
+.video-modal[hidden] {
+  display: none !important;
+}
+
+.video-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(40, 32, 26, 0.78);
+  cursor: pointer;
+}
+
+.video-modal__dialog {
+  position: relative;
+  z-index: 1;
+  width: min(96vw, 1120px);
+  max-height: min(90vh, 100%);
+  margin: auto;
+  background: #0a0a0a;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.55);
+}
+
+.video-modal__video {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: min(85vh, 100%);
+  vertical-align: middle;
+}
+
+.video-modal__close {
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  font-size: 1.65rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.video-modal__close:hover {
+  background: rgba(0, 0, 0, 0.75);
+}
+
 .highlights-slider-viewport {
   position: relative;
   width: 100%;
