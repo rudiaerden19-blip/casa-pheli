@@ -258,17 +258,6 @@ a:hover {
   display: none;
 }
 
-/* Galerij: wide landschapsfoto — hero-hoogte volgt beeldverhouding (≈4:3), geen “inzoomen” */
-.hero.hero--slider.hero--galerij-wide {
-  min-height: unset;
-  height: min(calc(100vw * 767 / 1024), min(88vh, 56rem));
-  max-height: min(88vh, 56rem);
-}
-
-.hero.hero--slider.hero--galerij-wide .hero-foreground {
-  min-height: min(calc(100vw * 767 / 1024), min(88vh, 56rem));
-}
-
 #galerij-fotos {
   scroll-margin-top: 5.5rem;
 }
@@ -303,14 +292,10 @@ a:hover {
   pointer-events: none;
 }
 
-/* Galerij wide: volledige foto tonen (geen cover-crop); bij hoogte-cap dunne banden i.p.v. uitsnede */
-.hero-slide--wide {
-  background: #1c1917;
-}
-
+/* Galerij: landschap vol breedte — cover, geen zwarte randen (geen contain) */
 .hero-slide--wide img {
-  object-fit: contain;
-  object-position: center center;
+  object-fit: cover;
+  object-position: center 40%;
 }
 
 .hero--slider .hero-title-wrap h1 {
@@ -323,11 +308,11 @@ a:hover {
     0 4px 24px rgba(0, 0, 0, 0.55);
 }
 
-/* Galerij-hero: alleen zwart, geen halo — groot genoeg om goed te lezen */
+/* Galerij-hero: alleen zwart, geen halo — extra groot voor leesbaarheid */
 .hero--slider .hero-title-wrap--galerij h1 {
   color: #000;
-  max-width: min(100%, 42rem);
-  font-size: clamp(2.35rem, 6.8vw, 4.25rem);
+  max-width: min(100%, 46rem);
+  font-size: clamp(2.75rem, 8vw, 5rem);
   font-weight: 600;
   line-height: 1.14;
   text-shadow: none;
@@ -684,7 +669,7 @@ a:hover {
   }
 
   .hero--slider .hero-title-wrap--galerij h1 {
-    font-size: clamp(2rem, 8.2vw, 3.35rem);
+    font-size: clamp(2.35rem, 9vw, 3.65rem);
     max-width: min(100%, 100%);
   }
 
