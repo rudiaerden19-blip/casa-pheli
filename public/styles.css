@@ -347,16 +347,16 @@ a:hover {
 }
 
 .hero--slider .btn-ghost {
-  background: rgba(255, 254, 251, 0.12);
-  color: #fffefb;
-  border: 1px solid rgba(255, 254, 251, 0.45);
-  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(180deg, var(--sand) 0%, var(--cream) 100%);
+  color: var(--earth);
+  border: 1px solid rgba(61, 52, 41, 0.14);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.18);
 }
 
 .hero--slider .btn-ghost:hover {
-  background: rgba(255, 254, 251, 0.24);
-  color: #fff;
-  border-color: rgba(255, 254, 251, 0.65);
+  background: var(--cream);
+  color: var(--earth);
+  border-color: rgba(61, 52, 41, 0.22);
 }
 
 .hero-dots-wrap {
