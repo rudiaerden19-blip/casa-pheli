@@ -903,6 +903,14 @@ button.btn {
   margin-inline: auto;
 }
 
+.hosts-photo-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 0;
+}
+
 @media (min-width: 720px) {
   .hosts-photo-stack {
     margin-left: auto;
@@ -957,6 +965,95 @@ button.btn {
   object-position: center 28%;
   transform: scale(1.14);
   transform-origin: center center;
+}
+
+/* Over ons: stripachtige gedachtenballon boven de hostfoto (fade-in na 3s) */
+.hosts-thought-bubble {
+  width: 100%;
+  max-width: 19rem;
+  margin-inline: auto;
+  opacity: 0;
+  animation: hosts-thought-bubble-in 0.9s ease-out 3s forwards;
+}
+
+@keyframes hosts-thought-bubble-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hosts-thought-bubble {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+.hosts-thought-bubble__cloud {
+  background: var(--white);
+  border: 2.5px solid var(--terracotta);
+  border-radius: 1.35rem 1.5rem 1.2rem 1.4rem;
+  padding: 0.75rem 0.95rem 0.85rem;
+  box-shadow: 4px 5px 0 rgba(196, 92, 62, 0.18);
+}
+
+.hosts-thought-bubble__cloud blockquote {
+  margin: 0;
+}
+
+.section--hosts .hosts-thought-bubble__text {
+  margin: 0 0 0.55rem;
+  max-width: none;
+  font-size: clamp(0.78rem, 2.1vw, 0.88rem);
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--earth);
+}
+
+.hosts-thought-bubble__attr {
+  margin: 0;
+  font-size: 0.72rem;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--earth-soft);
+  text-align: right;
+}
+
+.hosts-thought-bubble__tail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.22rem;
+  margin-top: 0.12rem;
+  margin-bottom: 0.25rem;
+}
+
+.hosts-thought-bubble__dot {
+  display: block;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--white);
+  border: 2.5px solid var(--terracotta);
+  box-shadow: 1px 2px 0 rgba(196, 92, 62, 0.12);
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
+.hosts-thought-bubble__dot--md {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-width: 2px;
+}
+
+.hosts-thought-bubble__dot--sm {
+  width: 0.35rem;
+  height: 0.35rem;
+  border-width: 1.5px;
 }
 
 .card {
