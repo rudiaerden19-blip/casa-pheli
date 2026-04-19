@@ -182,102 +182,79 @@ a:hover {
   border-bottom: 1px solid var(--line);
 }
 
-.hero.hero--slider {
+/* Eén grote hero: alleen strandfoto, full-width cover, geen slider */
+.hero.hero--strand {
   position: relative;
-  padding: 0;
-  background: var(--cream);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: clamp(22rem, 48vh, 36rem);
+  max-height: min(72vh, 40rem);
+  padding: clamp(1.75rem, 5vw, 3rem) 0;
   overflow: hidden;
-  /* Geen min-height op de hele section — dat maakte de “30 cm” hero */
+  border-bottom: 1px solid var(--line);
+  background-color: #0b3550;
+  background-image: url("/assets/hero-strand.png");
+  background-size: cover;
+  background-position: center 40%;
+  background-repeat: no-repeat;
 }
 
-.hero-slider {
-  position: relative;
-  width: 100%;
-  height: clamp(9.5rem, 16vh, 12.5rem);
-  max-height: 12.5rem;
-  background: #232120;
-}
-
-.hero-slide {
+.hero--strand .hero-shade {
   position: absolute;
   inset: 0;
-  background-size: contain;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-color: #232120;
-  opacity: 0;
+  z-index: 0;
   pointer-events: none;
-  transition: opacity 0.65s ease;
+  background: linear-gradient(
+    180deg,
+    rgba(6, 14, 22, 0.38) 0%,
+    transparent 40%,
+    transparent 55%,
+    rgba(6, 14, 22, 0.58) 100%
+  );
 }
 
-.hero-slide.is-active {
-  opacity: 1;
-  z-index: 1;
-}
-
-.hero--slider .hero-copy {
+.hero--strand .hero-copy {
   position: relative;
   z-index: 1;
   text-align: center;
-  padding: clamp(0.85rem, 2.8vw, 1.35rem) clamp(1rem, 3vw, 1.5rem) clamp(0.6rem, 2vw, 1rem);
-  background: var(--cream);
+  padding: 0 clamp(1rem, 3vw, 1.5rem);
 }
 
-.hero--slider .hero-copy h1 {
-  color: var(--earth);
-  text-shadow: none;
-}
-
-.hero--slider .hero-copy .lead {
+.hero--strand .hero-copy .lead {
   margin-inline: auto;
-  color: var(--earth-soft);
-  text-shadow: none;
 }
 
-.hero--slider .hero-copy strong {
-  color: var(--earth);
+.hero--strand .hero-copy h1 {
+  color: #fffefb;
+  text-shadow: 0 2px 26px rgba(0, 0, 0, 0.45);
+}
+
+.hero--strand .hero-copy .lead {
+  color: rgba(255, 254, 251, 0.94);
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.38);
+}
+
+.hero--strand .hero-copy strong {
+  color: #fff;
   font-weight: 600;
 }
 
-.hero--slider .hero-actions {
+.hero--strand .hero-actions {
   justify-content: center;
 }
 
-.hero-dots-wrap {
-  position: relative;
-  z-index: 1;
-  padding: 0 0 clamp(0.45rem, 1.8vw, 0.75rem);
-  background: var(--cream);
+.hero--strand .btn-ghost {
+  background: rgba(255, 254, 251, 0.12);
+  color: #fffefb;
+  border: 1px solid rgba(255, 254, 251, 0.45);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.2);
 }
 
-.hero-dots {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.hero-dot {
-  width: 11px;
-  height: 11px;
-  padding: 0;
-  border-radius: 999px;
-  border: 2px solid rgba(61, 52, 41, 0.32);
-  background: rgba(255, 254, 251, 0.9);
-  cursor: pointer;
-  transition:
-    background 0.2s,
-    transform 0.2s,
-    border-color 0.2s;
-}
-
-.hero-dot:hover {
-  border-color: rgba(168, 107, 74, 0.55);
-}
-
-.hero-dot.is-active {
-  background: var(--terracotta);
-  border-color: var(--terracotta);
-  transform: scale(1.12);
+.hero--strand .btn-ghost:hover {
+  background: rgba(255, 254, 251, 0.24);
+  color: #fff;
+  border-color: rgba(255, 254, 251, 0.65);
 }
 
 .hero h1 {

@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="/assets/hero-strand.png" fetchpriority="high" />
-  <link rel="stylesheet" href="/styles.css?v=14" />
+  <link rel="stylesheet" href="/styles.css?v=15" />
 </head>
 <body>
   <header class="site-header">
@@ -35,12 +35,8 @@
   </header>
 
   <main>
-    <section class="hero hero--slider" aria-labelledby="hero-title">
-      <div class="hero-slider" data-hero-slider aria-hidden="true">
-        <div class="hero-slide is-active" style="background-image: url(/assets/hero-strand.png)"></div>
-        <div class="hero-slide" style="background-image: url(/assets/hero-keuken.png)"></div>
-        <div class="hero-slide" style="background-image: url(/assets/hero-slaapkamer.png)"></div>
-      </div>
+    <section class="hero hero--strand" aria-labelledby="hero-title">
+      <div class="hero-shade" aria-hidden="true"></div>
       <div class="wrap hero-copy">
         <h1 id="hero-title">Uw zonnige uitvalsbasis aan de Costa Blanca</h1>
         <p class="lead">
@@ -50,13 +46,6 @@
         <div class="hero-actions">
           <a class="btn btn-primary" href="/boeken">Beschikbaarheid aanvragen</a>
           <a class="btn btn-ghost" href="/galerij">Bekijk de galerij</a>
-        </div>
-      </div>
-      <div class="wrap hero-dots-wrap" role="presentation">
-        <div class="hero-dots" role="tablist" aria-label="Wisselende sfeerbeelden">
-          <button type="button" class="hero-dot is-active" data-hero-dot role="tab" aria-selected="true" aria-label="Beeld 1 van 3"></button>
-          <button type="button" class="hero-dot" data-hero-dot role="tab" aria-selected="false" aria-label="Beeld 2 van 3"></button>
-          <button type="button" class="hero-dot" data-hero-dot role="tab" aria-selected="false" aria-label="Beeld 3 van 3"></button>
         </div>
       </div>
     </section>
@@ -102,6 +91,5 @@
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
   <script src="/scripts/nav.js" defer></script>
-  <script src="/scripts/hero-slider.js" defer></script>
 </body>
 </html>
