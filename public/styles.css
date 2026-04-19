@@ -496,6 +496,11 @@ a:hover {
   }
 }
 
+/* Homepage: Over ons — extra ruimte tussen hero en deze sectie (~3 cm) */
+.section.section--hosts {
+  margin-top: 3cm;
+}
+
 /* Homepage: Over ons — tekst links, ronde foto rechts (zwarte hoeken weggeknipt) */
 .grid-2--hosts {
   align-items: center;
@@ -537,11 +542,6 @@ a:hover {
   object-position: center 28%;
   transform: scale(1.14);
   transform-origin: center center;
-}
-
-/* Homepage: volgende sectie (o.a. Waarom Casa Pheli?) ~3 cm lager */
-.section.section--hosts + .section {
-  margin-top: 3cm;
 }
 
 .card {
