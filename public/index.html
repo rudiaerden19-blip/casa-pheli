@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="/assets/hero-woonkamer.png" fetchpriority="high" />
-  <link rel="stylesheet" href="/styles.css?v=82" />
+  <link rel="stylesheet" href="/styles.css?v=83" />
 </head>
 <body>
   <header class="site-header">
@@ -108,7 +108,15 @@
             </div>
             <div class="hosts-photo-actions">
               <a class="btn btn-primary hosts-book-btn" href="/boeken">Boek nu</a>
-              <button type="button" class="btn btn-primary hosts-video-btn" data-video-modal-open>Kijk video</button>
+              <button
+                type="button"
+                class="btn hosts-video-btn"
+                data-video-modal-open
+                data-video-src="/assets/video/kijk-video.mp4"
+                data-video-fill
+              >
+                Kijk video
+              </button>
             </div>
           </div>
         </figure>
@@ -286,7 +294,14 @@
           </div>
         </div>
         <div class="highlights-video-cta" style="padding-top: 3cm; box-sizing: border-box">
-          <button type="button" class="btn btn-primary" data-video-modal-open>Bekijk de video</button>
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-video-modal-open
+            data-video-src="/assets/video/area-beach-iii-el-raso-guardamar-1080p.mp4"
+          >
+            Bekijk de video
+          </button>
         </div>
         </div>
       </div>
@@ -473,6 +488,6 @@
   <script src="/scripts/hero-slider.js" defer></script>
   <script src="/scripts/amenities-reveal.js?v=1" defer></script>
   <script src="/scripts/highlights-carousel.js?v=5" defer></script>
-  <script src="/scripts/video-modal.js?v=2" defer></script>
+  <script src="/scripts/video-modal.js?v=3" defer></script>
 </body>
 </html>
