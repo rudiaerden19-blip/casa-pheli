@@ -511,6 +511,170 @@ a:hover {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
+/* Homepage: Tarieven — tussen Waarom en Ontdek omgeving (accenten = terracotta, geen goud) */
+.section--pricing {
+  background: linear-gradient(180deg, #f8f5f1 0%, #eee6dd 100%);
+  border-top: none;
+  border-bottom: 1px solid rgba(168, 107, 74, 0.12);
+}
+
+.pricing-header {
+  text-align: center;
+  max-width: 46rem;
+  margin-inline: auto;
+}
+
+.pricing-kicker {
+  margin: 0 0 0.55rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--terracotta);
+}
+
+.section--pricing .pricing-title {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 4.2vw, 2.55rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--earth);
+}
+
+.pricing-title-plain {
+  color: var(--earth);
+}
+
+.pricing-title-accent {
+  color: var(--terracotta);
+}
+
+.section--pricing .pricing-intro {
+  margin: 0;
+  max-width: none;
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--earth-soft);
+}
+
+.section--pricing .pricing-card p {
+  max-width: none;
+}
+
+.pricing-grid {
+  display: grid;
+  gap: 1.15rem;
+  margin-top: clamp(1.75rem, 4vw, 2.5rem);
+  align-items: stretch;
+}
+
+@media (min-width: 900px) {
+  .pricing-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: clamp(1.2rem, 3vw, 1.5rem);
+  background: rgba(255, 254, 251, 0.94);
+  border: 1px solid rgba(168, 107, 74, 0.14);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.pricing-card--featured {
+  border-top: 4px solid var(--terracotta);
+  box-shadow:
+    0 12px 40px rgba(61, 52, 41, 0.1),
+    0 0 0 1px rgba(168, 107, 74, 0.12);
+}
+
+.pricing-card-name {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--earth);
+}
+
+.pricing-card-months {
+  margin: 0 0 0.85rem;
+  font-size: 0.82rem;
+  line-height: 1.45;
+  color: var(--earth-soft);
+}
+
+.pricing-card-price {
+  margin: 0 0 0.75rem;
+  line-height: 1.15;
+}
+
+.pricing-amount {
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 3.5vw, 2rem);
+  font-weight: 600;
+  color: var(--earth);
+}
+
+.pricing-amount--accent {
+  color: var(--terracotta);
+}
+
+.pricing-unit {
+  margin-left: 0.2rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--earth-soft);
+}
+
+.pricing-card-desc {
+  margin: 0 0 1rem;
+  flex: 1;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--earth-soft);
+}
+
+.pricing-features {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--earth);
+}
+
+.pricing-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  margin-bottom: 0.45rem;
+}
+
+.pricing-features li:last-child {
+  margin-bottom: 0;
+}
+
+.pricing-check {
+  flex-shrink: 0;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.12rem;
+  color: var(--terracotta);
+}
+
+.pricing-check svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 /* Homepage: Waarom — hogere positie (minder padding-top) */
 .section.section--highlights.section--why {
   padding-top: clamp(2rem, 5vw, 3rem);
