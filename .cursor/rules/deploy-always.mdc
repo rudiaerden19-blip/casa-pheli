@@ -1,0 +1,14 @@
+---
+description: Na wijzigingen altijd committen en naar GitHub pushen (Vercel deploy)
+alwaysApply: true
+---
+
+# Deploy-ritueel
+
+Na elke substantiële wijziging aan deze site:
+
+1. `git status` controleren, relevante bestanden stagen.
+2. Een duidelijke commit message (Nederlands of Engels is oké).
+3. `git push origin main` zodat Vercel opnieuw deployt.
+
+Niet alleen code aanpassen en stoppen: de gebruiker wil wijzigingen live op Vercel.
