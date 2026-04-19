@@ -4,8 +4,8 @@
   --sand-deep: #d4c9bb;
   --earth: #3d3429;
   --earth-soft: #5c4f42;
-  --terracotta: #c45c3e;
-  --terracotta-hover: #a84a32;
+  --terracotta: #a86b4a;
+  --terracotta-hover: #955a3f;
   --gold: #c9a227;
   --white: #fffefb;
   --line: rgba(61, 52, 41, 0.12);
@@ -83,7 +83,7 @@ a:hover {
   max-width: 100%;
   overflow-x: hidden;
   padding-top: env(safe-area-inset-top, 0);
-  background: linear-gradient(180deg, #a86b4a 0%, #955a3f 100%);
+  background: linear-gradient(180deg, var(--terracotta) 0%, var(--terracotta-hover) 100%);
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.12) inset,
