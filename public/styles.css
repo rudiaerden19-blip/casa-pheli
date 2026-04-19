@@ -885,10 +885,10 @@ a:hover {
   font-size: 1.25rem;
 }
 
-/* ——— Footer (3 kolommen + onderbalk, lichte achtergrond) ——— */
+/* ——— Footer (3 kolommen + onderbalk, terracotta + warm zand) ——— */
 .site-footer {
   margin-top: auto;
-  background: #e9eff4;
+  background: linear-gradient(180deg, #f0e8e2 0%, #f7f2ed 100%);
   color: var(--earth);
   font-size: 0.92rem;
 }
@@ -916,7 +916,7 @@ a:hover {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #6b7280;
+  color: rgba(168, 107, 74, 0.72);
 }
 
 .footer-brand-title {
@@ -924,7 +924,7 @@ a:hover {
   font-family: var(--font-display);
   font-size: clamp(1.5rem, 2.5vw, 1.85rem);
   font-weight: 600;
-  color: #111827;
+  color: var(--terracotta);
   line-height: 1.2;
 }
 
@@ -932,7 +932,7 @@ a:hover {
   margin: 0;
   max-width: 38ch;
   line-height: 1.55;
-  color: #4b5563;
+  color: var(--earth-soft);
   font-size: 0.94rem;
 }
 
@@ -960,18 +960,18 @@ a:hover {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #6b7280;
+  color: rgba(168, 107, 74, 0.65);
 }
 
 .footer-labeled-item a {
   font-weight: 600;
   font-size: 0.95rem;
-  color: #0c4a6e;
+  color: var(--terracotta);
   text-decoration: none;
 }
 
 .footer-labeled-item a:hover {
-  color: #082f49;
+  color: var(--terracotta-hover);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -981,7 +981,7 @@ a:hover {
   font-family: var(--font-sans);
   font-size: 1.05rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--terracotta);
 }
 
 .footer-link-list {
@@ -995,12 +995,12 @@ a:hover {
 
 .footer-link-list a {
   font-weight: 600;
-  color: #0c4a6e;
+  color: var(--terracotta);
   text-decoration: none;
 }
 
 .footer-link-list a:hover {
-  color: #082f49;
+  color: var(--terracotta-hover);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -1009,7 +1009,7 @@ a:hover {
   margin: 0 0 0.85rem;
   font-style: normal;
   line-height: 1.55;
-  color: #374151;
+  color: var(--earth-soft);
   font-size: 0.94rem;
 }
 
@@ -1019,18 +1019,18 @@ a:hover {
 
 .footer-email {
   font-weight: 600;
-  color: #0c4a6e;
+  color: var(--terracotta);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
 .footer-email:hover {
-  color: #082f49;
+  color: var(--terracotta-hover);
 }
 
 .footer-bar {
-  background: #dfe6ec;
-  border-top: 1px solid rgba(61, 52, 41, 0.08);
+  background: #e5d9d0;
+  border-top: 1px solid rgba(168, 107, 74, 0.15);
   padding: 0.85rem 0 calc(0.85rem + env(safe-area-inset-bottom, 0));
 }
 
@@ -1041,7 +1041,7 @@ a:hover {
 .footer-bar-inner p {
   margin: 0;
   font-size: 0.82rem;
-  color: #4b5563;
+  color: var(--earth-soft);
 }
 
 .page-title {
