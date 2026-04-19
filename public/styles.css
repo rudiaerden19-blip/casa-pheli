@@ -880,8 +880,12 @@ button.btn {
 
 .hosts-brand {
   position: absolute;
-  top: clamp(-3.25rem, -8vw, -2.25rem);
+  top: calc(clamp(-3.25rem, -8vw, -2.25rem) - 2cm);
   left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 0.5rem;
   margin: 0;
   max-width: 100%;
   font-family: var(--font-display);
@@ -890,6 +894,21 @@ button.btn {
   line-height: 1.05;
   letter-spacing: 0.02em;
   color: var(--terracotta);
+}
+
+.hosts-brand-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin-left: 0.05rem;
+}
+
+.hosts-brand-dot {
+  width: 0.32rem;
+  height: 0.32rem;
+  border-radius: 50%;
+  background: var(--terracotta);
+  flex-shrink: 0;
 }
 
 .section--hosts .hosts-copy p.hosts-brand {
