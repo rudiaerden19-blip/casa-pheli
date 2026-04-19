@@ -539,8 +539,9 @@ a:hover {
 }
 
 .highlights-facilities-block {
-  margin: 0 0 1.35rem;
+  margin: 0 auto 1.35rem;
   max-width: 52ch;
+  text-align: center;
 }
 
 .highlights-facilities-kicker {
@@ -568,7 +569,7 @@ a:hover {
 .highlights-facilities-line2 {
   display: block;
   margin-top: 0.12em;
-  color: var(--gold);
+  color: var(--terracotta);
 }
 
 .highlights-facilities-text {
@@ -576,6 +577,7 @@ a:hover {
   font-size: 0.98rem;
   line-height: 1.55;
   color: var(--earth-soft);
+  text-wrap: balance;
 }
 
 .highlights-features {
