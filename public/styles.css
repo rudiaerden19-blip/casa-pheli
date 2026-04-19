@@ -921,37 +921,37 @@ button.btn {
   opacity: 1;
   transform: translateY(0);
   transition:
-    opacity 0.65s ease,
-    transform 0.65s ease;
+    opacity 0.42s ease,
+    transform 0.42s ease;
 }
 
-/* 1 seconde tussen het begin van elk volgend vlak */
+/* ~0,45 s tussen het begin van elk volgend vlak (was 1 s) */
 .section--amenities .amenities-grid.is-revealed .amenity-card:nth-child(1) {
   transition-delay: 0s;
 }
 .section--amenities .amenities-grid.is-revealed .amenity-card:nth-child(2) {
-  transition-delay: 1s;
+  transition-delay: 0.45s;
 }
 .section--amenities .amenities-grid.is-revealed .amenity-card:nth-child(3) {
-  transition-delay: 2s;
+  transition-delay: 0.9s;
 }
 .section--amenities .amenities-grid.is-revealed .amenity-card:nth-child(4) {
-  transition-delay: 3s;
+  transition-delay: 1.35s;
 }
 .section--amenities .amenities-grid.is-revealed .amenity-card:nth-child(5) {
-  transition-delay: 4s;
+  transition-delay: 1.8s;
 }
 .section--amenities .amenities-grid.is-revealed .amenity-card:nth-child(6) {
-  transition-delay: 5s;
+  transition-delay: 2.25s;
 }
 .section--amenities .amenities-grid.is-revealed .amenity-card:nth-child(7) {
-  transition-delay: 6s;
+  transition-delay: 2.7s;
 }
 .section--amenities .amenities-grid.is-revealed .amenity-card:nth-child(8) {
-  transition-delay: 7s;
+  transition-delay: 3.15s;
 }
 .section--amenities .amenities-grid.is-revealed .amenity-card:nth-child(9) {
-  transition-delay: 8s;
+  transition-delay: 3.6s;
 }
 
 @media (prefers-reduced-motion: reduce) {
