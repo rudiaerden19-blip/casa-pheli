@@ -1614,7 +1614,7 @@ button.btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: rgba(255, 254, 251, 0.98);
+  color: #fff;
 }
 
 .amenity-icon svg {
@@ -1626,7 +1626,7 @@ button.btn {
 .amenity-label {
   font-weight: 500;
   font-size: 0.98rem;
-  color: var(--earth);
+  color: #fff;
   line-height: 1.35;
 }
 
