@@ -571,18 +571,21 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 1rem;
+  gap: 0;
   width: 100%;
   max-width: 40rem;
   margin-inline: auto;
 }
 
-.highlights-video-cta {
-  margin: 2cm 0 0;
+/* Geen <p>: vermijdt .section p. Extra ruimte staat ook inline op de div (werkt bij gecachte CSS). */
+.section--highlights .highlights-video-cta {
+  margin: 0;
+  max-width: none;
   text-align: center;
+  box-sizing: border-box;
 }
 
-.highlights-video-cta .btn {
+.section--highlights .highlights-video-cta .btn {
   width: 100%;
   max-width: 20rem;
 }
