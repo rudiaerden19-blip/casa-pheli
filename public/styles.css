@@ -554,7 +554,7 @@ a:hover {
   text-align: center;
 }
 
-.highlights-lead {
+.section .highlights-lead {
   margin: 0;
   font-family: var(--font-display);
   font-size: clamp(1.35rem, 3.2vw, 1.8rem);
