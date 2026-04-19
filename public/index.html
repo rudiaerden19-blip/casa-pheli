@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="/assets/hero-woonkamer.png" fetchpriority="high" />
-  <link rel="stylesheet" href="/styles.css?v=62" />
+  <link rel="stylesheet" href="/styles.css?v=63" />
 </head>
 <body>
   <header class="site-header">
@@ -203,6 +203,70 @@
         </p>
       </div>
     </section>
+
+    <section class="section section--inquiry" aria-labelledby="inquiry-title">
+      <div class="wrap inquiry-wrap">
+        <div class="inquiry-intro">
+          <h2 id="inquiry-title">Vraag naar beschikbaarheid</h2>
+          <p>
+            Wil je informatie over de beschikbaarheid? Vul je gegevens hieronder in — we beantwoorden je vragen zo snel
+            mogelijk.
+          </p>
+          <p class="inquiry-note">Je gegevens gebruiken we enkel om je vraag te beantwoorden.</p>
+        </div>
+        <div class="inquiry-card">
+          <form id="home-inquiry-form" class="inquiry-form">
+            <div class="inquiry-field">
+              <label for="inq-voornaam">Voornaam <span class="field-req" aria-hidden="true">*</span></label>
+              <input
+                id="inq-voornaam"
+                name="voornaam"
+                type="text"
+                required
+                autocomplete="given-name"
+                placeholder="Voornaam"
+              />
+            </div>
+            <div class="inquiry-field">
+              <label for="inq-naam">Naam <span class="field-req" aria-hidden="true">*</span></label>
+              <input
+                id="inq-naam"
+                name="naam"
+                type="text"
+                required
+                autocomplete="family-name"
+                placeholder="Familienaam"
+              />
+            </div>
+            <div class="inquiry-field">
+              <label for="inq-email">E-mail <span class="field-req" aria-hidden="true">*</span></label>
+              <input
+                id="inq-email"
+                name="email"
+                type="email"
+                required
+                autocomplete="email"
+                inputmode="email"
+                placeholder="jouw@voorbeeld.be"
+              />
+            </div>
+            <div class="inquiry-field">
+              <label for="inq-tel">Telefoonnummer <span class="field-req" aria-hidden="true">*</span></label>
+              <input
+                id="inq-tel"
+                name="telefoon"
+                type="tel"
+                required
+                autocomplete="tel"
+                inputmode="tel"
+                placeholder="+32 … of +34 …"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary inquiry-submit">Verstuur aanvraag</button>
+          </form>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
@@ -260,6 +324,24 @@
   </footer>
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+  <script>
+    (function () {
+      var form = document.getElementById("home-inquiry-form");
+      if (!form) return;
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var voornaam = document.getElementById("inq-voornaam").value.trim();
+        var naam = document.getElementById("inq-naam").value.trim();
+        var email = document.getElementById("inq-email").value.trim();
+        var tel = document.getElementById("inq-tel").value.trim();
+        var body =
+          "Voornaam: " + voornaam + "\n" + "Naam: " + naam + "\n" + "E-mail: " + email + "\n" + "Telefoon: " + tel + "\n";
+        var subject = encodeURIComponent("Beschikbaarheid Casa Pheli");
+        window.location.href =
+          "mailto:heidi.torfs@outlook.be?subject=" + subject + "&body=" + encodeURIComponent(body);
+      });
+    })();
   </script>
   <script src="/scripts/nav.js" defer></script>
   <script src="/scripts/hero-slider.js" defer></script>
