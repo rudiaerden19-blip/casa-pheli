@@ -215,11 +215,13 @@ a:hover {
   inset: 0;
   z-index: 1;
   pointer-events: none;
+  /* Lichte onderkant i.p.v. zware roomwitte vulling — foto blijft scherp, tekst/knoppen blijven leesbaar */
   background: linear-gradient(
     180deg,
-    rgba(250, 246, 240, 0.86) 0%,
-    rgba(250, 246, 240, 0.78) 45%,
-    rgba(250, 246, 240, 0.7) 100%
+    transparent 0%,
+    transparent 48%,
+    rgba(61, 52, 41, 0.18) 85%,
+    rgba(61, 52, 41, 0.32) 100%
   );
 }
 
@@ -232,6 +234,15 @@ a:hover {
 
 .hero--slider .hero-copy .lead {
   margin-inline: auto;
+}
+
+.hero--slider .hero-copy h1,
+.hero--slider .hero-copy .lead {
+  text-shadow:
+    0 0 1px rgba(250, 246, 240, 0.98),
+    0 1px 3px rgba(61, 52, 41, 0.35),
+    0 0 18px rgba(250, 246, 240, 0.75),
+    0 0 42px rgba(250, 246, 240, 0.45);
 }
 
 .hero--slider .hero-actions {
