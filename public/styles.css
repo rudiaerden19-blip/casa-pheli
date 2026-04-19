@@ -645,7 +645,7 @@ a:hover {
 
 /* Geen <p>: vermijdt .section p. Extra ruimte staat ook inline op de div (werkt bij gecachte CSS). */
 .section--highlights .highlights-video-cta {
-  margin: 0;
+  margin: 1.5cm 0 0;
   width: 100%;
   max-width: 100%;
   text-align: center;
