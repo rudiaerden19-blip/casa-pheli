@@ -420,7 +420,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(0.55rem, 1.8vw, 0.85rem);
+  gap: clamp(0.65rem, 2.2vw, 1.05rem);
 }
 
 .hero--slider .hero-title-wrap h1 .hero-title__main {
@@ -435,7 +435,7 @@ a:hover {
 .hero--slider .hero-title-wrap h1 .hero-title__location {
   display: block;
   font-family: var(--font-script);
-  font-size: clamp(1.65rem, 5.5vw, 2.95rem);
+  font-size: clamp(2.05rem, 7.5vw, 3.65rem);
   font-weight: 600;
   letter-spacing: 0.01em;
   line-height: 1.05;
@@ -3417,11 +3417,11 @@ h2#voorzieningen-title {
 
   .hero--slider .hero-title-wrap h1 {
     font-size: clamp(1.4rem, 5.2vw, 2.5rem);
-    gap: clamp(0.45rem, 2vw, 0.65rem);
+    gap: clamp(0.55rem, 2.4vw, 0.85rem);
   }
 
   .hero--slider .hero-title-wrap h1 .hero-title__location {
-    font-size: clamp(1.45rem, 6.2vw, 2.35rem);
+    font-size: clamp(1.85rem, 8.2vw, 2.95rem);
   }
 
   .hero--slider .hero-title-wrap--galerij h1 {
