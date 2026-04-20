@@ -199,7 +199,7 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       var code = (inpCode && inpCode.value) || "";
-      code = code.trim();
+      code = code.replace(/[\u200B-\u200D\uFEFF]/g, "").trim();
       if (!code) {
         setErr("Vul de beheercode in.");
         return;
@@ -207,6 +207,9 @@
       setErr("");
       fetch("/api/calendar", { cache: "no-store" })
         .then(function (r) {
+          if (!r.ok) {
+            throw new Error("Kalender laden mislukt (HTTP " + r.status + ").");
+          }
           return r.json();
         })
         .then(function (d) {
@@ -218,12 +221,16 @@
             },
             body: JSON.stringify({ booked: d.booked || [] }),
           }).then(function (r2) {
-            if (!r2.ok) {
-              return r2.json().then(function (j) {
-                throw new Error(j.error || "Verkeerde code");
-              });
-            }
-            return r2.json();
+            return r2.json().then(function (j) {
+              if (!r2.ok) {
+                var errKey = (j && j.error) || "";
+                if (r2.status === 401 || /unauthorized/i.test(errKey)) {
+                  throw new Error("Die code komt niet overeen met CALENDAR_ADMIN_TOKEN in Vercel.");
+                }
+                throw new Error(errKey || "Opslaan geweigerd (HTTP " + r2.status + ").");
+              }
+              return j;
+            });
           });
         })
         .then(function () {
@@ -235,7 +242,18 @@
           if (statusEl) statusEl.textContent = "Beheer ontgrendeld. Klik op dagen om te wijzigen.";
         })
         .catch(function (err) {
-          setErr(err.message || "Code geweigerd.");
+          var msg = (err && err.message) || "";
+          if (/did not match the expected pattern|patternMismatch|validity/i.test(msg)) {
+            setErr(
+              "De browser blokkeerde dit veld. Vernieuw de pagina (hard refresh) en vul de code opnieuw in, zonder spaties aan het begin of einde."
+            );
+            return;
+          }
+          if (/JSON|Unexpected token|parse/i.test(msg)) {
+            setErr("Kon het antwoord van de server niet lezen. Controleer of /api/calendar werkt na je laatste deploy.");
+            return;
+          }
+          setErr(msg || "Code geweigerd.");
         });
     });
   }

@@ -277,14 +277,18 @@
           Vul de <strong>beheercode</strong> in — dezelfde waarde als <code>CALENDAR_ADMIN_TOKEN</code> in je Vercel-project
           (Environment Variables). Die code blijft in deze browser tot je op <strong>Afmelden</strong> klikt.
         </p>
-        <form id="cp-login-form">
+        <form id="cp-login-form" novalidate>
           <label class="cp-cal-admin-label" for="cp-cal-admin-code">Beheercode</label>
           <input
             id="cp-cal-admin-code"
             class="cp-cal-admin-input"
-            type="password"
+            type="text"
             name="admincode"
             autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+            inputmode="text"
             required
           />
           <p id="cp-login-error" class="cp-login-error" role="alert" hidden></p>
@@ -329,6 +333,6 @@
   <script src="/scripts/nav.js?v=2" defer></script>
   <script src="/scripts/legal-modals.js?v=1" defer></script>
   <script src="/scripts/calendar-core.js?v=1"></script>
-  <script src="/scripts/beschikbaarheid-vercel.js?v=1" defer></script>
+  <script src="/scripts/beschikbaarheid-vercel.js?v=2" defer></script>
 </body>
 </html>
