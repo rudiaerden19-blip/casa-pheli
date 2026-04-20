@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="/assets/hero-woonkamer.png" fetchpriority="high" />
-  <link rel="stylesheet" href="/styles.css?v=173" />
+  <link rel="stylesheet" href="/styles.css?v=174" />
 </head>
 <body>
   <header class="site-header">
@@ -990,6 +990,34 @@
       </video>
     </div>
   </div>
+
+  <div
+    id="cookie-banner"
+    class="cookie-banner"
+    hidden
+    role="dialog"
+    aria-modal="false"
+    aria-labelledby="cookie-banner-title"
+    aria-describedby="cookie-banner-desc"
+  >
+    <div class="cookie-banner__inner wrap">
+      <div class="cookie-banner__copy">
+        <h2 id="cookie-banner-title" class="cookie-banner__title">Cookies</h2>
+        <p id="cookie-banner-desc" class="cookie-banner__text">
+          We gebruiken cookies om deze site te laten werken en het gebruik te verbeteren. Kies
+          <strong>alles accepteren</strong> of <strong>alleen noodzakelijk</strong>. Meer uitleg:
+          <button type="button" class="cookie-banner__link" data-legal-modal-open="privacy">
+            Privacy &amp; gegevens
+          </button>.
+        </p>
+      </div>
+      <div class="cookie-banner__actions">
+        <button type="button" class="btn btn-primary cookie-banner__accept">Alles accepteren</button>
+        <button type="button" class="btn btn-ghost cookie-banner__reject">Alleen noodzakelijk</button>
+      </div>
+    </div>
+  </div>
+  <script src="/scripts/cookie-consent.js?v=1"></script>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
