@@ -61,6 +61,28 @@
     }
   }
 
+  /** Voorkomt r.json() op HTML-foutpagina's (Safari meldt dan o.a. "expected pattern"). */
+  function parseJsonResponse(r) {
+    return r.text().then(function (text) {
+      var t = (text || "").trim();
+      if (!t) {
+        throw new Error("Leeg antwoord van server (HTTP " + r.status + ").");
+      }
+      if (t.charAt(0) !== "{" && t.charAt(0) !== "[") {
+        throw new Error(
+          "Geen JSON van /api/calendar (HTTP " +
+            r.status +
+            "). Controleer in Vercel: Root Directory = repository-root (niet alleen public), zodat api/calendar.js mee deployt."
+        );
+      }
+      try {
+        return JSON.parse(t);
+      } catch (e) {
+        throw new Error("Ongeldige JSON van server (HTTP " + r.status + ").");
+      }
+    });
+  }
+
   function openModal() {
     if (!modal) return;
     modal.removeAttribute("hidden");
@@ -110,12 +132,12 @@
             body: JSON.stringify({ booked: arr }),
           })
             .then(function (r) {
-              if (!r.ok) {
-                return r.json().then(function (j) {
-                  throw new Error(j.error || "HTTP " + r.status);
-                });
-              }
-              return r.json();
+              return parseJsonResponse(r).then(function (j) {
+                if (!r.ok) {
+                  throw new Error((j && j.error) || "HTTP " + r.status);
+                }
+                return j;
+              });
             })
             .then(function () {
               if (statusEl) statusEl.textContent = "Opgeslagen.";
@@ -134,7 +156,12 @@
     if (statusEl) statusEl.textContent = "Kalender laden…";
     return fetch("/api/calendar", { cache: "no-store" })
       .then(function (r) {
-        return r.json();
+        return parseJsonResponse(r).then(function (data) {
+          if (!r.ok) {
+            throw new Error((data && data.error) || "HTTP " + r.status);
+          }
+          return data;
+        });
       })
       .then(function (data) {
         serverConfigured = data.configured === true;
@@ -207,10 +234,12 @@
       setErr("");
       fetch("/api/calendar", { cache: "no-store" })
         .then(function (r) {
-          if (!r.ok) {
-            throw new Error("Kalender laden mislukt (HTTP " + r.status + ").");
-          }
-          return r.json();
+          return parseJsonResponse(r).then(function (d) {
+            if (!r.ok) {
+              throw new Error((d && d.error) || "Kalender laden mislukt (HTTP " + r.status + ").");
+            }
+            return d;
+          });
         })
         .then(function (d) {
           return fetch("/api/calendar", {
@@ -221,7 +250,7 @@
             },
             body: JSON.stringify({ booked: d.booked || [] }),
           }).then(function (r2) {
-            return r2.json().then(function (j) {
+            return parseJsonResponse(r2).then(function (j) {
               if (!r2.ok) {
                 var errKey = (j && j.error) || "";
                 if (r2.status === 401 || /unauthorized/i.test(errKey)) {
@@ -242,18 +271,7 @@
           if (statusEl) statusEl.textContent = "Beheer ontgrendeld. Klik op dagen om te wijzigen.";
         })
         .catch(function (err) {
-          var msg = (err && err.message) || "";
-          if (/did not match the expected pattern|patternMismatch|validity/i.test(msg)) {
-            setErr(
-              "De browser blokkeerde dit veld. Vernieuw de pagina (hard refresh) en vul de code opnieuw in, zonder spaties aan het begin of einde."
-            );
-            return;
-          }
-          if (/JSON|Unexpected token|parse/i.test(msg)) {
-            setErr("Kon het antwoord van de server niet lezen. Controleer of /api/calendar werkt na je laatste deploy.");
-            return;
-          }
-          setErr(msg || "Code geweigerd.");
+          setErr((err && err.message) || "Code geweigerd.");
         });
     });
   }

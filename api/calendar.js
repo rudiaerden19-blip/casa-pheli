@@ -87,14 +87,22 @@ export default async function handler(req, res) {
       booked,
       updatedAt: new Date().toISOString(),
     });
-    await put(CALENDAR_PATH, payload, {
-      access: "public",
-      token,
-      addRandomSuffix: false,
-      allowOverwrite: true,
-      contentType: "application/json",
-      cacheControlMaxAge: 60,
-    });
+    try {
+      await put(CALENDAR_PATH, payload, {
+        access: "private",
+        token,
+        addRandomSuffix: false,
+        allowOverwrite: true,
+        contentType: "application/json",
+        cacheControlMaxAge: 60,
+      });
+    } catch (e) {
+      console.error("[calendar] put failed", e);
+      return sendJson(res, 500, {
+        error:
+          "Kalender opslaan in Blob mislukt. Controleer dat de store Private is en BLOB_READ_WRITE_TOKEN klopt; zie Vercel Function Logs.",
+      });
+    }
     return sendJson(res, 200, { ok: true, booked });
   }
 
