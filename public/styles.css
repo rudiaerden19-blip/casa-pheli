@@ -1650,6 +1650,15 @@ button.btn {
   flex-shrink: 0;
 }
 
+.hosts-brand-tagline {
+  font-weight: 500;
+  font-size: clamp(1.05rem, 2.8vw, 1.4rem);
+  letter-spacing: 0.03em;
+  color: var(--terracotta);
+  opacity: 0.9;
+  white-space: normal;
+}
+
 .section--hosts .hosts-copy p.hosts-brand {
   margin: 0;
   color: var(--terracotta);
