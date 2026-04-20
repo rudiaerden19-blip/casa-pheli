@@ -516,6 +516,37 @@ h2#discover-title {
   color: var(--terracotta);
 }
 
+.section--discover h2.discover-title-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  max-width: none;
+}
+
+.discover-title-row .discover-video-btn {
+  margin-left: 4cm;
+  flex-shrink: 0;
+  background: linear-gradient(180deg, var(--sand) 0%, var(--sand-deep) 100%);
+  color: var(--earth);
+  border: 1px solid rgba(61, 52, 41, 0.12);
+  box-shadow: 0 4px 14px rgba(61, 52, 41, 0.12);
+  font-size: 0.92rem;
+  padding: 0.52rem 1.15rem;
+}
+
+.discover-title-row .discover-video-btn:hover {
+  background: linear-gradient(180deg, #f5efe8 0%, #ddd0c4 100%);
+  color: var(--earth);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 720px) {
+  .discover-title-row .discover-video-btn {
+    margin-left: 0;
+    margin-top: 0.65rem;
+  }
+}
+
 .section--discover .discover-lead {
   margin: 0 0 0.25rem;
   max-width: 52ch;
@@ -1185,37 +1216,6 @@ h2#discover-title {
   margin-inline: auto;
   min-width: 0;
   overflow-x: hidden;
-}
-
-/* Geen <p>: vermijdt .section p. */
-.section--highlights .highlights-video-cta {
-  margin: 0;
-  width: 100%;
-  max-width: 100%;
-  text-align: center;
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.section--highlights .highlights-video-cta .btn {
-  width: 100%;
-  max-width: min(20rem, 100%);
-  box-sizing: border-box;
-}
-
-.section--highlights .highlights-video-cta .btn.btn-primary {
-  background: linear-gradient(180deg, var(--sand) 0%, var(--sand-deep) 100%);
-  color: var(--earth);
-  border: 1px solid rgba(61, 52, 41, 0.12);
-  box-shadow: 0 4px 14px rgba(61, 52, 41, 0.12);
-}
-
-.section--highlights .highlights-video-cta .btn.btn-primary:hover {
-  background: linear-gradient(180deg, #f5efe8 0%, #ddd0c4 100%);
-  color: var(--earth);
-  transform: translateY(-1px);
 }
 
 button.btn {

@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="/assets/hero-woonkamer.png" fetchpriority="high" />
-  <link rel="stylesheet" href="/styles.css?v=153" />
+  <link rel="stylesheet" href="/styles.css?v=154" />
 </head>
 <body>
   <header class="site-header">
@@ -294,16 +294,6 @@
           </ul>
         </div>
         <div class="highlights-media">
-        <div class="highlights-video-cta">
-          <button
-            type="button"
-            class="btn btn-primary"
-            data-video-modal-open
-            data-video-src="/assets/video/kijk-video.mp4"
-          >
-            Bekijk de video
-          </button>
-        </div>
         <div
           class="highlights-slider-viewport"
           data-highlights-carousel
@@ -590,7 +580,17 @@
 
     <section class="section section--discover" aria-labelledby="discover-title">
       <div class="wrap">
-        <h2 id="discover-title">Ontdek de omgeving van Guardamar del Segura</h2>
+        <h2 id="discover-title" class="discover-title-row">
+          <span class="discover-title-text">Ontdek de omgeving van Guardamar del Segura</span>
+          <button
+            type="button"
+            class="btn btn-primary discover-video-btn"
+            data-video-modal-open
+            data-video-src="/assets/video/kijk-video.mp4"
+          >
+            Bekijk de video
+          </button>
+        </h2>
         <p class="discover-lead">Van markten tot natuurgebieden: de regio heeft voor ieder wat wils.</p>
 
         <div class="discover-spots">
