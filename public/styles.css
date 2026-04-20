@@ -3475,7 +3475,7 @@ button.cp-cal__day:focus-visible {
 }
 
 .cp-cal-cta {
-  margin-top: 2rem;
+  margin-top: calc(2rem + 1cm);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
