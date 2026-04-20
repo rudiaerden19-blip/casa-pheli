@@ -1,0 +1,19 @@
+{
+  "name": "Casa Pheli",
+  "short_name": "Casa Pheli",
+  "description": "Vakantieappartement te huur in El Raso, Guardamar del Segura.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#faf6f0",
+  "theme_color": "#a86b4a",
+  "lang": "nl",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any",
+      "purpose": "any"
+    }
+  ]
+}
