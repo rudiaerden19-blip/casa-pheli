@@ -237,6 +237,13 @@ a:hover {
   }
 }
 
+/* iPad / tablet: grotere menu-tekst (staand + liggend, hamburger én horizontaal) */
+@media (min-width: 768px) and (max-width: 1366px) {
+  .site-nav a {
+    font-size: 1.08rem;
+  }
+}
+
 /* ——— Hero ——— (alleen homepage: slider; geen crème-achtergrond op deze sectie) */
 .hero {
   position: relative;
@@ -508,7 +515,7 @@ a:hover {
   border-bottom: 1px solid rgba(168, 107, 74, 0.16);
 }
 
-/* Homepage: Voorzieningen — zandtextuur + lichte overlay */
+/* Homepage: Voorzieningen — zandtextuur + lichte overlay + zachte rand-fades */
 .section--amenities {
   position: relative;
   isolation: isolate;
@@ -527,12 +534,23 @@ a:hover {
   position: absolute;
   inset: 0;
   z-index: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(252, 248, 242, 0.92) 0%,
-    rgba(238, 230, 218, 0.9) 45%,
-    rgba(230, 220, 206, 0.92) 100%
-  );
+  background:
+    linear-gradient(
+      180deg,
+      rgba(252, 248, 242, 0.65) 0%,
+      transparent 20%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(230, 220, 206, 0.62) 0%,
+      transparent 24%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(252, 248, 242, 0.88) 0%,
+      rgba(240, 232, 220, 0.86) 45%,
+      rgba(230, 220, 206, 0.88) 100%
+    );
   pointer-events: none;
 }
 
