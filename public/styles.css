@@ -488,12 +488,37 @@ a:hover {
   border-bottom: 1px solid rgba(168, 107, 74, 0.16);
 }
 
-/* Homepage: Voorzieningen — lichte beige band (anders dan Over ons) */
+/* Homepage: Voorzieningen — zand + decoratieve strandfoto */
 .section--amenities {
-  background: linear-gradient(180deg, #f8f2ea 0%, #e9e0d4 100%);
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-color: var(--sand);
+  background-image: url("/assets/voorzieningen-achtergrond.png");
+  background-size: cover;
+  background-position: center center;
   border-top: none;
   border-bottom: 1px solid rgba(168, 107, 74, 0.14);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.section--amenities::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(250, 246, 240, 0.9) 0%,
+    rgba(235, 227, 216, 0.88) 45%,
+    rgba(228, 217, 204, 0.9) 100%
+  );
+  pointer-events: none;
+}
+
+.section--amenities .wrap {
+  position: relative;
+  z-index: 1;
 }
 
 /* Homepage: Waarom — rustige “kaart”-strook */
@@ -1770,6 +1795,7 @@ button.btn {
 h2#voorzieningen-title {
   margin-bottom: 1.35rem;
   color: var(--terracotta);
+  text-align: center;
 }
 
 .amenities-grid {
