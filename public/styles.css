@@ -2405,21 +2405,6 @@ h2#voorzieningen-title {
   font-size: 0.94rem;
 }
 
-.footer-email-wrap {
-  margin: 0;
-}
-
-.footer-email {
-  font-weight: 600;
-  color: var(--terracotta);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.footer-email:hover {
-  color: var(--terracotta-hover);
-}
-
 .footer-bar {
   background: var(--sand-deep);
   border-top: 1px solid rgba(168, 107, 74, 0.2);
