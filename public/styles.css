@@ -3476,6 +3476,9 @@ button.cp-cal__day:focus-visible {
 
 /* Specifieker dan .section p { margin: … } — anders wordt margin-top op de <p> teruggezet naar 0. */
 .section.section--calendar .cp-cal-cta {
+  /* Volle breedte: anders vangt .section p { max-width: 62ch } de <p> en blijven knoppen links hangen. */
+  max-width: none;
+  width: 100%;
   margin-top: calc(2rem + 1cm);
   display: flex;
   flex-wrap: wrap;
