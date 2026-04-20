@@ -3203,11 +3203,11 @@ h2#voorzieningen-title {
   border-color: rgba(149, 90, 63, 0.45);
 }
 
-/* Flex + gap: voorkomt margin-collapse tussen toolbar en statusvak (anders lijkt marge weg). */
+/* Flex + gap: voorkomt margin-collapse; afstand toolbar → status bewust klein (±1 cm). */
 .cp-cal-toolbar-stack {
   display: flex;
   flex-direction: column;
-  gap: calc(2.15rem + 4cm);
+  gap: 1cm;
   min-width: 0;
 }
 
