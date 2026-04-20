@@ -2494,12 +2494,25 @@ h2#voorzieningen-title {
 }
 
 /* ——— Contact: aanvraag beschikbaarheid ——— */
-.section--contact-request {
+.section.section--contact-request {
+  position: relative;
+  isolation: isolate;
   padding-top: clamp(3rem, 8vw, 4.5rem);
   padding-bottom: clamp(3rem, 8vw, 4.75rem);
   border-top: 1px solid rgba(168, 107, 74, 0.12);
   border-bottom: 1px solid rgba(168, 107, 74, 0.1);
   background-color: #e9e2d8;
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(233, 226, 216, 0.94) 0%,
+      rgba(245, 239, 230, 0.82) 42%,
+      rgba(233, 226, 216, 0.94) 100%
+    ),
+    url("/assets/contact-terras-bg.png");
+  background-size: cover, cover;
+  background-position: center 40%, center;
+  background-repeat: no-repeat, no-repeat;
 }
 
 .contact-request-layout {
