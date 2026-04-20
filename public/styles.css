@@ -2479,7 +2479,8 @@ h2#voorzieningen-title {
   font-weight: 700;
 }
 
-.inquiry-field input {
+.inquiry-field input,
+.inquiry-field textarea {
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -2493,14 +2494,22 @@ h2#voorzieningen-title {
   transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
-.inquiry-field input:focus {
+.inquiry-field textarea {
+  min-height: 7.5rem;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.inquiry-field input:focus,
+.inquiry-field textarea:focus {
   outline: none;
   border-color: rgba(168, 107, 74, 0.55);
   background: #fffefb;
   box-shadow: 0 0 0 3px rgba(168, 107, 74, 0.14);
 }
 
-.inquiry-field input::placeholder {
+.inquiry-field input::placeholder,
+.inquiry-field textarea::placeholder {
   color: #a89b8f;
 }
 

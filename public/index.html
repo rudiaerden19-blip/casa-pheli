@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="/assets/hero-woonkamer.png" fetchpriority="high" />
-  <link rel="stylesheet" href="/styles.css?v=147" />
+  <link rel="stylesheet" href="/styles.css?v=148" />
 </head>
 <body>
   <header class="site-header">
@@ -742,6 +742,17 @@
                 placeholder="Telefoonnummer"
               />
             </div>
+            <div class="inquiry-field inquiry-field--message">
+              <label for="inq-bericht">Uw vraag of bericht <span class="field-req" aria-hidden="true">*</span></label>
+              <textarea
+                id="inq-bericht"
+                name="bericht"
+                required
+                rows="5"
+                autocomplete="off"
+                placeholder="Typ hier je vraag over beschikbaarheid, verblijf, …"
+              ></textarea>
+            </div>
             <button type="submit" class="btn btn-primary inquiry-submit">Verstuur aanvraag</button>
           </form>
         </div>
@@ -857,8 +868,23 @@
         var naam = document.getElementById("inq-naam").value.trim();
         var email = document.getElementById("inq-email").value.trim();
         var tel = document.getElementById("inq-tel").value.trim();
+        var bericht = document.getElementById("inq-bericht").value.trim();
         var body =
-          "Voornaam: " + voornaam + "\n" + "Naam: " + naam + "\n" + "E-mail: " + email + "\n" + "Telefoon: " + tel + "\n";
+          "Voornaam: " +
+          voornaam +
+          "\n" +
+          "Naam: " +
+          naam +
+          "\n" +
+          "E-mail: " +
+          email +
+          "\n" +
+          "Telefoon: " +
+          tel +
+          "\n\n" +
+          "Bericht:\n" +
+          bericht +
+          "\n";
         var subject = encodeURIComponent("Beschikbaarheid Casa Pheli");
         window.location.href =
           "mailto:heidi.torfs@outlook.be?subject=" + subject + "&body=" + encodeURIComponent(body);
