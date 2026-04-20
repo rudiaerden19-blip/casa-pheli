@@ -1784,7 +1784,7 @@ button.btn {
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1) rotate(0deg);
+    transform: translateY(-1cm) scale(1) rotate(0deg);
   }
 }
 
@@ -1792,6 +1792,7 @@ button.btn {
   .hosts-thought-bubble--show {
     animation: none;
     opacity: 1;
+    transform: translateY(-1cm);
   }
 }
 
