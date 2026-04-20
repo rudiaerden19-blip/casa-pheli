@@ -1669,6 +1669,11 @@ button.btn {
   margin-top: 0;
 }
 
+/* Alleen de lopende tekst onder «Over ons» iets lager (niet de merkregel). */
+.section--hosts .hosts-copy h2 + p {
+  margin-top: 1cm;
+}
+
 .hosts-copy p:last-child {
   margin-bottom: 0;
 }
