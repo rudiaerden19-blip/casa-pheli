@@ -242,6 +242,10 @@ a:hover {
   .site-nav a {
     font-size: 1.08rem;
   }
+
+  .section--hosts .hosts-photo-actions .btn {
+    font-size: 1.08rem;
+  }
 }
 
 /* ——— Hero ——— (alleen homepage: slider; geen crème-achtergrond op deze sectie) */
@@ -508,11 +512,22 @@ a:hover {
   border-bottom: 1px solid rgba(168, 107, 74, 0.12);
 }
 
-/* Homepage: Over ons — dieper warm zand, geen grijze lijn onder hero */
+/* Homepage: Over ons — zelfde zand + gradient als header (leesbaarheid) */
 .section.section--alt.section--hosts {
-  background: linear-gradient(180deg, #e0d4c8 0%, #efe8df 50%, #faf6f0 100%);
   border-top: none;
   border-bottom: 1px solid rgba(168, 107, 74, 0.16);
+  background-color: var(--sand);
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(253, 250, 245, 0.86) 0%,
+      rgba(245, 237, 226, 0.8) 45%,
+      rgba(238, 228, 216, 0.84) 100%
+    ),
+    url("/assets/voorzieningen-achtergrond.png");
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
 }
 
 /* Homepage: Voorzieningen — zandtextuur + lichte overlay + zachte rand-fades */
