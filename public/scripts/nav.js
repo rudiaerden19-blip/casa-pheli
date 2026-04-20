@@ -3,15 +3,32 @@
   var nav = document.querySelector("[data-site-nav]");
   if (!btn || !nav) return;
 
-  btn.addEventListener("click", function () {
-    var open = nav.classList.toggle("is-open");
+  var root = document.documentElement;
+
+  function setOpen(open) {
+    nav.classList.toggle("is-open", open);
     btn.setAttribute("aria-expanded", open ? "true" : "false");
+    root.classList.toggle("nav-drawer-open", open);
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+  }
+
+  btn.addEventListener("click", function () {
+    setOpen(!nav.classList.contains("is-open"));
   });
 
   nav.querySelectorAll("a").forEach(function (link) {
     link.addEventListener("click", function () {
-      nav.classList.remove("is-open");
-      btn.setAttribute("aria-expanded", "false");
+      setOpen(false);
     });
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && nav.classList.contains("is-open")) {
+      setOpen(false);
+    }
   });
 })();

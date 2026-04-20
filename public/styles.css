@@ -199,8 +199,25 @@ a:hover {
 
 /* Tot ±tablet: hamburger (lange NL-menu’s breken niet meer) */
 @media (max-width: 900px) {
+  /*
+   * Homepage: .hero--slider recht onder de header — op iOS/WebKit kan die composited
+   * laag boven het absoluut gepositioneerde menu tekenen. Bij open menu: hele header
+   * omhoog in z-index + vast paneel onder de balk (niet alleen binnen de header-box).
+   */
+  html.nav-drawer-open .site-header {
+    /* Boven homepage-hero; onder legal-modals (300) en cookiebalk (400) */
+    z-index: 280;
+  }
+
   .nav-toggle {
+    position: relative;
+    z-index: 2;
     display: flex;
+  }
+
+  .brand {
+    position: relative;
+    z-index: 1;
   }
 
   .site-nav {
@@ -232,6 +249,17 @@ a:hover {
 
   .site-nav.is-open {
     display: flex;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: calc(env(safe-area-inset-top, 0px) + clamp(4.65rem, 11vw, 6rem));
+    max-height: calc(100vh - env(safe-area-inset-top, 0px) - clamp(4.65rem, 11vw, 6rem));
+    max-height: calc(100dvh - env(safe-area-inset-top, 0px) - clamp(4.65rem, 11vw, 6rem));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    z-index: 10;
+    box-sizing: border-box;
   }
 
   .site-nav a {
