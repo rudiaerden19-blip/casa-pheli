@@ -3165,6 +3165,26 @@ h2#voorzieningen-title {
 }
 
 /* ——— Beschikbaarheidskalender (publiek + beheer) ——— */
+/* Intro: wellness/spa-foto met crème-gradient (leesbaarheid + overgang naar kalender-sectie). */
+.section.section--calendar-intro {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--cream);
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(250, 246, 240, 0.94) 0%,
+      rgba(250, 246, 240, 0.68) 40%,
+      rgba(250, 246, 240, 0.86) 72%,
+      rgba(235, 227, 216, 0.97) 100%
+    ),
+    url("/assets/beschikbaarheid-spa-wellness.png");
+  background-size: cover, cover;
+  background-position: center 22%, center;
+  background-repeat: no-repeat, no-repeat;
+  border-bottom: 1px solid rgba(168, 107, 74, 0.1);
+}
+
 .section--calendar-intro .cp-cal-legend {
   display: flex;
   flex-wrap: wrap;
