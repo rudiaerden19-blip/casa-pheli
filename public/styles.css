@@ -3149,8 +3149,16 @@ h2#voorzieningen-title {
   border-color: rgba(149, 90, 63, 0.45);
 }
 
+/* Flex + gap: voorkomt margin-collapse tussen toolbar en statusvak (anders lijkt marge weg). */
+.cp-cal-toolbar-stack {
+  display: flex;
+  flex-direction: column;
+  gap: calc(2.15rem + 4cm);
+  min-width: 0;
+}
+
 .cp-cal-note {
-  margin-top: calc(2.15rem + 3cm);
+  margin-top: 0;
   min-height: 1.25rem;
   overflow-wrap: anywhere;
   word-break: break-word;
@@ -3346,7 +3354,7 @@ button.cp-cal__day:focus-visible {
 
 .cp-cal-toolbar {
   margin-top: 1.25rem;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0;
   display: flex;
   flex-direction: column;
   gap: 0.85rem;

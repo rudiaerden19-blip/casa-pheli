@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=187" />
+  <link rel="stylesheet" href="/styles.css?v=188" />
 </head>
 <body id="page-top">
   <header class="site-header">
@@ -49,19 +49,21 @@
             <span><strong>Niet vrij</strong></span>
           </div>
         </div>
-        <div class="cp-cal-toolbar">
-          <p class="note cp-cal-setup-hint" id="cp-cal-setup-hint" hidden></p>
-          <div class="cp-cal-toolbar-actions">
-            <button type="button" class="btn btn-primary" id="cp-cal-login-open" hidden>
-              Beheer
-            </button>
-            <div id="cp-cal-toolbar-user" class="cp-cal-toolbar-user" hidden>
-              <span class="cp-cal-toolbar-email" id="cp-cal-toolbar-email"></span>
-              <button type="button" class="btn btn-ghost" id="cp-cal-logout">Afmelden</button>
+        <div class="cp-cal-toolbar-stack">
+          <div class="cp-cal-toolbar">
+            <p class="note cp-cal-setup-hint" id="cp-cal-setup-hint" hidden></p>
+            <div class="cp-cal-toolbar-actions">
+              <button type="button" class="btn btn-primary" id="cp-cal-login-open" hidden>
+                Beheer
+              </button>
+              <div id="cp-cal-toolbar-user" class="cp-cal-toolbar-user" hidden>
+                <span class="cp-cal-toolbar-email" id="cp-cal-toolbar-email"></span>
+                <button type="button" class="btn btn-ghost" id="cp-cal-logout">Afmelden</button>
+              </div>
             </div>
           </div>
+          <p class="note cp-cal-note" id="cp-cal-status" role="status" aria-live="polite"></p>
         </div>
-        <p class="note cp-cal-note" id="cp-cal-status" role="status" aria-live="polite"></p>
         <div class="cp-cal-policies" aria-label="Boekings- en huisregels">
           <article class="cp-cal-policy-card">
             <h3 class="cp-cal-policy-card__title">Minimale boekingsperiode (online)</h3>
