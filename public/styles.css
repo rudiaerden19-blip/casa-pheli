@@ -530,13 +530,13 @@ a:hover {
   background-repeat: no-repeat, no-repeat;
 }
 
-/* Homepage: Voorzieningen — zandtextuur + lichte overlay + zachte rand-fades */
+/* Homepage: Voorzieningen — duinen/strand-foto + lichte overlay + rand-fades */
 .section--amenities {
   position: relative;
   isolation: isolate;
   overflow: hidden;
   background-color: var(--sand);
-  background-image: url("/assets/voorzieningen-achtergrond.png");
+  background-image: url("/assets/voorzieningen-duinen.png");
   background-size: cover;
   background-position: center center;
   border-top: none;
@@ -552,19 +552,19 @@ a:hover {
   background:
     linear-gradient(
       180deg,
-      rgba(252, 248, 242, 0.65) 0%,
-      transparent 20%
+      rgba(252, 248, 242, 0.72) 0%,
+      transparent 22%
     ),
     linear-gradient(
       0deg,
-      rgba(230, 220, 206, 0.62) 0%,
-      transparent 24%
+      rgba(230, 220, 206, 0.68) 0%,
+      transparent 26%
     ),
     linear-gradient(
       180deg,
-      rgba(252, 248, 242, 0.88) 0%,
-      rgba(240, 232, 220, 0.86) 45%,
-      rgba(230, 220, 206, 0.88) 100%
+      rgba(252, 248, 242, 0.9) 0%,
+      rgba(242, 234, 224, 0.88) 45%,
+      rgba(232, 222, 208, 0.9) 100%
     );
   pointer-events: none;
 }
