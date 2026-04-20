@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="/assets/hero-woonkamer.png" fetchpriority="high" />
-  <link rel="stylesheet" href="/styles.css?v=140" />
+  <link rel="stylesheet" href="/styles.css?v=141" />
 </head>
 <body>
   <header class="site-header">
@@ -515,14 +515,21 @@
         <div class="discover-spots">
           <article class="discover-spot">
             <figure class="discover-spot__media">
-              <img
-                src="/assets/discover-kasteel-guardamar-1.png"
-                alt="Zicht op het kasteel van Guardamar del Segura op de heuvel"
-                width="1200"
-                height="800"
-                loading="lazy"
-                decoding="async"
-              />
+              <button
+                type="button"
+                class="discover-spot__lightbox"
+                data-lightbox
+                aria-label="Foto vergroten: kasteel van Guardamar del Segura"
+              >
+                <img
+                  src="/assets/discover-kasteel-guardamar-1.png"
+                  alt="Zicht op het kasteel van Guardamar del Segura op de heuvel"
+                  width="1200"
+                  height="800"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
             </figure>
             <div class="discover-spot__body">
               <p>
@@ -533,14 +540,21 @@
           </article>
           <article class="discover-spot discover-spot--reverse">
             <figure class="discover-spot__media">
-              <img
-                src="/assets/discover-kasteel-guardamar-2.png"
-                alt="Houten wandelpad door de duinen richting zee bij Guardamar"
-                width="1200"
-                height="800"
-                loading="lazy"
-                decoding="async"
-              />
+              <button
+                type="button"
+                class="discover-spot__lightbox"
+                data-lightbox
+                aria-label="Foto vergroten: strand en duinen bij Guardamar"
+              >
+                <img
+                  src="/assets/discover-kasteel-guardamar-2.png"
+                  alt="Houten wandelpad door de duinen richting zee bij Guardamar"
+                  width="1200"
+                  height="800"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
             </figure>
             <div class="discover-spot__body">
               <h3>Strand van Ortigues</h3>
@@ -551,14 +565,21 @@
           </article>
           <article class="discover-spot" id="parque-reina-sofia" aria-labelledby="parque-home-title">
             <figure class="discover-spot__media">
-              <img
-                src="/assets/parque-reina-sofia-guardamar.png"
-                alt="Lagune en pijnbomen in Parque Reina Sofía, Guardamar del Segura"
-                width="1200"
-                height="800"
-                loading="lazy"
-                decoding="async"
-              />
+              <button
+                type="button"
+                class="discover-spot__lightbox"
+                data-lightbox
+                aria-label="Foto vergroten: Parque Reina Sofía, Guardamar"
+              >
+                <img
+                  src="/assets/parque-reina-sofia-guardamar.png"
+                  alt="Lagune en pijnbomen in Parque Reina Sofía, Guardamar del Segura"
+                  width="1200"
+                  height="800"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </button>
             </figure>
             <div class="discover-spot__body">
               <h3 id="parque-home-title">Parque Reina Sofía</h3>
@@ -640,6 +661,20 @@
       </div>
     </section>
   </main>
+
+  <div
+    class="lightbox"
+    id="lightbox"
+    hidden
+    role="dialog"
+    aria-modal="true"
+    aria-label="Vergrote foto"
+  >
+    <button type="button" class="lightbox-close" aria-label="Sluiten">×</button>
+    <button type="button" class="lightbox-nav lightbox-prev" aria-label="Vorige foto">‹</button>
+    <button type="button" class="lightbox-nav lightbox-next" aria-label="Volgende foto">›</button>
+    <img class="lightbox-img" src="" alt="" />
+  </div>
 
   <footer class="site-footer">
     <div class="footer-main">
@@ -749,5 +784,6 @@
   <script src="/scripts/highlights-carousel.js?v=5" defer></script>
   <script src="/scripts/video-modal.js?v=4" defer></script>
   <script src="/scripts/thought-bubble-reveal.js?v=1" defer></script>
+  <script src="/scripts/gallery-lightbox.js?v=2" defer></script>
 </body>
 </html>
