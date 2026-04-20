@@ -2419,6 +2419,29 @@ h2#voorzieningen-title {
 }
 
 /* ——— Contact ——— */
+/* Hero: slaapkamerfoto (afb 2) met zachte crème-overlay voor leesbaarheid. */
+.section.section--contact-hero {
+  position: relative;
+  isolation: isolate;
+  background-color: var(--cream);
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(250, 246, 240, 0.93) 0%,
+      rgba(250, 246, 240, 0.74) 40%,
+      rgba(250, 246, 240, 0.91) 100%
+    ),
+    url("/assets/contact-slaapkamer-bg.png");
+  background-size: cover, cover;
+  background-position: center 28%, center;
+  background-repeat: no-repeat, no-repeat;
+  border-bottom: 1px solid rgba(168, 107, 74, 0.1);
+}
+
+.section.section--contact-hero .contact-grid {
+  gap: clamp(1.5rem, 3vw, 2.25rem);
+}
+
 .contact-grid {
   display: grid;
   gap: 1.5rem;
