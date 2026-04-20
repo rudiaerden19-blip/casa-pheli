@@ -3,7 +3,6 @@
   <url><loc>https://www.casa-pheli.be/</loc><changefreq>monthly</changefreq><priority>1</priority></url>
   <url><loc>https://www.casa-pheli.be/galerij</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://www.casa-pheli.be/beschikbaarheid</loc><changefreq>weekly</changefreq><priority>0.95</priority></url>
-  <url><loc>https://www.casa-pheli.be/boeken</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://www.casa-pheli.be/gastenboek</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://www.casa-pheli.be/contact</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
 </urlset>
