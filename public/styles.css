@@ -1878,6 +1878,27 @@ button.btn {
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
+@media (max-width: 640px) {
+  .hosts-thought-bubble__balloon {
+    padding-bottom: 1.35rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .hosts-thought-bubble__cloud {
+    padding-bottom: 1rem;
+  }
+
+  .section--hosts .hosts-thought-bubble__text {
+    margin-bottom: 0.65rem;
+  }
+
+  .hosts-thought-bubble__attr {
+    margin-top: 0.2rem;
+    padding-bottom: 0.15rem;
+  }
+}
+
 .card {
   background: var(--white);
   border: 1px solid var(--line);
