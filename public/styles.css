@@ -3077,6 +3077,8 @@ h2#voorzieningen-title {
 .cp-cal-note {
   margin-top: calc(2.15rem + 3cm);
   min-height: 1.25rem;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .cp-cal-policies {
@@ -3084,7 +3086,9 @@ h2#voorzieningen-title {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 42rem;
+  width: 100%;
+  max-width: min(42rem, 100%);
+  box-sizing: border-box;
 }
 
 .cp-cal-policy-card {
@@ -3135,6 +3139,8 @@ h2#voorzieningen-title {
 }
 
 .cp-cal__month {
+  min-width: 0;
+  max-width: 100%;
   border-radius: var(--radius);
   border: 1px solid var(--line);
   background: rgba(255, 254, 251, 0.88);
@@ -3205,6 +3211,8 @@ button.cp-cal__day {
   font: inherit;
   cursor: pointer;
   width: 100%;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
   transition:
     background 0.15s ease,
     transform 0.12s ease,
@@ -3307,4 +3315,100 @@ button.cp-cal__day:focus-visible {
   font-size: 0.9rem;
   font-weight: 600;
   color: #b42318;
+}
+
+.cp-cal-cta {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.65rem 1rem;
+  padding-inline: max(0px, env(safe-area-inset-left, 0px)) max(0px, env(safe-area-inset-right, 0px));
+}
+
+.cp-cal-cta .btn {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 520px) {
+  .cp-cal-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cp-cal-cta .btn {
+    width: min(100%, 22rem);
+  }
+}
+
+/* Beschikbaarheid: phones + kleine tablets */
+@media (max-width: 640px) {
+  .section.section--calendar-intro,
+  .section.section--calendar {
+    padding-block: clamp(2.35rem, 7vw, 4rem);
+  }
+
+  .section--calendar-intro .page-intro {
+    max-width: none;
+  }
+
+  .cp-cal-toolbar-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cp-cal-toolbar-actions > .btn-primary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cp-cal-toolbar-user {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .cp-cal-toolbar-user .btn-ghost {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cp-cal-toolbar-email {
+    text-align: center;
+  }
+
+  .cp-cal__month {
+    padding: 0.9rem 0.55rem 1rem;
+  }
+
+  .cp-cal__days {
+    gap: 0.22rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .cp-cal__day,
+  .cp-cal__pad {
+    min-height: 2.15rem;
+    font-size: 0.78rem;
+  }
+
+  .cp-cal__days {
+    gap: 0.15rem;
+  }
+
+  .cp-cal-policy-card {
+    padding: 0.95rem 0.85rem 1rem;
+  }
+}
+
+/* iPad / tablet landscape: iets compactere maandrand indien nodig */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .cp-cal__month {
+    padding: 1rem 0.95rem 1.15rem;
+  }
 }
