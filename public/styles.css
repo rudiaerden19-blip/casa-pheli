@@ -2384,6 +2384,18 @@ h2#voorzieningen-title {
   }
 }
 
+.footer-logo {
+  display: block;
+  width: auto;
+  max-width: 2.85rem;
+  height: auto;
+  max-height: 3.5rem;
+  object-fit: contain;
+  border-radius: 9px;
+  margin: 0 0 0.6rem;
+  box-shadow: 0 1px 4px rgba(61, 52, 41, 0.12);
+}
+
 .footer-kicker {
   margin: 0 0 0.35rem;
   font-size: 0.68rem;
