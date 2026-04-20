@@ -134,7 +134,9 @@
             .then(function (r) {
               return parseJsonResponse(r).then(function (j) {
                 if (!r.ok) {
-                  throw new Error((j && j.error) || "HTTP " + r.status);
+                  var er = (j && j.error) || "HTTP " + r.status;
+                  var dt = (j && j.detail) || "";
+                  throw new Error(dt ? er + " — " + dt : er);
                 }
                 return j;
               });
@@ -253,10 +255,13 @@
             return parseJsonResponse(r2).then(function (j) {
               if (!r2.ok) {
                 var errKey = (j && j.error) || "";
+                var det = (j && j.detail) || "";
                 if (r2.status === 401 || /unauthorized/i.test(errKey)) {
                   throw new Error("Die code komt niet overeen met CALENDAR_ADMIN_TOKEN in Vercel.");
                 }
-                throw new Error(errKey || "Opslaan geweigerd (HTTP " + r2.status + ").");
+                var line = errKey || "Opslaan geweigerd (HTTP " + r2.status + ").";
+                if (det) line += " — " + det;
+                throw new Error(line);
               }
               return j;
             });

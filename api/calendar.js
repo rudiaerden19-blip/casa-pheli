@@ -1,11 +1,31 @@
 /**
  * GET  /api/calendar  — { booked: string[], configured: boolean }
  * POST /api/calendar  — body { booked: string[] }, Authorization: Bearer <CALENDAR_ADMIN_TOKEN>
- * Opslag: Vercel Blob (één JSON-bestand). Geen aparte betaalde database nodig.
+ * Opslag: Vercel Blob (één JSON-bestand). Gebruik @vercel/blob 2.x (past bij huidige Blob-API).
  */
 import { list, put } from "@vercel/blob";
 
 const CALENDAR_PATH = "casa-pheli/booking-calendar.json";
+
+function getBlobToken() {
+  const raw = process.env.BLOB_READ_WRITE_TOKEN;
+  if (typeof raw !== "string") return "";
+  let t = raw.trim();
+  if ((t.startsWith('"') && t.endsWith('"')) || (t.startsWith("'") && t.endsWith("'"))) {
+    t = t.slice(1, -1).trim();
+  }
+  return t;
+}
+
+function getAdminToken() {
+  const raw = process.env.CALENDAR_ADMIN_TOKEN;
+  if (typeof raw !== "string") return "";
+  let t = raw.trim();
+  if ((t.startsWith('"') && t.endsWith('"')) || (t.startsWith("'") && t.endsWith("'"))) {
+    t = t.slice(1, -1).trim();
+  }
+  return t;
+}
 
 function getRawBody(req) {
   return new Promise((resolve, reject) => {
@@ -24,12 +44,12 @@ function sendJson(res, status, obj) {
   res.end(body);
 }
 
-async function readCalendar(token) {
-  if (!token) {
+async function readCalendar(blobToken) {
+  if (!blobToken) {
     return { booked: [], configured: false };
   }
   try {
-    const { blobs } = await list({ prefix: "casa-pheli/", token, limit: 50 });
+    const { blobs } = await list({ prefix: "casa-pheli/", token: blobToken, limit: 50 });
     const hit = blobs.find((b) => b.pathname === CALENDAR_PATH);
     if (!hit) {
       return { booked: [], configured: true };
@@ -47,7 +67,7 @@ async function readCalendar(token) {
 }
 
 export default async function handler(req, res) {
-  const token = process.env.BLOB_READ_WRITE_TOKEN;
+  const blobToken = getBlobToken();
 
   if (req.method === "OPTIONS") {
     res.statusCode = 204;
@@ -57,19 +77,19 @@ export default async function handler(req, res) {
 
   if (req.method === "GET") {
     res.setHeader("Cache-Control", "no-store");
-    const data = await readCalendar(token);
+    const data = await readCalendar(blobToken);
     return sendJson(res, 200, data);
   }
 
   if (req.method === "POST") {
-    const expected = process.env.CALENDAR_ADMIN_TOKEN;
-    const auth = req.headers.authorization || "";
+    const expected = getAdminToken();
+    const auth = (req.headers.authorization || "").trim();
     if (!expected || auth !== `Bearer ${expected}`) {
       return sendJson(res, 401, { error: "Unauthorized" });
     }
-    if (!token) {
+    if (!blobToken) {
       return sendJson(res, 503, {
-        error: "Blob niet geconfigureerd. Voeg Vercel Blob toe (Storage) aan dit project.",
+        error: "Blob niet geconfigureerd. Zet BLOB_READ_WRITE_TOKEN in Environment Variables (Production).",
       });
     }
     const raw = await getRawBody(req);
@@ -88,20 +108,19 @@ export default async function handler(req, res) {
       updatedAt: new Date().toISOString(),
     });
     try {
-      // @vercel/blob server-put vereist access "public" (SDK); dat is los van "Private store" in het Vercel-dashboard.
       await put(CALENDAR_PATH, payload, {
-        access: "public",
-        token,
+        access: "private",
+        token: blobToken,
         addRandomSuffix: false,
         allowOverwrite: true,
         contentType: "application/json",
-        cacheControlMaxAge: 60,
       });
     } catch (e) {
+      const msg = e instanceof Error ? e.message : String(e);
       console.error("[calendar] put failed", e);
       return sendJson(res, 500, {
-        error:
-          "Kalender opslaan in Blob mislukt. Controleer BLOB_READ_WRITE_TOKEN en of de Blob-store aan dit project hangt. Details: Vercel → Logs.",
+        error: "Kalender opslaan in Blob mislukt.",
+        detail: msg.slice(0, 500),
       });
     }
     return sendJson(res, 200, { ok: true, booked });
