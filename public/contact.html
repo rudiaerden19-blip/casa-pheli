@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=187" />
+  <link rel="stylesheet" href="/styles.css?v=197" />
 </head>
 <body id="page-top">
   <header class="site-header">
@@ -68,6 +68,74 @@
               >
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--contact-request" aria-labelledby="contact-request-title">
+      <div class="wrap contact-request-layout">
+        <div class="contact-request-copy">
+          <h2 id="contact-request-title" class="contact-request-title">Vraag naar beschikbaarheid</h2>
+          <p class="contact-request-lead">
+            Wil je informatie over de beschikbaarheid? Vul je gegevens hieronder in — we beantwoorden je vragen zo snel
+            mogelijk.
+          </p>
+          <p class="contact-request-privacy">Je gegevens gebruiken we enkel om je vraag te beantwoorden.</p>
+        </div>
+        <div class="contact-request-form-wrap">
+          <form id="contact-request-form" class="contact-request-card">
+            <div class="contact-request-field">
+              <label for="cr-voornaam">Voornaam <span class="contact-request-req" aria-hidden="true">*</span></label>
+              <input
+                id="cr-voornaam"
+                name="voornaam"
+                type="text"
+                autocomplete="given-name"
+                required
+                placeholder="Voornaam"
+              />
+            </div>
+            <div class="contact-request-field">
+              <label for="cr-naam">Naam <span class="contact-request-req" aria-hidden="true">*</span></label>
+              <input id="cr-naam" name="naam" type="text" autocomplete="family-name" required placeholder="Familienaam" />
+            </div>
+            <div class="contact-request-field">
+              <label for="cr-email">E-mail <span class="contact-request-req" aria-hidden="true">*</span></label>
+              <input
+                id="cr-email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                inputmode="email"
+                required
+                placeholder="jouw@voorbeeld.be"
+              />
+            </div>
+            <div class="contact-request-field">
+              <label for="cr-tel">Telefoonnummer <span class="contact-request-req" aria-hidden="true">*</span></label>
+              <input
+                id="cr-tel"
+                name="telefoon"
+                type="tel"
+                autocomplete="tel"
+                inputmode="tel"
+                required
+                placeholder="Telefoonnummer"
+              />
+            </div>
+            <div class="contact-request-field">
+              <label for="cr-bericht">Uw vraag of bericht <span class="contact-request-req" aria-hidden="true">*</span></label>
+              <textarea
+                id="cr-bericht"
+                name="bericht"
+                rows="5"
+                required
+                placeholder="Typ hier je vraag over beschikbaarheid, verblijf, …"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn contact-request-submit">Verstuur aanvraag</button>
+            <p id="contact-request-status" class="contact-request-status" role="status" hidden></p>
+          </form>
         </div>
       </div>
     </section>
@@ -297,5 +365,6 @@
   <script src="/scripts/nav.js?v=2" defer></script>
   <script src="/scripts/scroll-top.js?v=2" defer></script>
   <script src="/scripts/legal-modals.js?v=1" defer></script>
+  <script src="/scripts/contact-request-form.js?v=1" defer></script>
 </body>
 </html>
