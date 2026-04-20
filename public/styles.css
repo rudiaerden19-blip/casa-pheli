@@ -592,12 +592,23 @@ a:hover {
   background-repeat: no-repeat, no-repeat;
 }
 
-/* Homepage: Ontdek omgeving — omgekeerde gradient t.o.v. Over ons */
+/* Homepage: Ontdek omgeving — zelfde zand + gradient als header */
 .section--discover {
-  background: linear-gradient(180deg, var(--cream) 0%, #d9cfc4 100%);
   border-top: none;
   border-bottom: 1px solid rgba(168, 107, 74, 0.14);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  background-color: var(--sand);
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(253, 250, 245, 0.86) 0%,
+      rgba(245, 237, 226, 0.8) 45%,
+      rgba(238, 228, 216, 0.84) 100%
+    ),
+    url("/assets/voorzieningen-achtergrond.png");
+  background-size: cover, cover;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
 }
 
 .section--discover h2,
