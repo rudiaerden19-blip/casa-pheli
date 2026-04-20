@@ -1671,8 +1671,10 @@ button.btn {
 }
 
 /* ——— Homepage: Voorzieningen ——— */
-.section--amenities h2 {
+.section--amenities h2,
+h2#voorzieningen-title {
   margin-bottom: 1.35rem;
+  color: var(--terracotta);
 }
 
 .amenities-grid {
