@@ -2460,7 +2460,7 @@ h2#voorzieningen-title {
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(168, 107, 74, 0.65);
+  color: #000;
 }
 
 .footer-labeled-item a {
