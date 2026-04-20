@@ -14,9 +14,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="/assets/hero-woonkamer.png" fetchpriority="high" />
-  <link rel="stylesheet" href="/styles.css?v=178" />
+  <link rel="stylesheet" href="/styles.css?v=186" />
 </head>
-<body>
+<body id="page-top">
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="/">
@@ -852,6 +852,16 @@
     </div>
   </footer>
 
+  <a
+    href="#page-top"
+    class="home-scroll-top"
+    id="home-scroll-top"
+    aria-label="Ga naar boven"
+  >
+    <span class="home-scroll-top__arrow" aria-hidden="true">↑</span>
+    <span class="home-scroll-top__text">Up</span>
+  </a>
+
   <div
     id="legal-modal-privacy"
     class="legal-modal"
@@ -1057,6 +1067,18 @@
     })();
   </script>
   <script src="/scripts/nav.js?v=2" defer></script>
+  <script>
+    (function () {
+      var btn = document.getElementById("home-scroll-top");
+      if (!btn) return;
+      function sync() {
+        var y = window.scrollY || document.documentElement.scrollTop || 0;
+        btn.classList.toggle("is-visible", y > 280);
+      }
+      sync();
+      window.addEventListener("scroll", sync, { passive: true });
+    })();
+  </script>
   <script src="/scripts/hero-slider.js" defer></script>
   <script src="/scripts/amenities-reveal.js?v=1" defer></script>
   <script src="/scripts/highlights-carousel.js?v=5" defer></script>
