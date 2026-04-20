@@ -3075,7 +3075,7 @@ h2#voorzieningen-title {
 }
 
 .cp-cal-note {
-  margin-top: 2.15rem;
+  margin-top: calc(2.15rem + 1cm);
   min-height: 1.25rem;
 }
 
