@@ -9,14 +9,15 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="/assets/logo-casa-pheli-header.jpg" fetchpriority="high" />
   <link rel="preload" as="image" href="/assets/galerij-hero-balkon.png" fetchpriority="high" />
-  <link rel="stylesheet" href="/styles.css?v=187" />
+  <link rel="stylesheet" href="/styles.css?v=205" />
 </head>
 <body id="page-top">
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="/">
-        <img class="brand-logo" src="/assets/logo-casa-pheli.jpg" alt="" width="790" height="1024" decoding="async" />
+        <img class="brand-logo" src="/assets/logo-casa-pheli-header.jpg" alt="" width="148" height="192" fetchpriority="high" decoding="async" />
         <span class="brand-text">Casa Pheli</span>
       </a>
       <button type="button" class="nav-toggle" data-nav-toggle aria-expanded="false" aria-controls="site-nav" aria-label="Menu openen">
@@ -67,22 +68,22 @@
         </p>
         <div class="gallery-grid">
           <button type="button" class="gallery-item" data-lightbox aria-label="Foto 1 vergroten">
-            <img src="/assets/gallery/galerij-01.png" alt="Woonkamer Casa Pheli" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="/assets/gallery/galerij-01.png" alt="Woonkamer Casa Pheli" loading="eager" fetchpriority="low" decoding="async" width="1200" height="800" />
           </button>
           <button type="button" class="gallery-item" data-lightbox aria-label="Foto 2 vergroten">
-            <img src="/assets/gallery/galerij-02.png" alt="Keuken Casa Pheli" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="/assets/gallery/galerij-02.png" alt="Keuken Casa Pheli" loading="eager" fetchpriority="low" decoding="async" width="1200" height="800" />
           </button>
           <button type="button" class="gallery-item" data-lightbox aria-label="Foto 3 vergroten">
-            <img src="/assets/gallery/galerij-03.png" alt="Slaapkamer Casa Pheli" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="/assets/gallery/galerij-03.png" alt="Slaapkamer Casa Pheli" loading="eager" fetchpriority="low" decoding="async" width="1200" height="800" />
           </button>
           <button type="button" class="gallery-item" data-lightbox aria-label="Foto 4 vergroten">
-            <img src="/assets/gallery/galerij-04.png" alt="Terras met uitzicht" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="/assets/gallery/galerij-04.png" alt="Terras met uitzicht" loading="eager" fetchpriority="low" decoding="async" width="1200" height="800" />
           </button>
           <button type="button" class="gallery-item" data-lightbox aria-label="Foto 5 vergroten">
-            <img src="/assets/gallery/galerij-05.png" alt="Complex en zwembad" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="/assets/gallery/galerij-05.png" alt="Complex en zwembad" loading="eager" fetchpriority="low" decoding="async" width="1200" height="800" />
           </button>
           <button type="button" class="gallery-item" data-lightbox aria-label="Foto 6 vergroten">
-            <img src="/assets/gallery/galerij-06.png" alt="Luchtfoto residentie" loading="lazy" decoding="async" width="1200" height="800" />
+            <img src="/assets/gallery/galerij-06.png" alt="Luchtfoto residentie" loading="eager" fetchpriority="low" decoding="async" width="1200" height="800" />
           </button>
           <button type="button" class="gallery-item" data-lightbox aria-label="Foto 7 vergroten">
             <img src="/assets/gallery/galerij-07.png" alt="Zwembad en palmbomen" loading="lazy" decoding="async" width="1200" height="800" />
@@ -157,11 +158,13 @@
         <div class="footer-col">
           <img
             class="footer-logo"
-            src="/assets/logo-casa-pheli.jpg"
+            src="/assets/logo-casa-pheli-header.jpg"
             alt=""
-            width="790"
-            height="1024"
+            width="148"
+            height="192"
+            loading="lazy"
             decoding="async"
+            fetchpriority="low"
           />
           <p class="footer-kicker">Vakantie aan de Costa Blanca</p>
           <p class="footer-brand-title">Casa Pheli</p>
