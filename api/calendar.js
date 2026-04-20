@@ -3,7 +3,7 @@
  * POST /api/calendar  — body { booked: string[] }, Authorization: Bearer <CALENDAR_ADMIN_TOKEN>
  * Opslag: Vercel Blob (één JSON-bestand). Gebruik @vercel/blob 2.x (past bij huidige Blob-API).
  */
-import { list, put } from "@vercel/blob";
+import { get, put } from "@vercel/blob";
 
 const CALENDAR_PATH = "casa-pheli/booking-calendar.json";
 
@@ -44,25 +44,46 @@ function sendJson(res, status, obj) {
   res.end(body);
 }
 
+async function getCalendarJson(blobToken, access) {
+  const result = await get(CALENDAR_PATH, {
+    access,
+    token: blobToken,
+    useCache: false,
+  });
+  if (!result || result.statusCode !== 200 || !result.stream) {
+    return null;
+  }
+  const text = await new Response(result.stream).text();
+  return JSON.parse(text);
+}
+
 async function readCalendar(blobToken) {
   if (!blobToken) {
     return { booked: [], configured: false };
   }
   try {
-    const { blobs } = await list({ prefix: "casa-pheli/", token: blobToken, limit: 50 });
-    const hit = blobs.find((b) => b.pathname === CALENDAR_PATH);
-    if (!hit) {
+    // Private blobs vereisen get() met token; blote fetch(url) geeft 403 → lege kalender na afmelden.
+    let j = null;
+    try {
+      j = await getCalendarJson(blobToken, "private");
+    } catch {
+      /* private-pad faalt bv. bij ontbrekend bestand */
+    }
+    if (!j) {
+      try {
+        j = await getCalendarJson(blobToken, "public");
+      } catch {
+        /* geen legacy public-bestand */
+      }
+    }
+    if (!j) {
       return { booked: [], configured: true };
     }
-    const r = await fetch(hit.url, { cache: "no-store" });
-    if (!r.ok) {
-      return { booked: [], configured: true };
-    }
-    const j = await r.json();
     const booked = Array.isArray(j.booked) ? j.booked.filter((d) => /^\d{4}-\d{2}-\d{2}$/.test(d)) : [];
     return { booked, configured: true, updatedAt: j.updatedAt || null };
-  } catch {
-    return { booked: [], configured: false };
+  } catch (e) {
+    console.error("[calendar] read failed", e);
+    return { booked: [], configured: true };
   }
 }
 
