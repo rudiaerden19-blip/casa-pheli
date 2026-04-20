@@ -174,7 +174,7 @@
               "Nog <strong>geen opslag</strong> gekoppeld (geen Vercel Blob-token). Alle dagen tonen als vrij. " +
               "In Vercel: <strong>Storage → Blob</strong> een store maken (past meestal in het gratis Vercel-plafond bij weinig data). " +
               "Zet ook <code>CALENDAR_ADMIN_TOKEN</code> (eigen geheime code) in Environment Variables en deploy opnieuw. " +
-              "Daarna verschijnt <strong>Beheer (vakjes kleuren)</strong>.";
+              "Daarna verschijnt de knop <strong>Beheer</strong>.";
           }
           if (btnOpen) btnOpen.hidden = true;
           if (statusEl) statusEl.textContent = "";

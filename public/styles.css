@@ -2,6 +2,8 @@
   --cream: #faf6f0;
   --sand: #ebe3d8;
   --sand-deep: #d4c9bb;
+  --terracotta-cal: #c47d5e;
+  --terracotta-cal-deep: #9a5a3f;
   --earth: #3d3429;
   --earth-soft: #5c4f42;
   --terracotta: #a86b4a;
@@ -3068,12 +3070,12 @@ h2#voorzieningen-title {
 }
 
 .cp-cal-legend__swatch--booked {
-  background: linear-gradient(180deg, var(--sand) 0%, var(--sand-deep) 100%);
-  border-color: rgba(168, 107, 74, 0.28);
+  background: linear-gradient(180deg, var(--terracotta-cal) 0%, var(--terracotta) 45%, var(--terracotta-cal-deep) 100%);
+  border-color: rgba(149, 90, 63, 0.45);
 }
 
 .cp-cal-note {
-  margin-top: 1rem;
+  margin-top: 2.15rem;
   min-height: 1.25rem;
 }
 
@@ -3149,9 +3151,10 @@ h2#voorzieningen-title {
 }
 
 .cp-cal__day--booked {
-  background: linear-gradient(180deg, var(--sand) 0%, var(--sand-deep) 100%);
-  color: var(--earth);
-  border-color: rgba(168, 107, 74, 0.35);
+  background: linear-gradient(180deg, var(--terracotta-cal) 0%, var(--terracotta) 48%, var(--terracotta-cal-deep) 100%);
+  color: #fffaf6;
+  border-color: rgba(149, 90, 63, 0.5);
+  text-shadow: 0 1px 0 rgba(61, 52, 41, 0.12);
 }
 
 button.cp-cal__day {
@@ -3165,7 +3168,7 @@ button.cp-cal__day {
 }
 
 button.cp-cal__day:hover {
-  border-color: rgba(168, 107, 74, 0.45);
+  border-color: rgba(149, 90, 63, 0.55);
   transform: translateY(-1px);
 }
 
@@ -3216,6 +3219,7 @@ button.cp-cal__day:focus-visible {
 
 .cp-cal-toolbar {
   margin-top: 1.25rem;
+  margin-bottom: 0.35rem;
   display: flex;
   flex-direction: column;
   gap: 0.85rem;
