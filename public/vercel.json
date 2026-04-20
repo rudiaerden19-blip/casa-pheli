@@ -1,4 +1,12 @@
 {
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "casa-pheli.be" }],
+      "destination": "https://www.casa-pheli.be/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/galerij", "destination": "/galerij.html" },
     { "source": "/boeken", "destination": "/boeken.html" },
