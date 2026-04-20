@@ -2353,6 +2353,56 @@ h2#voorzieningen-title {
   color: var(--earth);
 }
 
+.gb-reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin: 0 0 1.5rem;
+  max-width: min(46rem, 100%);
+}
+
+.gb-review {
+  margin: 0;
+  padding: 1.2rem 1.35rem 1.05rem;
+  background: var(--white);
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--terracotta);
+  box-shadow: var(--shadow);
+}
+
+.gb-review__text {
+  margin: 0;
+  font-style: italic;
+  color: var(--earth-soft);
+  line-height: 1.65;
+  font-size: 0.98rem;
+}
+
+.gb-review__author {
+  margin: 0.75rem 0 0;
+  padding: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-style: normal;
+  color: var(--earth);
+}
+
+.gb-review__stars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.12rem;
+  margin-top: 0.55rem;
+  font-size: 1.15rem;
+  line-height: 1;
+  color: var(--gold);
+  filter: drop-shadow(0 1px 0 rgba(61, 52, 41, 0.06));
+}
+
+.gb-review__stars .gb-star {
+  user-select: none;
+}
+
 .note {
   margin-top: 1.5rem;
   padding: 1rem 1.15rem;
@@ -2361,6 +2411,10 @@ h2#voorzieningen-title {
   border-radius: var(--radius);
   font-size: 0.95rem;
   color: var(--earth-soft);
+}
+
+.note.gb-mail-note {
+  margin-top: clamp(1.75rem, 5vw, 2.75rem);
 }
 
 /* ——— Contact ——— */
