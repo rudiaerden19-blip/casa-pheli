@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Boeken — Casa Pheli</title>
-  <meta name="description" content="Boeken en reservatie voor Casa Pheli per e-mail. Bekijk eerst de kalender op Beschikbaarheid." />
+  <title>Beschikbaarheid — Casa Pheli</title>
+  <meta name="description" content="Beschikbaarheid Casa Pheli: kalender per maand. Zandkleur = niet vrij; lege dag = vrij. Reservatie per e-mail." />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -24,8 +24,8 @@
       <nav id="site-nav" class="site-nav" data-site-nav>
         <a href="/">Home</a>
         <a href="/galerij">Galerij</a>
-        <a href="/beschikbaarheid">Beschikbaarheid</a>
-        <a href="/boeken" aria-current="page">Boeken</a>
+        <a href="/beschikbaarheid" aria-current="page">Beschikbaarheid</a>
+        <a href="/boeken">Boeken</a>
         <a href="/gastenboek">Gastenboek</a>
         <a href="/contact">Contact</a>
       </nav>
@@ -33,32 +33,32 @@
   </header>
 
   <main>
-    <section class="section">
+    <section class="section section--calendar-intro">
       <div class="wrap">
-        <h1 class="page-title">Boeken</h1>
+        <h1 class="page-title">Beschikbaarheid</h1>
         <p class="page-intro">
-          Op de pagina <a href="/beschikbaarheid">Beschikbaarheid</a> vind je een <strong>indicatieve kalender</strong> (maand per
-          maand). Reserveren gebeurt <strong>persoonlijk per e-mail</strong> — zo stemmen we alles rustig met je af.
+          Onderstaande kalender toont <strong>18 maanden</strong> (vanaf vandaag). Een reservatie is pas definitief na
+          <strong>persoonlijke bevestiging</strong> per e-mail — deze weergave is een indicatie.
         </p>
-
-        <div class="card" style="max-width: 40rem">
-          <h3>Wat vermeld je best in je mail?</h3>
-          <ul style="margin: 0.5rem 0 0; padding-left: 1.2rem; color: var(--earth-soft)">
-            <li>Gewenste <strong>aankomst-</strong> en <strong>vertrekdatum</strong></li>
-            <li><strong>Aantal personen</strong> (volwassenen / kinderen)</li>
-            <li>Eventuele <strong>vragen</strong> over het appartement of het verblijf</li>
-          </ul>
+        <div class="cp-cal-legend" aria-label="Legenda">
+          <div class="cp-cal-legend__item">
+            <span class="cp-cal-legend__swatch cp-cal-legend__swatch--free" aria-hidden="true"></span>
+            <span><strong>Vrij</strong> — dag niet gemarkeerd als bezet</span>
+          </div>
+          <div class="cp-cal-legend__item">
+            <span class="cp-cal-legend__swatch cp-cal-legend__swatch--booked" aria-hidden="true"></span>
+            <span><strong>Niet vrij</strong> — zandkleur (reeds ingepland of geblokkeerd door de verhuurder)</span>
+          </div>
         </div>
-
-        <p style="margin-top: 1.75rem">
-          <a
-            class="btn btn-primary"
-            href="mailto:heidi.torfs@outlook.be?subject=Beschikbaarheid%20Casa%20Pheli&body=Beste%2C%0A%0AIk%20wil%20graag%20informatie%20over%20beschikbaarheid%20voor%20Casa%20Pheli.%0A%0A-%20Aankomst%20%28datum%29%3A%20%0A-%20Vertrek%20%28datum%29%3A%20%0A-%20Aantal%20personen%3A%20%0A%0AMet%20vriendelijke%20groet%2C"
-            >Mail naar de verhuurder</a
-          >
-        </p>
-        <p class="note" style="margin-top: 1.25rem; max-width: 40rem">
-          Je bericht gaat naar <strong>heidi.torfs@outlook.be</strong>. Wij streven ernaar zo spoedig mogelijk te antwoorden.
+        <p class="note cp-cal-note" id="cp-cal-status" role="status" aria-live="polite"></p>
+      </div>
+    </section>
+    <section class="section section--alt section--calendar" aria-label="Kalendermatrix">
+      <div class="wrap">
+        <div id="cp-cal-root" class="cp-cal"></div>
+        <p class="cp-cal-cta" style="margin-top: 2rem; text-align: center">
+          <a class="btn btn-primary" href="/boeken">Boeken of mailen</a>
+          <a class="btn btn-ghost" href="/contact">Contact</a>
         </p>
       </div>
     </section>
@@ -277,5 +277,7 @@
   <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
   <script src="/scripts/nav.js?v=2" defer></script>
   <script src="/scripts/legal-modals.js?v=1" defer></script>
+  <script src="/scripts/calendar-core.js?v=1"></script>
+  <script src="/scripts/beschikbaarheid.js?v=1" defer></script>
 </body>
 </html>

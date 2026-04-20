@@ -3032,3 +3032,184 @@ h2#voorzieningen-title {
     grid-template-columns: repeat(auto-fill, minmax(min(100%, 220px), 1fr));
   }
 }
+
+/* ——— Beschikbaarheidskalender (publiek + beheer) ——— */
+.section--calendar-intro .cp-cal-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.75rem;
+  margin-top: 1.25rem;
+  padding: 1rem 1.15rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: rgba(255, 254, 251, 0.75);
+  box-shadow: var(--shadow);
+}
+
+.cp-cal-legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.92rem;
+  color: var(--earth-soft);
+}
+
+.cp-cal-legend__swatch {
+  width: 1.65rem;
+  height: 1.65rem;
+  border-radius: 8px;
+  flex-shrink: 0;
+  border: 1px solid rgba(61, 52, 41, 0.12);
+}
+
+.cp-cal-legend__swatch--free {
+  background: rgba(255, 254, 251, 0.95);
+  box-shadow: inset 0 0 0 1px rgba(168, 107, 74, 0.12);
+}
+
+.cp-cal-legend__swatch--booked {
+  background: linear-gradient(180deg, var(--sand) 0%, var(--sand-deep) 100%);
+  border-color: rgba(168, 107, 74, 0.28);
+}
+
+.cp-cal-note {
+  margin-top: 1rem;
+  min-height: 1.25rem;
+}
+
+.section--calendar {
+  padding-top: 2rem;
+  padding-bottom: 2.75rem;
+}
+
+.cp-cal {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.cp-cal__month {
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: rgba(255, 254, 251, 0.88);
+  box-shadow: 0 8px 28px rgba(61, 52, 41, 0.06);
+  padding: 1.1rem 1.15rem 1.25rem;
+}
+
+.cp-cal__month-title {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 3.2vw, 1.65rem);
+  font-weight: 600;
+  color: var(--terracotta);
+}
+
+.cp-cal__weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.25rem;
+  margin-bottom: 0.35rem;
+}
+
+.cp-cal__weekday {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--earth-soft);
+  text-align: center;
+  padding: 0.2rem 0;
+}
+
+.cp-cal__days {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 0.35rem;
+}
+
+.cp-cal__pad {
+  min-height: 2.65rem;
+}
+
+.cp-cal__day {
+  min-height: 2.65rem;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 1px solid rgba(61, 52, 41, 0.1);
+  box-sizing: border-box;
+}
+
+.cp-cal__day--free {
+  background: rgba(255, 254, 251, 0.98);
+  color: var(--earth);
+}
+
+.cp-cal__day--booked {
+  background: linear-gradient(180deg, var(--sand) 0%, var(--sand-deep) 100%);
+  color: var(--earth);
+  border-color: rgba(168, 107, 74, 0.35);
+}
+
+button.cp-cal__day {
+  font: inherit;
+  cursor: pointer;
+  width: 100%;
+  transition:
+    background 0.15s ease,
+    transform 0.12s ease,
+    border-color 0.15s ease;
+}
+
+button.cp-cal__day:hover {
+  border-color: rgba(168, 107, 74, 0.45);
+  transform: translateY(-1px);
+}
+
+button.cp-cal__day:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 2px;
+}
+
+.cp-cal-admin-label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.88rem;
+  margin-bottom: 0.35rem;
+  color: var(--earth-soft);
+}
+
+.cp-cal-admin-input {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0.65rem 0.75rem;
+  border-radius: 10px;
+  border: 1px solid rgba(61, 52, 41, 0.18);
+  font: inherit;
+  font-size: 1rem;
+  background: rgba(255, 254, 251, 0.95);
+}
+
+.cp-cal-admin-card code {
+  font-size: 0.85em;
+  padding: 0.08rem 0.28rem;
+  border-radius: 4px;
+  background: rgba(168, 107, 74, 0.1);
+  color: var(--earth);
+}
+
+@media (max-width: 520px) {
+  .cp-cal__day,
+  .cp-cal__pad {
+    min-height: 2.35rem;
+    font-size: 0.82rem;
+  }
+
+  .cp-cal__weekday {
+    font-size: 0.65rem;
+  }
+}

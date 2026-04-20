@@ -10,6 +10,8 @@
   "rewrites": [
     { "source": "/galerij", "destination": "/galerij.html" },
     { "source": "/boeken", "destination": "/boeken.html" },
+    { "source": "/beschikbaarheid", "destination": "/beschikbaarheid.html" },
+    { "source": "/beheer/kalender", "destination": "/beheer/kalender.html" },
     { "source": "/gastenboek", "destination": "/gastenboek.html" },
     { "source": "/contact", "destination": "/contact.html" }
   ],
@@ -28,6 +30,14 @@
     },
     {
       "source": "/boeken",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
+    },
+    {
+      "source": "/beschikbaarheid",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
+    },
+    {
+      "source": "/beheer/kalender",
       "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
     },
     {

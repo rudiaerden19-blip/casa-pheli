@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>Boeken — Casa Pheli</title>
-  <meta name="description" content="Boeken en reservatie voor Casa Pheli per e-mail. Bekijk eerst de kalender op Beschikbaarheid." />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Beheer — kalender — Casa Pheli</title>
+  <meta name="description" content="Interne beheerpagina voor de beschikbaarheidskalender van Casa Pheli." />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,7 +26,7 @@
         <a href="/">Home</a>
         <a href="/galerij">Galerij</a>
         <a href="/beschikbaarheid">Beschikbaarheid</a>
-        <a href="/boeken" aria-current="page">Boeken</a>
+        <a href="/boeken">Boeken</a>
         <a href="/gastenboek">Gastenboek</a>
         <a href="/contact">Contact</a>
       </nav>
@@ -33,33 +34,50 @@
   </header>
 
   <main>
-    <section class="section">
+    <section class="section section--calendar-intro">
       <div class="wrap">
-        <h1 class="page-title">Boeken</h1>
-        <p class="page-intro">
-          Op de pagina <a href="/beschikbaarheid">Beschikbaarheid</a> vind je een <strong>indicatieve kalender</strong> (maand per
-          maand). Reserveren gebeurt <strong>persoonlijk per e-mail</strong> — zo stemmen we alles rustig met je af.
+        <h1 class="page-title">Beheer: beschikbaarheid</h1>
+        <p class="page-intro cp-cal-admin-intro">
+          Deze pagina is <strong>alleen voor de verhuurder</strong>. Klik op dagen om ze te markeren als
+          <strong>niet vrij</strong> (zandkleur) of weer <strong>vrij</strong>. Daarna op
+          <strong>Opslaan</strong> — de publieke <a href="/beschikbaarheid">beschikbaarheidspagina</a> leest dezelfde
+          data via de server.
         </p>
-
-        <div class="card" style="max-width: 40rem">
-          <h3>Wat vermeld je best in je mail?</h3>
-          <ul style="margin: 0.5rem 0 0; padding-left: 1.2rem; color: var(--earth-soft)">
-            <li>Gewenste <strong>aankomst-</strong> en <strong>vertrekdatum</strong></li>
-            <li><strong>Aantal personen</strong> (volwassenen / kinderen)</li>
-            <li>Eventuele <strong>vragen</strong> over het appartement of het verblijf</li>
-          </ul>
+        <div class="card cp-cal-admin-card" style="max-width: 36rem">
+          <label class="cp-cal-admin-label" for="cp-cal-token">Beheercode</label>
+          <input
+            id="cp-cal-token"
+            class="cp-cal-admin-input"
+            type="password"
+            autocomplete="current-password"
+            placeholder="Zelfde waarde als CALENDAR_ADMIN_TOKEN op Vercel"
+          />
+          <p class="note" style="margin-top: 0.65rem; margin-bottom: 0">
+            In Vercel: <strong>Project → Settings → Environment Variables</strong>: voeg
+            <code>CALENDAR_ADMIN_TOKEN</code> toe (een sterk geheim) en koppel
+            <strong>Blob storage</strong> zodat <code>BLOB_READ_WRITE_TOKEN</code> bestaat. Herdeploy daarna.
+          </p>
         </div>
-
-        <p style="margin-top: 1.75rem">
-          <a
-            class="btn btn-primary"
-            href="mailto:heidi.torfs@outlook.be?subject=Beschikbaarheid%20Casa%20Pheli&body=Beste%2C%0A%0AIk%20wil%20graag%20informatie%20over%20beschikbaarheid%20voor%20Casa%20Pheli.%0A%0A-%20Aankomst%20%28datum%29%3A%20%0A-%20Vertrek%20%28datum%29%3A%20%0A-%20Aantal%20personen%3A%20%0A%0AMet%20vriendelijke%20groet%2C"
-            >Mail naar de verhuurder</a
-          >
+        <div class="cp-cal-legend" aria-label="Legenda" style="margin-top: 1.5rem">
+          <div class="cp-cal-legend__item">
+            <span class="cp-cal-legend__swatch cp-cal-legend__swatch--free" aria-hidden="true"></span>
+            <span><strong>Vrij</strong></span>
+          </div>
+          <div class="cp-cal-legend__item">
+            <span class="cp-cal-legend__swatch cp-cal-legend__swatch--booked" aria-hidden="true"></span>
+            <span><strong>Niet vrij</strong> (zand)</span>
+          </div>
+        </div>
+        <p class="note cp-cal-note" id="cp-cal-status" role="status" aria-live="polite"></p>
+        <p style="margin-top: 1rem">
+          <button type="button" class="btn btn-primary" id="cp-cal-save">Opslaan op server</button>
+          <a class="btn btn-ghost" href="/beschikbaarheid">Publieke kalender</a>
         </p>
-        <p class="note" style="margin-top: 1.25rem; max-width: 40rem">
-          Je bericht gaat naar <strong>heidi.torfs@outlook.be</strong>. Wij streven ernaar zo spoedig mogelijk te antwoorden.
-        </p>
+      </div>
+    </section>
+    <section class="section section--alt section--calendar" aria-label="Kalendermatrix beheer">
+      <div class="wrap">
+        <div id="cp-cal-root" class="cp-cal"></div>
       </div>
     </section>
   </main>
@@ -277,5 +295,7 @@
   <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
   <script src="/scripts/nav.js?v=2" defer></script>
   <script src="/scripts/legal-modals.js?v=1" defer></script>
+  <script src="/scripts/calendar-core.js?v=1"></script>
+  <script src="/scripts/beheer-kalender.js?v=1" defer></script>
 </body>
 </html>
