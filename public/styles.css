@@ -552,19 +552,19 @@ a:hover {
   background:
     linear-gradient(
       180deg,
-      rgba(252, 248, 242, 0.72) 0%,
-      transparent 22%
+      rgba(252, 248, 242, 0.48) 0%,
+      transparent 18%
     ),
     linear-gradient(
       0deg,
-      rgba(230, 220, 206, 0.68) 0%,
-      transparent 26%
+      rgba(230, 220, 206, 0.46) 0%,
+      transparent 22%
     ),
     linear-gradient(
       180deg,
-      rgba(252, 248, 242, 0.9) 0%,
-      rgba(242, 234, 224, 0.88) 45%,
-      rgba(232, 222, 208, 0.9) 100%
+      rgba(252, 248, 242, 0.72) 0%,
+      rgba(242, 234, 224, 0.68) 45%,
+      rgba(232, 222, 208, 0.72) 100%
     );
   pointer-events: none;
 }
