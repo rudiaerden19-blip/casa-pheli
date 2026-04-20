@@ -3474,7 +3474,8 @@ button.cp-cal__day:focus-visible {
   color: #b42318;
 }
 
-.cp-cal-cta {
+/* Specifieker dan .section p { margin: … } — anders wordt margin-top op de <p> teruggezet naar 0. */
+.section.section--calendar .cp-cal-cta {
   margin-top: calc(2rem + 1cm);
   display: flex;
   flex-wrap: wrap;
@@ -3484,7 +3485,7 @@ button.cp-cal__day:focus-visible {
   padding-inline: max(0px, env(safe-area-inset-left, 0px)) max(0px, env(safe-area-inset-right, 0px));
 }
 
-.cp-cal-cta .btn {
+.section.section--calendar .cp-cal-cta .btn {
   min-height: 44px;
   display: inline-flex;
   align-items: center;
@@ -3492,12 +3493,12 @@ button.cp-cal__day:focus-visible {
 }
 
 @media (max-width: 520px) {
-  .cp-cal-cta {
+  .section.section--calendar .cp-cal-cta {
     flex-direction: column;
     width: 100%;
   }
 
-  .cp-cal-cta .btn {
+  .section.section--calendar .cp-cal-cta .btn {
     width: min(100%, 22rem);
   }
 }
