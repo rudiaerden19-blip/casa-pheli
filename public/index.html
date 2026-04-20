@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="/assets/hero-woonkamer.png" fetchpriority="high" />
-  <link rel="stylesheet" href="/styles.css?v=187" />
+  <link rel="stylesheet" href="/styles.css?v=195" />
 </head>
 <body id="page-top">
   <header class="site-header">
@@ -205,7 +205,11 @@
       </div>
     </section>
 
-    <section class="section section--why section--highlights" aria-labelledby="highlights-title">
+    <section
+      id="highlights-section"
+      class="section section--why section--highlights"
+      aria-labelledby="highlights-title"
+    >
       <div class="wrap highlights-layout">
         <div class="highlights-copy">
           <div class="highlights-intro">
@@ -308,9 +312,9 @@
                 class="highlights-slider-lightbox"
                 data-lightbox
                 data-lightbox-group="highlights"
-                aria-label="Foto vergroten: Woonkamer Casa Pheli"
+                aria-label="Foto vergroten: Slaapkamer Casa Pheli"
               >
-                <img src="/assets/gallery/galerij-01.png" alt="Woonkamer Casa Pheli" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="/assets/gallery/galerij-03.png" alt="Slaapkamer Casa Pheli" width="1200" height="800" loading="lazy" decoding="async" />
               </button>
             </div>
             <div class="highlights-slider-slide">
@@ -319,9 +323,9 @@
                 class="highlights-slider-lightbox"
                 data-lightbox
                 data-lightbox-group="highlights"
-                aria-label="Foto vergroten: Slaapkamer Casa Pheli"
+                aria-label="Foto vergroten: Woonkamer Casa Pheli"
               >
-                <img src="/assets/gallery/galerij-03.png" alt="Slaapkamer Casa Pheli" width="1200" height="800" loading="lazy" decoding="async" />
+                <img src="/assets/gallery/galerij-01.png" alt="Woonkamer Casa Pheli" width="1200" height="800" loading="lazy" decoding="async" />
               </button>
             </div>
             <div class="highlights-slider-slide">
@@ -855,6 +859,7 @@
     href="#page-top"
     class="home-scroll-top"
     id="home-scroll-top"
+    data-hide-near="#highlights-section"
     aria-label="Ga naar boven"
   >
     <span class="home-scroll-top__arrow" aria-hidden="true">↑</span>
@@ -1066,7 +1071,7 @@
     })();
   </script>
   <script src="/scripts/nav.js?v=2" defer></script>
-  <script src="/scripts/scroll-top.js?v=1" defer></script>
+  <script src="/scripts/scroll-top.js?v=2" defer></script>
   <script src="/scripts/hero-slider.js" defer></script>
   <script src="/scripts/amenities-reveal.js?v=1" defer></script>
   <script src="/scripts/highlights-carousel.js?v=5" defer></script>
