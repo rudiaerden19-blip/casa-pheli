@@ -2483,7 +2483,7 @@ h2#voorzieningen-title {
   letter-spacing: 0.01em;
 }
 
-.contact-request-lead {
+.section.section--contact-request .contact-request-lead {
   margin: 0 0 1.25rem;
   font-size: 1.02rem;
   line-height: 1.65;
@@ -2491,7 +2491,7 @@ h2#voorzieningen-title {
   max-width: 38ch;
 }
 
-.contact-request-privacy {
+.section.section--contact-request .contact-request-privacy {
   margin: 0;
   font-size: 0.92rem;
   line-height: 1.55;
@@ -2602,7 +2602,8 @@ h2#voorzieningen-title {
   outline-offset: 3px;
 }
 
-.contact-request-status {
+.section.section--contact-request .contact-request-status {
+  max-width: none;
   margin: 1rem 0 0;
   font-size: 0.92rem;
   line-height: 1.5;
