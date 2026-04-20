@@ -2405,6 +2405,15 @@ h2#voorzieningen-title {
   font-size: 0.94rem;
 }
 
+.footer-credit {
+  margin: 0.75rem 0 0;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--terracotta);
+  opacity: 0.92;
+}
+
 .footer-bar {
   background: var(--sand-deep);
   border-top: 1px solid rgba(168, 107, 74, 0.2);
