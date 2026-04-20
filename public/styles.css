@@ -2442,6 +2442,32 @@ h2#voorzieningen-title {
   gap: clamp(1.5rem, 3vw, 2.25rem);
 }
 
+.contact-card-cta-wrap {
+  margin: 0 0 0.25rem;
+}
+
+.contact-card-links {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.55rem;
+}
+
+.contact-card-links a {
+  font-weight: 600;
+  color: var(--earth);
+  text-decoration: none;
+}
+
+.contact-card-links a:hover {
+  color: var(--terracotta-hover);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .contact-grid {
   display: grid;
   gap: 1.5rem;
