@@ -3213,3 +3213,50 @@ button.cp-cal__day:focus-visible {
     font-size: 0.65rem;
   }
 }
+
+.cp-cal-toolbar {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.cp-cal-toolbar-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.cp-cal-toolbar-user {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.cp-cal-toolbar-email {
+  font-weight: 600;
+  color: var(--earth-soft);
+  font-size: 0.92rem;
+}
+
+.cp-cal-setup-hint {
+  max-width: 62ch;
+  line-height: 1.55;
+}
+
+.cp-cal-setup-hint code {
+  font-size: 0.88em;
+  padding: 0.08rem 0.28rem;
+  border-radius: 4px;
+  background: rgba(168, 107, 74, 0.1);
+  color: var(--earth);
+}
+
+.cp-login-error {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #b42318;
+}

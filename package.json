@@ -3,9 +3,6 @@
   "private": true,
   "type": "module",
   "description": "Statische site Casa Pheli — deploy vanuit deze map op Vercel.",
-  "dependencies": {
-    "@vercel/blob": "^0.27.1"
-  },
   "scripts": {
     "build": "node -e \"import('fs/promises').then(fs=>fs.access('public/index.html')).then(()=>console.log('casa-pheli-web: build OK')).catch(e=>{console.error(e);process.exit(1)})\""
   }

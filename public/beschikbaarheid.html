@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=178" />
+  <link rel="stylesheet" href="/styles.css?v=179" />
 </head>
 <body>
   <header class="site-header">
@@ -48,6 +48,18 @@
           <div class="cp-cal-legend__item">
             <span class="cp-cal-legend__swatch cp-cal-legend__swatch--booked" aria-hidden="true"></span>
             <span><strong>Niet vrij</strong> — zandkleur (reeds ingepland of geblokkeerd door de verhuurder)</span>
+          </div>
+        </div>
+        <div class="cp-cal-toolbar">
+          <p class="note cp-cal-setup-hint" id="cp-cal-setup-hint" hidden></p>
+          <div class="cp-cal-toolbar-actions">
+            <button type="button" class="btn btn-primary" id="cp-cal-login-open" hidden>
+              Inloggen (verhuurder)
+            </button>
+            <div id="cp-cal-toolbar-user" class="cp-cal-toolbar-user" hidden>
+              <span class="cp-cal-toolbar-email" id="cp-cal-toolbar-email"></span>
+              <button type="button" class="btn btn-ghost" id="cp-cal-logout">Afmelden</button>
+            </div>
           </div>
         </div>
         <p class="note cp-cal-note" id="cp-cal-status" role="status" aria-live="polite"></p>
@@ -247,6 +259,54 @@
   </div>
 
   <div
+    id="cp-login-modal"
+    class="legal-modal"
+    hidden
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="cp-login-title"
+  >
+    <div class="legal-modal__backdrop" data-cp-login-close tabindex="-1"></div>
+    <div class="legal-modal__dialog">
+      <button type="button" class="legal-modal__close" data-cp-login-close aria-label="Sluiten">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="legal-modal__body">
+        <h2 id="cp-login-title">Inloggen als verhuurder</h2>
+        <p class="note" id="cp-login-lead">
+          Gebruik het <strong>e-mailadres en wachtwoord</strong> van het account dat je in Supabase onder
+          <strong>Authentication → Users</strong> hebt aangemaakt.
+        </p>
+        <form id="cp-login-form">
+          <label class="cp-cal-admin-label" for="cp-login-email">E-mail</label>
+          <input
+            id="cp-login-email"
+            class="cp-cal-admin-input"
+            type="email"
+            name="email"
+            autocomplete="username"
+            required
+          />
+          <label class="cp-cal-admin-label" for="cp-login-password" style="margin-top: 0.75rem">Wachtwoord</label>
+          <input
+            id="cp-login-password"
+            class="cp-cal-admin-input"
+            type="password"
+            name="password"
+            autocomplete="current-password"
+            required
+          />
+          <p id="cp-login-error" class="cp-login-error" role="alert" hidden></p>
+          <p style="margin-top: 1.15rem; display: flex; flex-wrap: wrap; gap: 0.5rem">
+            <button type="submit" class="btn btn-primary">Inloggen</button>
+            <button type="button" class="btn btn-ghost" data-cp-login-close>Annuleren</button>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div
     id="cookie-banner"
     class="cookie-banner"
     hidden
@@ -278,6 +338,6 @@
   <script src="/scripts/nav.js?v=2" defer></script>
   <script src="/scripts/legal-modals.js?v=1" defer></script>
   <script src="/scripts/calendar-core.js?v=1"></script>
-  <script src="/scripts/beschikbaarheid.js?v=1" defer></script>
+  <script type="module" src="/scripts/beschikbaarheid-supabase.mjs?v=1"></script>
 </body>
 </html>
