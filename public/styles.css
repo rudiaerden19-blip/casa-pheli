@@ -1901,9 +1901,19 @@ button.btn {
 /* ——— Homepage: Voorzieningen ——— */
 .section--amenities h2,
 h2#voorzieningen-title {
-  margin-bottom: 1.35rem;
+  margin-bottom: 0.65rem;
   color: var(--terracotta);
   text-align: center;
+}
+
+.section.section--amenities .amenities-intro {
+  margin: 0 auto 1.75rem;
+  max-width: min(48ch, 100%);
+  text-align: center;
+  text-wrap: balance;
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: var(--earth-soft);
 }
 
 .amenities-grid {
