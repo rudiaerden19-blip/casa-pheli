@@ -2967,7 +2967,7 @@ h2#voorzieningen-title {
   line-height: 1;
 }
 
-/* Homepage: vaste link omhoog (pijl + “Up”) */
+/* Alle pagina’s: vaste link omhoog (pijl + “Up”) */
 .home-scroll-top {
   position: fixed;
   z-index: 250;
