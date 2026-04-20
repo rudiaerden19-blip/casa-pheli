@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="/assets/hero-woonkamer.png" fetchpriority="high" />
-  <link rel="stylesheet" href="/styles.css?v=148" />
+  <link rel="stylesheet" href="/styles.css?v=149" />
 </head>
 <body>
   <header class="site-header">
@@ -294,6 +294,27 @@
           </ul>
         </div>
         <div class="highlights-media">
+        <div class="highlights-video-stack">
+          <video
+            class="highlights-inline-video"
+            controls
+            playsinline
+            preload="metadata"
+            src="/assets/video/kijk-video.mp4"
+          >
+            <p>Je browser ondersteunt geen video.</p>
+          </video>
+          <div class="highlights-video-cta">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-video-modal-open
+              data-video-src="/assets/video/kijk-video.mp4"
+            >
+              Bekijk de video
+            </button>
+          </div>
+        </div>
         <div
           class="highlights-slider-viewport"
           data-highlights-carousel
@@ -415,16 +436,6 @@
           </div>
         </div>
         <p class="highlights-slider-hint" aria-hidden="true">Klik om te vergroten</p>
-        <div class="highlights-video-cta">
-          <button
-            type="button"
-            class="btn btn-primary"
-            data-video-modal-open
-            data-video-src="/assets/video/kijk-video.mp4"
-          >
-            Bekijk de video
-          </button>
-        </div>
         </div>
       </div>
     </section>
