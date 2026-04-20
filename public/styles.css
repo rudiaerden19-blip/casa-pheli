@@ -1377,17 +1377,59 @@ button.btn {
   box-sizing: border-box;
 }
 
+.highlights-slider-lightbox {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  font: inherit;
+  color: inherit;
+  cursor: zoom-in;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.highlights-slider-lightbox:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 3px;
+}
+
+.highlights-slider-lightbox:hover {
+  transform: scale(1.02);
+}
+
 .highlights-slider-slide img {
   display: block;
   width: 100%;
   height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  pointer-events: none;
+}
+
+.highlights-slider-hint {
+  margin: 0.45rem 0 0;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: var(--terracotta);
+  opacity: 0.92;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .highlights-slider-track {
     transition: none;
+  }
+
+  .highlights-slider-lightbox {
+    transition: none;
+  }
+
+  .highlights-slider-lightbox:hover {
+    transform: none;
   }
 }
 

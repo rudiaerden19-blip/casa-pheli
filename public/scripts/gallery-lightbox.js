@@ -7,11 +7,28 @@
   var prevBtn = root.querySelector(".lightbox-prev");
   var nextBtn = root.querySelector(".lightbox-next");
 
-  var items = Array.prototype.slice.call(document.querySelectorAll("[data-lightbox]"));
+  var items = [];
   var index = 0;
 
   function thumbFrom(item) {
     return item ? item.querySelector("img") : null;
+  }
+
+  /** Galerij zonder groep; homepage gebruikt o.a. discover / highlights. */
+  function itemsForGroupKey(key) {
+    if (!key || key === "__default__") {
+      return Array.prototype.slice.call(
+        document.querySelectorAll("[data-lightbox]:not([data-lightbox-group])")
+      );
+    }
+    return Array.prototype.slice.call(
+      document.querySelectorAll('[data-lightbox][data-lightbox-group="' + key + '"]')
+    );
+  }
+
+  function groupKeyFromButton(btn) {
+    var g = btn.getAttribute("data-lightbox-group");
+    return g == null || g === "" ? "__default__" : g;
   }
 
   function showAt(i) {
@@ -30,6 +47,13 @@
     closeBtn.focus();
   }
 
+  function openFromButton(btn) {
+    items = itemsForGroupKey(groupKeyFromButton(btn));
+    var i = items.indexOf(btn);
+    if (i < 0) return;
+    openAt(i);
+  }
+
   function close() {
     root.hidden = true;
     img.removeAttribute("src");
@@ -37,9 +61,9 @@
     document.body.style.overflow = "";
   }
 
-  items.forEach(function (btn, i) {
+  document.querySelectorAll("[data-lightbox]").forEach(function (btn) {
     btn.addEventListener("click", function () {
-      openAt(i);
+      openFromButton(btn);
     });
   });
 
