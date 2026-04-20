@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css?v=170" />
+  <link rel="stylesheet" href="/styles.css?v=171" />
 </head>
 <body>
   <header class="site-header">
@@ -92,7 +92,16 @@
           <h2 class="footer-heading">Juridisch</h2>
           <ul class="footer-link-list">
             <li><a href="/contact">Contact</a></li>
-            <li><a href="/contact">Privacy &amp; gegevens</a></li>
+            <li>
+              <button type="button" class="footer-legal-trigger" data-legal-modal-open="privacy">
+                Privacy &amp; gegevens
+              </button>
+            </li>
+            <li>
+              <button type="button" class="footer-legal-trigger" data-legal-modal-open="terms">
+                Algemene voorwaarden
+              </button>
+            </li>
           </ul>
         </div>
         <div class="footer-col">
@@ -114,7 +123,122 @@
       </div>
     </div>
   </footer>
+
+  <div
+    id="legal-modal-privacy"
+    class="legal-modal"
+    hidden
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="legal-modal-privacy-title"
+  >
+    <div class="legal-modal__backdrop" data-legal-modal-close tabindex="-1"></div>
+    <div class="legal-modal__dialog">
+      <button type="button" class="legal-modal__close" data-legal-modal-close aria-label="Sluiten">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="legal-modal__body">
+        <h2 id="legal-modal-privacy-title">Privacy &amp; gegevens</h2>
+        <p>
+          Casa Pheli gaat zorgvuldig om met persoonsgegevens. Op deze pagina leest u kort welke gegevens we
+          verwerken, waarom we dat doen en welke rechten u heeft. Voor specifieke vragen kunt u ons steeds
+          contacteren via de <a href="/contact">contactpagina</a>.
+        </p>
+        <h3>Verwerkingsverantwoordelijke</h3>
+        <p>
+          De verhuur van Casa Pheli (contactgegevens staan in de footer en op de contactpagina) bepaalt het
+          doel en de middelen van de verwerking van gegevens in het kader van uw aanvraag of boeking.
+        </p>
+        <h3>Welke gegevens</h3>
+        <p>
+          Afhankelijk van uw contact kunnen wij onder meer naam, voornaam, e-mailadres, telefoonnummer en de
+          inhoud van uw bericht verwerken. We verzamelen geen bijzondere categorieën gegevens via deze website.
+        </p>
+        <h3>Doeleinden en basis</h3>
+        <p>
+          Gegevens gebruiken we om uw vragen te beantwoorden, beschikbaarheid of reservaties op te volgen en
+          onze dienst als verhuurder uit te voeren. Dat gebeurt op basis van uw vraag (handelingen voor
+          sluiting van een overeenkomst) of ons gerechtvaardigd belang om professioneel te antwoorden.
+        </p>
+        <h3>Bewaartermijn</h3>
+        <p>
+          We bewaren gegevens niet langer dan nodig is voor deze doeleinden of dan wettelijk vereist is (o.a.
+          administratieve verplichtingen).
+        </p>
+        <h3>Uw rechten</h3>
+        <p>
+          U heeft recht op inzage, rectificatie en – in de door de wet voorziene gevallen – wissing of
+          beperking van verwerking, alsook bezwaar waar van toepassing. Voor uitoefening van uw rechten of een
+          klacht kunt u ons contacteren. U kan ook een klacht indienen bij de Gegevensbeschermingsautoriteit
+          (België) of de bevoegde autoriteit in uw land.
+        </p>
+        <h3>Wijzigingen</h3>
+        <p>
+          Deze tekst kan worden aangepast bij wijzigingen aan de website of de wetgeving. Raadpleeg ze
+          regelmatig bij twijfel.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div
+    id="legal-modal-terms"
+    class="legal-modal"
+    hidden
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="legal-modal-terms-title"
+  >
+    <div class="legal-modal__backdrop" data-legal-modal-close tabindex="-1"></div>
+    <div class="legal-modal__dialog">
+      <button type="button" class="legal-modal__close" data-legal-modal-close aria-label="Sluiten">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="legal-modal__body">
+        <h2 id="legal-modal-terms-title">Algemene voorwaarden</h2>
+        <p>
+          Onderstaande algemene voorwaarden geven het kader voor het gebruik van deze website en informatie
+          over vakantieverhuur van Casa Pheli. Een definitieve boeking wordt bevestigd in overleg met de
+          verhuurder (beschikbaarheid, prijs, annuleringsvoorwaarden).
+        </p>
+        <h3>Website en informatie</h3>
+        <p>
+          De inhoud van deze site (teksten, foto’s, prijzen) is met zorg samengesteld maar kan zonder
+          voorafgaande kennisgeving wijzigen. Aan de informatie kunnen geen rechten worden ontleend behalve
+          na uitdrukkelijke schriftelijke bevestiging van een reservatie.
+        </p>
+        <h3>Boeking en betaling</h3>
+        <p>
+          Reservaties en betalingsmodaliteiten (voorschot, saldo, waarborg indien van toepassing) worden
+          per geval overeengekomen. Pas na wederzijdse bevestiging komt een overeenkomst tot stand.
+        </p>
+        <h3>Annulering</h3>
+        <p>
+          Annuleringsvoorwaarden en eventuele kosten worden bij boeking duidelijk gecommuniceerd en vastgelegd.
+          Raadpleeg uw boekingsbevestiging of neem contact op bij twijfel.
+        </p>
+        <h3>Aansprakelijkheid</h3>
+        <p>
+          Het gebruik van de website gebeurt op eigen verantwoordelijkheid. Casa Pheli is niet aansprakelijk
+          voor onrechtstreekse schade door het gebruik van de site of door tijdelijke onbeschikbaarheid, behoudens
+          bedrog of grove fout waar de wet niet van afwijkt.
+        </p>
+        <h3>Intellectuele rechten</h3>
+        <p>
+          Teksten en beeldmateriaal op deze site vallen onder het auteursrecht en mogen niet zonder toestemming
+          worden hergebruikt voor commerciële doeleinden.
+        </p>
+        <h3>Toepasselijk recht</h3>
+        <p>
+          Op deze voorwaarden is het recht van toepassing zoals overeengekomen in uw boeking en de geldende
+          regels in Spanje voor de huur van de woning, tenzij dwingend consumentenrecht anders voorschrijft.
+        </p>
+      </div>
+    </div>
+  </div>
+
   <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
   <script src="/scripts/nav.js" defer></script>
+  <script src="/scripts/legal-modals.js?v=1" defer></script>
 </body>
 </html>
