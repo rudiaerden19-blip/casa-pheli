@@ -1,4 +1,18 @@
 (function () {
+  if (window.location.hash === "#cr-email") {
+    var emailInp = document.getElementById("cr-email");
+    if (emailInp) {
+      window.requestAnimationFrame(function () {
+        emailInp.scrollIntoView({ behavior: "smooth", block: "center" });
+        try {
+          emailInp.focus({ preventScroll: true });
+        } catch (e) {
+          emailInp.focus();
+        }
+      });
+    }
+  }
+
   var form = document.getElementById("contact-request-form");
   if (!form) return;
 
