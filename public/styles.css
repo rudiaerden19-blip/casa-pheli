@@ -1738,6 +1738,13 @@ button.btn {
   padding-top: calc(1.35cm + clamp(2.35rem, 6.5vw, 4rem));
 }
 
+/* Telefoon: «Casa Pheli» niet tegen de hero — extra ~1 cm lucht */
+@media (max-width: 639px) {
+  .section.section--hosts {
+    padding-top: calc(2.35cm + clamp(2.35rem, 6.5vw, 4rem));
+  }
+}
+
 /* Homepage: Over ons — tekst links, ronde foto rechts (zwarte hoeken weggeknipt) */
 .grid-2--hosts {
   align-items: center;
