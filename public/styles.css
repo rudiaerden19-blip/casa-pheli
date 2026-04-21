@@ -2433,6 +2433,20 @@ h2#voorzieningen-title {
   max-width: min(46rem, 100%);
 }
 
+.gb-reviews--cols-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.2rem;
+  max-width: min(56rem, 100%);
+}
+
+@media (min-width: 768px) {
+  .gb-reviews--cols-2 {
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+}
+
 .gb-review {
   margin: 0;
   padding: 1.2rem 1.35rem 1.05rem;
@@ -2451,13 +2465,27 @@ h2#voorzieningen-title {
   font-size: 0.98rem;
 }
 
-.gb-review__author {
+.gb-review__footer {
   margin: 0.75rem 0 0;
+  padding: 0;
+}
+
+.gb-review__author {
+  margin: 0;
   padding: 0;
   font-size: 0.9rem;
   font-weight: 600;
   font-style: normal;
   color: var(--earth);
+}
+
+.gb-review__date {
+  margin: 0.35rem 0 0;
+  padding: 0;
+  font-size: 0.82rem;
+  font-weight: 500;
+  font-style: normal;
+  color: var(--earth-soft);
 }
 
 .gb-review__stars {
