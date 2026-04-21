@@ -25,6 +25,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-anchor: none;
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
   max-width: 100%;
