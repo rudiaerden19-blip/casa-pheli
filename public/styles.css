@@ -1625,10 +1625,10 @@ button.btn {
   }
 }
 
-/* Homepage: Over ons — ruimte onder hero zit IN de sectie (padding), geen aparte crème-band + harde rand */
+/* Homepage: Over ons — bovenruimte (merkregel mag iets in de marge trekken; niet te hoog) */
 .section.section--hosts {
   margin-top: 0;
-  padding-top: calc(3cm + clamp(3.5rem, 9vw, 5.75rem));
+  padding-top: calc(1.35cm + clamp(2.35rem, 6.5vw, 4rem));
 }
 
 /* Homepage: Over ons — tekst links, ronde foto rechts (zwarte hoeken weggeknipt) */
@@ -1642,7 +1642,7 @@ button.btn {
 
 .hosts-brand {
   position: absolute;
-  top: calc(clamp(-3.25rem, -8vw, -2.25rem) - 2cm);
+  top: calc(clamp(-3.25rem, -8vw, -2.25rem) - 1.35cm);
   left: 0;
   display: flex;
   flex-wrap: wrap;
