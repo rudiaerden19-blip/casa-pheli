@@ -1798,7 +1798,7 @@ button.btn {
 /* Over ons: rechthoekige foto Phebe & Liam onder de ronde foto van Heidi en Geert */
 .hosts-top-photo {
   width: 100%;
-  max-width: 19rem;
+  max-width: min(100%, 15.25rem);
   margin-inline: auto;
   border-radius: 1.15rem;
   overflow: hidden;
