@@ -2484,21 +2484,21 @@ h2#voorzieningen-title {
 }
 
 /* ——— Guestbook ——— */
-/* Achtergrond: perkamentfoto + lichte wash voor leesbare titel/intro */
+/* Achtergrond: complex + zwembad met crème-overlay voor leesbaarheid */
 .section.section--gastenboek {
   position: relative;
   isolation: isolate;
-  background-color: #ebe4d9;
+  background-color: var(--cream);
   background-image:
     linear-gradient(
       180deg,
-      rgba(253, 250, 245, 0.38) 0%,
-      rgba(245, 236, 224, 0.32) 50%,
-      rgba(234, 222, 206, 0.4) 100%
+      rgba(253, 250, 245, 0.52) 0%,
+      rgba(245, 236, 224, 0.45) 48%,
+      rgba(234, 222, 206, 0.5) 100%
     ),
-    url("/assets/gastenboek-perkament.png");
+    url("/assets/gastenboek-achtergrond.png");
   background-size: cover, cover;
-  background-position: center center;
+  background-position: center, center;
   background-repeat: no-repeat, no-repeat;
   border-top: 1px solid rgba(168, 107, 74, 0.1);
   border-bottom: 1px solid rgba(168, 107, 74, 0.1);
