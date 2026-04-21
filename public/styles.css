@@ -1486,11 +1486,18 @@ button.btn {
   object-fit: contain;
 }
 
-/* Hosts-video is 480×480: niet breder tonen = scherper, minder “ingezoomd” */
+/* Hosts-video’s: niet breder dan bronresolutie = scherper, minder “ingezoomd” */
 .video-modal__video[src*="hosts-kijk-video"] {
   width: auto;
   max-width: min(480px, 96vw);
   max-height: min(85vh, 96vw);
+  margin-inline: auto;
+}
+
+.video-modal__video[src*="hosts-video-1"] {
+  width: auto;
+  max-width: min(848px, 96vw);
+  max-height: min(85vh, 100%);
   margin-inline: auto;
 }
 
