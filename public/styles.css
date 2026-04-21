@@ -1727,6 +1727,11 @@ button.btn {
   margin-inline: auto;
 }
 
+/* Over ons: hele blok (foto’s + knoppen) iets naar onder */
+.section--hosts .hosts-photo-stack {
+  margin-top: 1cm;
+}
+
 .hosts-photo-visual {
   display: flex;
   flex-direction: column;
