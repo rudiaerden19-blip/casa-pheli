@@ -7,7 +7,7 @@
   var closers = modal.querySelectorAll("[data-video-modal-close]");
   var lastOpener = null;
   var defaultSrc =
-    player.getAttribute("src") || "/assets/video/kijk-video.mp4";
+    player.getAttribute("src") || "/assets/video/guardamar-web.mp4";
 
   function setSourceFromButton(btn) {
     var src = btn.getAttribute("data-video-src") || defaultSrc;
