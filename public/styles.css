@@ -2911,6 +2911,38 @@ h2#voorzieningen-title {
   color: var(--earth-soft);
 }
 
+/* Toast na gelukte aanvraag (contact + home) */
+.contact-success-toast {
+  position: fixed;
+  inset: 0;
+  z-index: 450;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.28s ease;
+}
+
+.contact-success-toast.contact-success-toast--visible {
+  opacity: 1;
+}
+
+.contact-success-toast__inner {
+  pointer-events: auto;
+  max-width: min(22rem, 100%);
+  padding: 1.1rem 1.35rem;
+  border-radius: 14px;
+  font-size: 1.02rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--earth);
+  background: linear-gradient(180deg, #fffefb 0%, #f5efe8 100%);
+  border: 1px solid rgba(168, 107, 74, 0.25);
+  box-shadow: 0 12px 40px rgba(61, 52, 41, 0.18);
+}
+
 /* ——— Footer (zandtextuur + sterkere lichte gradient — terracotta leesbaar) ——— */
 .site-footer {
   margin-top: auto;
@@ -3450,6 +3482,13 @@ h2#voorzieningen-title {
 .inquiry-submit {
   width: 100%;
   margin-top: 0.25rem;
+}
+
+.inquiry-status {
+  margin: 0.85rem 0 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--earth-soft);
 }
 
 .section--inquiry .inquiry-submit.btn-primary {

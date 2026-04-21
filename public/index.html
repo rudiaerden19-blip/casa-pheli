@@ -912,7 +912,12 @@
                 placeholder="Typ hier je vraag over beschikbaarheid, verblijf, …"
               ></textarea>
             </div>
+            <div class="sr-only" aria-hidden="true">
+              <label for="inq-honey">Laat dit veld leeg</label>
+              <input id="inq-honey" name="_gotcha" type="text" tabindex="-1" autocomplete="off" value="" />
+            </div>
             <button type="submit" class="btn btn-primary inquiry-submit">Verstuur aanvraag</button>
+            <p id="home-inquiry-status" class="inquiry-status" role="status" hidden></p>
           </form>
         </div>
       </div>
@@ -1186,39 +1191,7 @@
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
   </script>
-  <script>
-    (function () {
-      var form = document.getElementById("home-inquiry-form");
-      if (!form) return;
-      form.addEventListener("submit", function (e) {
-        e.preventDefault();
-        var voornaam = document.getElementById("inq-voornaam").value.trim();
-        var naam = document.getElementById("inq-naam").value.trim();
-        var email = document.getElementById("inq-email").value.trim();
-        var tel = document.getElementById("inq-tel").value.trim();
-        var bericht = document.getElementById("inq-bericht").value.trim();
-        var body =
-          "Voornaam: " +
-          voornaam +
-          "\n" +
-          "Naam: " +
-          naam +
-          "\n" +
-          "E-mail: " +
-          email +
-          "\n" +
-          "Telefoon: " +
-          tel +
-          "\n\n" +
-          "Bericht:\n" +
-          bericht +
-          "\n";
-        var subject = encodeURIComponent("Beschikbaarheid Casa Pheli");
-        window.location.href =
-          "mailto:heidi.torfs@outlook.be?subject=" + subject + "&body=" + encodeURIComponent(body);
-      });
-    })();
-  </script>
+  <script src="/scripts/inquiry-forms.js?v=1" defer></script>
   <script src="/scripts/scroll-init.js?v=1" defer></script>
   <script src="/scripts/nav.js?v=2" defer></script>
   <script src="/scripts/scroll-top.js?v=2" defer></script>
