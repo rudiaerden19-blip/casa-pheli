@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="preload" as="image" href="/assets/logo-casa-pheli-header.jpg" fetchpriority="high" />
-  <link rel="stylesheet" href="/styles.css?v=205" />
+  <link rel="stylesheet" href="/styles.css?v=262" />
 </head>
 <body id="page-top">
   <header class="site-header">
@@ -227,6 +227,16 @@
     </div>
   </footer>
 
+  <a
+    href="#page-top"
+    class="home-scroll-top"
+    id="home-scroll-top"
+    aria-label="Ga naar boven"
+  >
+    <span class="home-scroll-top__arrow" aria-hidden="true">↑</span>
+    <span class="home-scroll-top__text">Up</span>
+  </a>
+
   <div
     id="legal-modal-privacy"
     class="legal-modal"
@@ -371,6 +381,7 @@
   <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
   <script src="/scripts/scroll-init.js?v=1" defer></script>
   <script src="/scripts/nav.js?v=2" defer></script>
+  <script src="/scripts/scroll-top.js?v=2" defer></script>
   <script src="/scripts/legal-modals.js?v=1" defer></script>
   <script src="/scripts/contact-request-form.js?v=2" defer></script>
 </body>

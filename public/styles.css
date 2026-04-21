@@ -3349,6 +3349,81 @@ h2#voorzieningen-title {
   line-height: 1;
 }
 
+/* Alle pagina’s: vaste link omhoog (pijl + “Up”) */
+.home-scroll-top {
+  position: fixed;
+  z-index: 250;
+  right: max(1rem, env(safe-area-inset-right, 0px));
+  bottom: max(1.25rem, env(safe-area-inset-bottom, 0px));
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-decoration: none;
+  color: var(--earth);
+  background: rgba(255, 254, 251, 0.96);
+  border: 1px solid rgba(168, 107, 74, 0.35);
+  box-shadow: 0 6px 22px rgba(61, 52, 41, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  pointer-events: none;
+  transition:
+    opacity 0.22s ease,
+    visibility 0.22s ease,
+    transform 0.22s ease;
+}
+
+.home-scroll-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.home-scroll-top:hover {
+  color: var(--terracotta);
+  border-color: rgba(168, 107, 74, 0.5);
+}
+
+.home-scroll-top:focus-visible {
+  outline: 2px solid var(--terracotta);
+  outline-offset: 3px;
+}
+
+.home-scroll-top__arrow {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+@media (max-width: 900px) {
+  .home-scroll-top {
+    bottom: calc(4.5rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-scroll-top {
+    transition: none;
+    transform: none;
+  }
+
+  .home-scroll-top.is-visible {
+    transform: none;
+  }
+}
+
+@media print {
+  .home-scroll-top {
+    display: none !important;
+  }
+}
+
 /* ——— Responsive: iPhone, iPad, kleine schermen ——— */
 @media (max-width: 640px) {
   .hero.hero--slider {
