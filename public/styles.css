@@ -2733,6 +2733,36 @@ h2#voorzieningen-title {
   margin-inline: auto;
 }
 
+@media (min-width: 880px) {
+  .contact-request-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
+    gap: clamp(2.25rem, 4.5vw, 3.75rem);
+    align-items: start;
+  }
+}
+
+.contact-request-column {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.35rem, 3.5vw, 1.85rem);
+  min-width: 0;
+}
+
+.contact-request-map {
+  margin: 0;
+  min-width: 0;
+}
+
+.contact-request-map img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(61, 52, 41, 0.12);
+  box-shadow: 0 6px 22px rgba(61, 52, 41, 0.1);
+}
+
 .contact-request-copy {
   min-width: 0;
 }
@@ -3297,6 +3327,38 @@ h2#voorzieningen-title {
   grid-template-columns: 1fr;
   gap: clamp(1.75rem, 4vw, 2.5rem);
   align-items: start;
+}
+
+@media (min-width: 880px) {
+  .inquiry-wrap {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
+    gap: 2.5rem 3rem;
+    align-items: start;
+  }
+}
+
+.inquiry-column {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.35rem, 3.5vw, 1.85rem);
+  min-width: 0;
+}
+
+.inquiry-map {
+  margin: 0;
+  min-width: 0;
+}
+
+.inquiry-map img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(168, 107, 74, 0.22);
+  box-shadow:
+    0 8px 26px rgba(61, 52, 41, 0.08),
+    0 2px 8px rgba(168, 107, 74, 0.08);
 }
 
 .inquiry-intro h2 {
