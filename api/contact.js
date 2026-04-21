@@ -1,12 +1,11 @@
 /**
  * POST /api/contact — JSON { subject?, voornaam, naam, email, telefoon, bericht, _gotcha? }
- * Verstuurt een mail naar de eigenaar via Resend wanneer geconfigureerd.
- * Zonder Resend: antwoord 501 + fallback — de browser stuurt rechtstreeks naar FormSubmit
- * (FormSubmit accepteert geen server-side Node-fetch).
+ * Stuurt één plain-text mail naar de eigenaar via Resend.
  *
- * Vercel env (optioneel):
- * - CONTACT_TO_EMAIL — ontvanger (default: heidi.torfs@outlook.be)
- * - RESEND_API_KEY + RESEND_FROM — dan via Resend (from = geverifieerd domein)
+ * Vercel → Environment Variables (Production):
+ *   RESEND_API_KEY   — API key van https://resend.com
+ *   RESEND_FROM      — geverifieerd afzenderadres (bv. contact@jouwdomein.be)
+ *   CONTACT_TO_EMAIL — optioneel, ontvanger (default heidi.torfs@outlook.be)
  */
 
 const DEFAULT_TO = "heidi.torfs@outlook.be";
@@ -88,7 +87,7 @@ async function sendViaResend({ to, from, apiKey, replyTo, subject, text }) {
   }
   if (!r.ok) {
     const msg = (j && j.message) || raw || r.statusText;
-    throw new Error(`Resend: ${msg}`);
+    throw new Error(typeof msg === "string" ? msg : "Resend-fout");
   }
 }
 
@@ -135,19 +134,18 @@ export default async function handler(req, res) {
     return sendJson(res, 400, { error: "Ongeldig e-mailadres." });
   }
 
-  const to = getEnvTrim("CONTACT_TO_EMAIL") || DEFAULT_TO;
-  const text = buildTextBody({ voornaam, naam, email, telefoon, bericht });
-
   const resendKey = getEnvTrim("RESEND_API_KEY");
   const resendFrom = getEnvTrim("RESEND_FROM");
-
   if (!(resendKey && resendFrom)) {
-    return sendJson(res, 501, {
+    console.warn("[contact] Ontbrekend: RESEND_API_KEY en/of RESEND_FROM in Vercel.");
+    return sendJson(res, 503, {
       ok: false,
-      fallback: true,
-      error: "Server-mail niet geconfigureerd; de site gebruikt browser-verzending.",
+      error: "Je bericht kon niet worden verstuurd. Probeer later opnieuw.",
     });
   }
+
+  const to = getEnvTrim("CONTACT_TO_EMAIL") || DEFAULT_TO;
+  const text = buildTextBody({ voornaam, naam, email, telefoon, bericht });
 
   try {
     await sendViaResend({
@@ -160,12 +158,10 @@ export default async function handler(req, res) {
     });
   } catch (e) {
     const msg = e instanceof Error ? e.message : String(e);
-    console.error("[contact] send failed", e);
+    console.error("[contact] Resend mislukt:", msg);
     return sendJson(res, 502, {
       ok: false,
-      fallback: true,
-      error: "Versturen via de server mislukt. Er wordt opnieuw geprobeerd vanuit je browser.",
-      detail: msg.slice(0, 300),
+      error: "Versturen mislukt. Probeer later opnieuw.",
     });
   }
 
