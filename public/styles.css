@@ -2492,9 +2492,9 @@ h2#voorzieningen-title {
   background-image:
     linear-gradient(
       180deg,
-      rgba(253, 250, 245, 0.9) 0%,
-      rgba(245, 236, 224, 0.86) 42%,
-      rgba(234, 222, 206, 0.93) 100%
+      rgba(253, 250, 245, 0.52) 0%,
+      rgba(245, 236, 224, 0.45) 48%,
+      rgba(234, 222, 206, 0.5) 100%
     ),
     url("/assets/gastenboek-achtergrond.png");
   background-size: cover, cover;
