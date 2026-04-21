@@ -8,48 +8,25 @@
 
   var index = 0;
   var intervalMs = 2000;
+  var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  function slideWidth() {
-    var w = viewport.getBoundingClientRect().width;
-    return w ? Math.floor(w) : 0;
-  }
-
-  function layout() {
-    var w = slideWidth();
-    if (!w) return;
-    slides.forEach(function (slide) {
-      slide.style.width = w + "px";
+  function syncAria() {
+    slides.forEach(function (slide, i) {
+      var on = i === index;
+      slide.classList.toggle("is-active", on);
+      slide.setAttribute("aria-hidden", on ? "false" : "true");
     });
-    track.style.transform = "translateX(" + -index * w + "px)";
   }
 
   function goNext() {
-    var w = slideWidth();
-    if (!w) return;
-    if (index >= slides.length - 1) {
-      track.style.transition = "none";
-      track.style.transform = "translateX(0)";
-      index = 0;
-      void track.offsetWidth;
-      track.style.transition = "";
-      return;
-    }
-    index += 1;
-    track.style.transform = "translateX(" + -index * w + "px)";
+    if (slides.length < 2) return;
+    index = (index + 1) % slides.length;
+    syncAria();
   }
 
-  layout();
-  window.addEventListener("load", layout, false);
+  syncAria();
 
-  window.addEventListener(
-    "resize",
-    function () {
-      layout();
-    },
-    false
-  );
-
-  window.setInterval(function () {
-    goNext();
-  }, intervalMs);
+  if (!reduced && slides.length > 1) {
+    window.setInterval(goNext, intervalMs);
+  }
 })();
