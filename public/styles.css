@@ -1483,6 +1483,15 @@ button.btn {
   height: auto;
   max-height: min(85vh, 100%);
   vertical-align: middle;
+  object-fit: contain;
+}
+
+/* Hosts-video is 480×480: niet breder tonen = scherper, minder “ingezoomd” */
+.video-modal__video[src*="hosts-kijk-video"] {
+  width: auto;
+  max-width: min(480px, 96vw);
+  max-height: min(85vh, 96vw);
+  margin-inline: auto;
 }
 
 .video-modal__close {
