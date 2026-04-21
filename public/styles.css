@@ -423,6 +423,8 @@ a:hover {
 
 .hero--slider .hero-title-wrap h1 .hero-title__main {
   display: block;
+  font-size: clamp(2.45rem, 6.5vw, 3.55rem);
+  line-height: 1.12;
   color: #fffefb;
   text-shadow:
     0 0 2px rgba(0, 0, 0, 0.85),
@@ -3416,6 +3418,10 @@ h2#voorzieningen-title {
   .hero--slider .hero-title-wrap h1 {
     font-size: clamp(1.4rem, 5.2vw, 2.5rem);
     gap: clamp(0.55rem, 2.4vw, 0.85rem);
+  }
+
+  .hero--slider .hero-title-wrap h1 .hero-title__main {
+    font-size: clamp(1.85rem, 6.5vw, 2.85rem);
   }
 
   .hero--slider .hero-title-wrap h1 .hero-title__location {
