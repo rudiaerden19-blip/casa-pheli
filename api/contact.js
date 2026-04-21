@@ -1,6 +1,8 @@
 /**
  * POST /api/contact — JSON { subject?, voornaam, naam, email, telefoon, bericht, _gotcha? }
- * Verstuurt een mail naar de eigenaar via Resend (aanbevolen) of anders FormSubmit.
+ * Verstuurt een mail naar de eigenaar via Resend wanneer geconfigureerd.
+ * Zonder Resend: antwoord 501 + fallback — de browser stuurt rechtstreeks naar FormSubmit
+ * (FormSubmit accepteert geen server-side Node-fetch).
  *
  * Vercel env (optioneel):
  * - CONTACT_TO_EMAIL — ontvanger (default: heidi.torfs@outlook.be)
@@ -90,40 +92,6 @@ async function sendViaResend({ to, from, apiKey, replyTo, subject, text }) {
   }
 }
 
-async function sendViaFormSubmit({ to, replyTo, subject, voornaam, naam, email, telefoon, bericht }) {
-  const url = `https://formsubmit.co/ajax/${encodeURIComponent(to)}`;
-  const r = await fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify({
-      _subject: subject,
-      _replyto: replyTo,
-      voornaam,
-      naam,
-      email,
-      telefoon,
-      bericht,
-    }),
-  });
-  const raw = await r.text();
-  let j = null;
-  try {
-    j = raw ? JSON.parse(raw) : null;
-  } catch {
-    throw new Error("FormSubmit gaf geen geldige JSON terug.");
-  }
-  if (!r.ok) {
-    const msg = (j && j.message) || j?.error || raw || r.statusText;
-    throw new Error(typeof msg === "string" ? msg : "FormSubmit mislukt.");
-  }
-  if (!j || typeof j.success !== "string") {
-    throw new Error("FormSubmit: onverwacht antwoord.");
-  }
-}
-
 export default async function handler(req, res) {
   if (req.method === "OPTIONS") {
     res.statusCode = 204;
@@ -173,33 +141,30 @@ export default async function handler(req, res) {
   const resendKey = getEnvTrim("RESEND_API_KEY");
   const resendFrom = getEnvTrim("RESEND_FROM");
 
+  if (!(resendKey && resendFrom)) {
+    return sendJson(res, 501, {
+      ok: false,
+      fallback: true,
+      error: "Server-mail niet geconfigureerd; de site gebruikt browser-verzending.",
+    });
+  }
+
   try {
-    if (resendKey && resendFrom) {
-      await sendViaResend({
-        to,
-        from: resendFrom,
-        apiKey: resendKey,
-        replyTo: email,
-        subject,
-        text,
-      });
-    } else {
-      await sendViaFormSubmit({
-        to,
-        replyTo: email,
-        subject,
-        voornaam,
-        naam,
-        email,
-        telefoon,
-        bericht,
-      });
-    }
+    await sendViaResend({
+      to,
+      from: resendFrom,
+      apiKey: resendKey,
+      replyTo: email,
+      subject,
+      text,
+    });
   } catch (e) {
     const msg = e instanceof Error ? e.message : String(e);
     console.error("[contact] send failed", e);
     return sendJson(res, 502, {
-      error: "Versturen mislukt. Probeer later opnieuw of mail rechtstreeks.",
+      ok: false,
+      fallback: true,
+      error: "Versturen via de server mislukt. Er wordt opnieuw geprobeerd vanuit je browser.",
       detail: msg.slice(0, 300),
     });
   }

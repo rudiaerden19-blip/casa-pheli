@@ -1,6 +1,8 @@
 (function () {
   var TOAST_ID = "contact-success-toast";
   var TOAST_MS = 3800;
+  /** FormSubmit AJAX — moet vanuit de echte browser (FormSubmit weigert server-side fetch). */
+  var FORMSUBMIT_TO = "heidi.torfs@outlook.be";
 
   if (window.location.hash === "#cr-email") {
     var emailInp = document.getElementById("cr-email");
@@ -51,24 +53,82 @@
     return inp ? String(inp.value || "").trim() : "";
   }
 
+  function parseJsonFromResponse(text) {
+    if (!text || !String(text).trim()) return null;
+    try {
+      return JSON.parse(text);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function formSubmitSuccess(j) {
+    if (!j || j.success == null) return false;
+    if (j.success === false) return false;
+    if (String(j.success).toLowerCase() === "false") return false;
+    return true;
+  }
+
+  async function postViaFormSubmitBrowser(payload) {
+    var url = "https://formsubmit.co/ajax/" + encodeURIComponent(FORMSUBMIT_TO);
+    var r = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({
+        _subject: payload.subject,
+        _replyto: payload.email,
+        voornaam: payload.voornaam,
+        naam: payload.naam,
+        email: payload.email,
+        telefoon: payload.telefoon,
+        bericht: payload.bericht,
+      }),
+    });
+    var text = await r.text();
+    var data = parseJsonFromResponse(text);
+    if (!data) {
+      throw new Error("Versturen mislukt (onverwacht antwoord). Probeer later opnieuw.");
+    }
+    if (!formSubmitSuccess(data)) {
+      var msg =
+        (typeof data.message === "string" && data.message) ||
+        "Versturen mislukt. Controleer je verbinding of probeer later opnieuw.";
+      throw new Error(msg);
+    }
+  }
+
   async function postInquiry(payload) {
     var r = await fetch("/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
       body: JSON.stringify(payload),
     });
-    var data = null;
-    try {
-      data = await r.json();
-    } catch (e) {
-      data = null;
+    var text = await r.text();
+    var data = parseJsonFromResponse(text);
+
+    if (r.ok && data && data.ok === true) {
+      return;
     }
-    if (!r.ok) {
-      var msg =
-        (data && (data.error || data.message)) ||
-        "Versturen mislukt. Probeer later opnieuw.";
-      throw new Error(typeof msg === "string" ? msg : "Versturen mislukt.");
+
+    var useBrowser =
+      r.status === 501 ||
+      (data && data.fallback === true) ||
+      (r.status >= 500 && r.status <= 504);
+
+    if (useBrowser) {
+      await postViaFormSubmitBrowser(payload);
+      return;
     }
+
+    if (r.status === 400 && data && typeof data.error === "string") {
+      throw new Error(data.error);
+    }
+
+    var msg =
+      (data && (typeof data.error === "string" ? data.error : null)) ||
+      (data && (typeof data.message === "string" ? data.message : null)) ||
+      "Versturen mislukt. Probeer later opnieuw.";
+    throw new Error(msg);
   }
 
   function wireForm(form, subject, statusId) {
@@ -76,7 +136,9 @@
     var statusEl = statusId ? document.getElementById(statusId) : null;
     var submitBtn = form.querySelector('button[type="submit"]');
 
-    form.addEventListener("submit", async function (e) {
+    form.addEventListener(
+      "submit",
+      async function (e) {
       e.preventDefault();
       if (statusEl) {
         statusEl.textContent = "";
@@ -122,7 +184,9 @@
       } finally {
         if (submitBtn) submitBtn.disabled = false;
       }
-    });
+    },
+      true
+    );
   }
 
   wireForm(
