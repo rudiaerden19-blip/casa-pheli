@@ -1,6 +1,8 @@
 (function () {
   var TOAST_ID = "contact-success-toast";
   var TOAST_MS = 3800;
+  /** Geen API-keys: rechtstreeks naar FormSubmit vanuit de browser (ontvanger hieronder). */
+  var OWNER_EMAIL = "heidi.torfs@outlook.be";
 
   if (window.location.hash === "#cr-email") {
     var emailInp = document.getElementById("cr-email");
@@ -51,25 +53,56 @@
     return inp ? String(inp.value || "").trim() : "";
   }
 
+  function parseJson(text) {
+    if (!text || !String(text).trim()) return null;
+    try {
+      return JSON.parse(text);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  function formSubmitOk(j) {
+    if (!j || j.success == null) return false;
+    if (j.success === false) return false;
+    if (String(j.success).toLowerCase() === "false") return false;
+    return true;
+  }
+
+  function humanFormSubmitError(j) {
+    var m = (j && typeof j.message === "string" && j.message) || "";
+    if (/activation/i.test(m)) {
+      return (
+        "Eénmalig: de eigenaar moet de bevestigingsmail van het formulier openen en op de link klikken. " +
+        "Daarna werkt verzenden automatisch, zonder extra sleutels."
+      );
+    }
+    return m || "Versturen mislukt. Probeer later opnieuw.";
+  }
+
   async function postInquiry(payload) {
-    var r = await fetch("/api/contact", {
+    var url = "https://formsubmit.co/ajax/" + encodeURIComponent(OWNER_EMAIL);
+    var r = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
-      body: JSON.stringify(payload),
+      body: JSON.stringify({
+        _subject: payload.subject,
+        _replyto: payload.email,
+        voornaam: payload.voornaam,
+        naam: payload.naam,
+        email: payload.email,
+        telefoon: payload.telefoon,
+        bericht: payload.bericht,
+      }),
     });
-    var data = null;
-    try {
-      data = await r.json();
-    } catch (e) {
-      data = null;
+    var text = await r.text();
+    var data = parseJson(text);
+    if (!data) {
+      throw new Error("Versturen mislukt. Controleer je verbinding of probeer later opnieuw.");
     }
-    if (r.ok && data && data.ok === true) {
-      return;
+    if (!formSubmitOk(data)) {
+      throw new Error(humanFormSubmitError(data));
     }
-    var msg =
-      (data && typeof data.error === "string" && data.error) ||
-      "Versturen mislukt. Probeer later opnieuw.";
-    throw new Error(msg);
   }
 
   function wireForm(form, subject, statusId) {
@@ -113,7 +146,6 @@
             email: email,
             telefoon: telefoon,
             bericht: bericht,
-            _gotcha: gotcha,
           });
           form.reset();
           showSuccessToast();
