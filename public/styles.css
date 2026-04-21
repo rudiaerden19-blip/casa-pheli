@@ -1735,6 +1735,10 @@ button.btn {
   gap: clamp(0.75rem, 2.2vw, 1.15rem);
 }
 
+.section--hosts .hosts-photo-visual > :first-child {
+  margin-top: clamp(1.1rem, 3.2vw, 2rem);
+}
+
 @media (min-width: 720px) {
   .hosts-photo-stack {
     margin-left: auto;
@@ -1791,12 +1795,11 @@ button.btn {
   transform-origin: center center;
 }
 
-/* Over ons: foto Phebe & Liam boven de ronde hosts-foto (voorheen tekstballon) */
+/* Over ons: rechthoekige foto Phebe & Liam onder de ronde foto van Heidi en Geert */
 .hosts-top-photo {
   width: 100%;
   max-width: 19rem;
   margin-inline: auto;
-  margin-top: clamp(1.1rem, 3.2vw, 2rem);
   border-radius: 1.15rem;
   overflow: hidden;
   box-shadow: var(--shadow);
