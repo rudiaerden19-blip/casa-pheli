@@ -1966,11 +1966,13 @@ h2#voorzieningen-title {
   margin: clamp(2rem, 5vw, 2.85rem) auto 0;
   max-width: min(52rem, 100%);
   padding: clamp(1.35rem, 4vw, 2rem) clamp(1.35rem, 4vw, 2.25rem);
-  background: var(--white);
-  border: 1px solid var(--line);
+  background: linear-gradient(180deg, var(--sand) 0%, var(--sand-deep) 100%);
+  border: 1px solid rgba(61, 52, 41, 0.1);
   border-left: 4px solid var(--terracotta);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  border-radius: 15px;
+  box-shadow:
+    0 8px 22px rgba(61, 52, 41, 0.1),
+    0 2px 8px rgba(61, 52, 41, 0.06);
   text-align: left;
 }
 
