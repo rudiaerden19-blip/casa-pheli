@@ -1974,6 +1974,18 @@ h2#voorzieningen-title {
     0 8px 22px rgba(61, 52, 41, 0.1),
     0 2px 8px rgba(61, 52, 41, 0.06);
   text-align: left;
+  opacity: 0;
+  transform: translateY(0.75rem);
+  pointer-events: none;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.section--amenities .amenities-keyholder.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .amenities-keyholder h3 {
@@ -2135,6 +2147,13 @@ h2#voorzieningen-title {
     box-shadow:
       0 8px 22px rgba(61, 52, 41, 0.1),
       0 2px 8px rgba(61, 52, 41, 0.06);
+  }
+
+  .section--amenities .amenities-keyholder {
+    opacity: 1;
+    transform: none;
+    transition: none;
+    pointer-events: auto;
   }
 }
 
