@@ -418,12 +418,12 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(0.65rem, 2.2vw, 1.05rem);
+  gap: clamp(0.75rem, 2.5vw, 1.2rem);
 }
 
 .hero--slider .hero-title-wrap h1 .hero-title__main {
   display: block;
-  font-size: clamp(2.85rem, 7.8vw, 4.35rem);
+  font-size: clamp(3.15rem, 8.6vw, 4.85rem);
   line-height: 1.1;
   color: #fffefb;
   text-shadow:
@@ -435,7 +435,7 @@ a:hover {
 .hero--slider .hero-title-wrap h1 .hero-title__location {
   display: block;
   font-family: var(--font-display);
-  font-size: clamp(2.05rem, 5.8vw, 3.65rem);
+  font-size: clamp(2.3rem, 6.4vw, 4rem);
   font-weight: 600;
   letter-spacing: 0.02em;
   line-height: 1.06;
