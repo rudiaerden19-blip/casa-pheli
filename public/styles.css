@@ -369,8 +369,8 @@ a:hover {
   display: none;
 }
 
-/* Galerij: één hero-foto — zelfde cover-gedrag als slider; licht framen op complex */
-.hero--single .hero-slide img {
+/* Galerij: één hero-foto — zelfde cover-gedrag als slider; licht framen op balkonfoto */
+#galerij-top.hero--single .hero-slide img {
   object-position: center 38%;
 }
 
