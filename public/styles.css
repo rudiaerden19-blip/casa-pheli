@@ -2768,18 +2768,11 @@ h2#voorzieningen-title {
 
 .contact-request-layout {
   display: grid;
-  gap: clamp(2rem, 5vw, 3rem);
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 5vw, 2.75rem);
   align-items: start;
   max-width: min(1040px, 100%);
   margin-inline: auto;
-}
-
-@media (min-width: 880px) {
-  .contact-request-layout {
-    grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
-    gap: clamp(2.25rem, 4.5vw, 3.75rem);
-    align-items: center;
-  }
 }
 
 .contact-request-copy {
@@ -2801,7 +2794,7 @@ h2#voorzieningen-title {
   font-size: 1.02rem;
   line-height: 1.65;
   color: var(--earth-soft);
-  max-width: 38ch;
+  max-width: min(52ch, 100%);
 }
 
 .section.section--contact-request .contact-request-privacy {
@@ -2809,7 +2802,7 @@ h2#voorzieningen-title {
   font-size: 0.92rem;
   line-height: 1.55;
   color: var(--earth-soft);
-  max-width: 36ch;
+  max-width: min(48ch, 100%);
 }
 
 .contact-request-form-wrap {
@@ -3343,15 +3336,9 @@ h2#voorzieningen-title {
 
 .inquiry-wrap {
   display: grid;
+  grid-template-columns: 1fr;
   gap: clamp(1.75rem, 4vw, 2.5rem);
-}
-
-@media (min-width: 880px) {
-  .inquiry-wrap {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
-    align-items: start;
-    gap: 2.5rem 3rem;
-  }
+  align-items: start;
 }
 
 .inquiry-intro h2 {
