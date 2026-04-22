@@ -2207,6 +2207,7 @@ h2#voorzieningen-title {
   border: none;
   background: var(--sand-deep);
   cursor: zoom-in;
+  -webkit-tap-highlight-color: transparent;
   box-shadow: 0 6px 22px rgba(61, 52, 41, 0.1);
   transition:
     box-shadow 0.25s ease,
