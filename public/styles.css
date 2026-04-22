@@ -1852,6 +1852,8 @@ button.btn {
   align-items: center;
   width: 100%;
   gap: clamp(0.75rem, 2.2vw, 1.15rem);
+  /* Alleen de twee foto’s samen ~1 cm omlaag; knoppen blijven op hun plek */
+  margin-top: 1cm;
 }
 
 .section--hosts .hosts-photo-visual > :first-child {
